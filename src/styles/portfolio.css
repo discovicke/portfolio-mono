@@ -1,0 +1,531 @@
+/**
+ * Huvudstil-fil för hela applikationen
+ *
+ * Denna fil innehåller all CSS som tidigare var inline i import.tsx.
+ * Den importeras i App.tsx och styr utseendet på alla komponenter.
+ */
+
+/* Importera Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&family=Patrick+Hand&family=Inter:wght@300;400&display=swap');
+
+/* CSS-variabler (globala färger och typsnitt) */
+:root {
+  --bg-wall: #EFEFEA;
+  --text-ink: #181818;
+  --birch-grey: #D6D6D2;
+  --accent-organic: #2F2F2F;
+  --font-psych: 'Shrikhand', cursive;
+  --font-doodle: 'Patrick Hand', cursive;
+  --font-sans: 'Inter', sans-serif;
+}
+
+/* Reset & Base - Grundläggande stilar för alla element */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-wall);
+  color: var(--text-ink);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  /* Custom Cursor - ger en handritad känsla */
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="1"/></svg>') 12 12, auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Typography Classes - Typsnittklasser */
+.font-psych {
+  font-family: var(--font-psych);
+  letter-spacing: 0.02em;
+}
+
+.font-doodle {
+  font-family: var(--font-doodle);
+}
+
+/* Utilities - Hjälpklasser */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section {
+  padding: 5rem 1rem;
+  position: relative;
+}
+
+/* Birch Background - Björkträds-randig bakgrund */
+.birch-bg {
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 40px,
+    rgba(24, 24, 24, 0.03) 40px,
+    rgba(24, 24, 24, 0.03) 42px
+  );
+  min-height: 100vh;
+}
+
+/* Navbar - Navigation längst upp */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  backdrop-filter: blur(2px);
+  mix-blend-mode: multiply;
+}
+
+.logo {
+  font-family: var(--font-psych);
+  font-size: 1.5rem;
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.logo:hover {
+  transform: rotate(2deg);
+}
+
+.nav-links {
+  display: none;
+  gap: 2rem;
+  font-family: var(--font-doodle);
+  font-size: 1.25rem;
+}
+
+/* Responsiv design - visa nav-länkar på större skärmar */
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+  }
+  .logo {
+    font-size: 2rem;
+  }
+}
+
+.mobile-menu-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu-icon {
+    display: none;
+  }
+}
+
+/* Hero Section - Startsida/landningssida */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-intro {
+  font-family: var(--font-doodle);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  transform: rotate(-2deg);
+}
+
+.hero-title {
+  font-family: var(--font-psych);
+  font-size: 15vw;
+  line-height: 0.85;
+  margin: 0 0 1.5rem 0;
+  /* Liquid Text Effect - ger text en "flytande" känsla */
+  background: linear-gradient(45deg, var(--text-ink) 40%, var(--accent-organic) 60%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: url(#wavy);
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 9rem;
+  }
+}
+
+.hero-desc {
+  font-family: var(--font-doodle);
+  font-size: 1.5rem;
+  max-width: 32rem;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Bounce Arrow Animation - Studsande pil */
+.bounce-arrow {
+  margin-top: 3rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Work Section - Projektsektion */
+.work-header {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.work-title {
+  font-family: var(--font-psych);
+  font-size: 3rem;
+  margin: 0;
+}
+
+.work-subtitle {
+  font-family: var(--font-doodle);
+  font-size: 1.125rem;
+  padding-bottom: 1rem;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .work-title {
+    font-size: 4.5rem;
+  }
+  .work-subtitle {
+    display: block;
+  }
+}
+
+/* Projects Grid - Rutnät för projekt */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+  }
+}
+
+.project-card {
+  position: relative;
+}
+
+/* Offset för varje andra projektkort (ger en mer dynamisk layout) */
+.project-card.offset {
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  .project-card.offset {
+    margin-top: 6rem;
+  }
+}
+
+/* Wobble Box - Handritad ram-effekt */
+.wobble-box {
+  border: 2px solid var(--text-ink);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  background: white;
+  aspect-ratio: 4/3;
+  position: relative;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.wobble-box:hover {
+  border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
+  transform: scale(1.02) rotate(-1deg);
+}
+
+.wobble-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1.1);
+  transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+.project-card:hover .wobble-box img {
+  filter: grayscale(0%) contrast(1);
+  transform: scale(1.05);
+}
+
+/* Sticker - Kategori-etikett */
+.sticker {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #EFEFEA;
+  padding: 0.25rem 0.75rem;
+  font-family: var(--font-doodle);
+  font-size: 0.875rem;
+  border: 1px solid black;
+  border-radius: 2px;
+  transform: rotate(3deg);
+  box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+  z-index: 10;
+}
+
+.project-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.project-info h3 {
+  font-family: var(--font-psych);
+  font-size: 1.875rem;
+  margin: 0 0 0.25rem 0;
+  transition: color 0.3s;
+}
+
+.project-card:hover .project-info h3 {
+  color: #4a4a4a;
+}
+
+.project-info p {
+  font-family: var(--font-doodle);
+  font-size: 1.125rem;
+  opacity: 0.8;
+  margin: 0;
+  max-width: 20rem;
+}
+
+.project-arrow {
+  width: 2rem;
+  height: 2rem;
+  transition: transform 0.3s;
+}
+
+.project-card:hover .project-arrow {
+  transform: translateX(0.5rem);
+}
+
+/* About Section - Om mig-sektion */
+.about-section {
+  padding: 8rem 1rem;
+  text-align: center;
+  position: relative;
+}
+
+.about-content {
+  max-width: 48rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Rotating background shape - Roterande bakgrundsform */
+.about-bg-shape {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 80%;
+  border: 2px dashed var(--birch-grey);
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  z-index: 0;
+  animation: spin 60s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.signature {
+  margin-top: 3rem;
+  transform: rotate(-5deg);
+  display: inline-block;
+}
+
+/* Footer - Sidfot */
+.footer {
+  padding: 5rem 1rem;
+  background-color: var(--text-ink);
+  color: var(--bg-wall);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-cta h2 {
+  font-family: var(--font-psych);
+  font-size: 3.5rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+  margin-bottom: 3rem;
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .footer-cta h2 {
+    font-size: 6rem;
+  }
+}
+
+.footer-cta h2:hover {
+  transform: skewX(-10deg);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.social-links a {
+  transition: transform 0.3s;
+}
+
+.social-links a:hover {
+  transform: scale(1.25);
+}
+
+/* Notebook Checkbox - Handritad checkbox-stil för navigation */
+.notebook-checkbox {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  font-family: var(--font-doodle);
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-left: 2em;
+}
+
+.notebook-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  filter: url(#handDrawnNoise);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.notebook-checkbox .checkmark {
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  height: 1em;
+  width: 1em;
+  border-radius: 10px;
+  border: 3px solid #33333366;
+  filter: url(#handDrawnNoise);
+  background: radial-gradient(#333333f1 65%, #33333300 70%);
+  animation: unmark 0.2s forwards;
+  animation-delay: 0.5s;
+  pointer-events: none;
+}
+
+.notebook-checkbox input:checked ~ .checkmark {
+  filter: url(#handDrawnNoise);
+  animation: mark 0.3s forwards;
+}
+
+/* Animationer för checkbox */
+@keyframes mark {
+  0% {
+    background: radial-gradient(#3333333d 0%, #33333300 35%);
+  }
+  50% {
+    background: radial-gradient(#3333333d 0%, #33333300 35%);
+  }
+  75% {
+    background: radial-gradient(#333333f1 35%, #33333300 60%);
+  }
+  100% {
+    background: radial-gradient(#333333f1 65%, #33333300 70%);
+  }
+}
+
+@keyframes unmark {
+  0% {
+    background: radial-gradient(#333333f1 65%, #33333300 70%);
+  }
+  50% {
+    background: linear-gradient(#333333f1 35%, #33333300 60%);
+  }
+  100% {
+    background: radial-gradient(#3333333d 0%, #33333300 35%);
+  }
+}
+
+.notebook-checkbox .text {
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+  display: inline-block;
+  filter: url(#handDrawnNoise);
+  pointer-events: none;
+}
+
+.notebook-checkbox .text .cut-line {
+  position: absolute;
+  left: 0em;
+  right: 0;
+  bottom: 45%;
+  height: 0.5em;
+  width: calc(100% + 15px);
+  pointer-events: none;
+  stroke: #333;
+  stroke-width: 3;
+  fill: none;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.notebook-checkbox input:checked ~ .text .cut-line {
+  transform: scaleX(1);
+}
+
+.notebook-checkbox input:checked ~ .text {
+  color: #222222aa;
+}
+
