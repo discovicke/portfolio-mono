@@ -6,7 +6,11 @@
  */
 
 /* Importera Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&family=Patrick+Hand&family=Inter:wght@300;400&display=swap');
+@font-face {
+  font-family: 'Shrikhand';
+  src: url("../assets/fonts/Shrikhand-Regular.ttf") format('truetype');
+  font-weight: normal;
+}
 
 /* CSS-variabler (globala färger och typsnitt) */
 :root {
@@ -31,8 +35,6 @@ body {
   color: var(--text-ink);
   font-family: var(--font-sans);
   overflow-x: hidden;
-  /* Custom Cursor - ger en handritad känsla */
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="1"/></svg>') 12 12, auto;
 }
 
 a {
@@ -65,7 +67,7 @@ a {
 /* Birch Background - Björkträds-randig bakgrund */
 .birch-bg {
   background-image: repeating-linear-gradient(
-    90deg,
+    180deg,
     transparent,
     transparent 40px,
     rgba(24, 24, 24, 0.03) 40px,
