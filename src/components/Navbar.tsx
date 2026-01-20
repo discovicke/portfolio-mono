@@ -16,7 +16,7 @@ const Navbar: React.FC = () => (
                  id="Layer_1"
                  xmlns="http://www.w3.org/2000/svg" x="0px"
                  y="0px"
-                 enable-background="new 0 0 1792 2400"
+                 enableBackground="new 0 0 1792 2400"
                  xmlSpace="default"
                  viewBox="127.26 619.79 1555 1183.41">
                 <path fill="#030303" opacity="1.000000" stroke="none"
