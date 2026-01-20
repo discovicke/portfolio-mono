@@ -11,10 +11,67 @@
 }
 
 .about-content {
-  max-width: 48rem;
+  max-width: 100rem;
   margin: 0 auto;
   position: relative;
   z-index: 1;
+}
+
+/* Rubrik centrerad */
+.about-title {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Layout: mobil = kolumn, desktop = tre kolumner */
+.about-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .about-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr 280px;
+    gap: 2rem;
+    align-items: start;
+  }
+}
+
+/* Vänster kolumn (tom för balans) */
+.about-spacer-column {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .about-spacer-column {
+    display: block;
+  }
+}
+
+/* Text-kolumn (mitten) */
+.about-text-column {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Polaroid-kolumn (höger) */
+.about-polaroid-column {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  order: 1; /* På mobil: visa efter text */
+}
+
+@media (min-width: 900px) {
+  .about-polaroid-column {
+    order: 0; /* På desktop: visa i naturlig ordning (till höger) */
+    position: sticky;
+    top: 8rem;
+    justify-content: flex-start;
+  }
 }
 
 /* Rotating background shape - Roterande bakgrundsform */
@@ -55,6 +112,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  text-align: left;
 }
 
 .about-bio p {
