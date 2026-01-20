@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import { Mail, Instagram, Linkedin } from 'lucide-react';
+import {Mail, Instagram, Linkedin, Github} from 'lucide-react';
 
 const Footer: React.FC = () => (
     <footer id="contact" className="footer">
@@ -18,20 +18,47 @@ const Footer: React.FC = () => (
 
             {/* Sociala medier länkar */}
             <div className="social-links">
-                <a href="#" aria-label="Email">
+                <a
+                    href="mailto:lohappaprod@gmail.com?subject=Kontakt%20via%20portfolio&body=Hej%20Viktor%2C"
+                    aria-label="Email"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <Mail size={32} strokeWidth={1.5} />
                 </a>
-                <a href="#" aria-label="Instagram">
+
+                <a
+                    href="https://www.github.com/discovicke"
+                    aria-label="GitHub"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <Github size={32} strokeWidth={1.5} />
+                </a>
+
+                <a
+                    href="https://www.instagram.com/discovicke"
+                    aria-label="Instagram"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <Instagram size={32} strokeWidth={1.5} />
                 </a>
-                <a href="#" aria-label="LinkedIn">
+
+                <a
+                    href="https://www.linkedin.com/in/viktorjohansson96/"
+                    aria-label="LinkedIn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <Linkedin size={32} strokeWidth={1.5} />
                 </a>
             </div>
 
+
             {/* Copyright text */}
             <p className="font-doodle" style={{ opacity: 0.5 }}>
-                © 2026 Viktor Johansson. Handskriven med koffein.
+                2026 Viktor Johansson.
             </p>
 
             {/* Dekorativa cirklar i hörnet */}
