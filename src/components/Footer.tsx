@@ -31,7 +31,7 @@ const Footer: React.FC = () => (
 
             {/* Copyright text */}
             <p className="font-doodle" style={{ opacity: 0.5 }}>
-                © 2024 Viktor Design. Handkodad med kärlek och koffein.
+                © 2026 Viktor Johansson. Handskriven med koffein.
             </p>
 
             {/* Dekorativa cirklar i hörnet */}
