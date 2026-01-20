@@ -13,6 +13,78 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  padding: 2rem 1rem;
+}
+
+/* Layout-container: tre kolumner på desktop */
+.hero-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .hero-layout {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+}
+
+/* Huvudinnehåll (centrerat) */
+.hero-content {
+  z-index: 10;
+  max-width: 600px;
+  padding: 0 1rem;
+  order: 1; /* På mobil: först */
+}
+
+@media (min-width: 1024px) {
+  .hero-content {
+    order: 2; /* På desktop: i mitten */
+  }
+}
+
+/* Polaroid-kolumner */
+.hero-polaroid {
+  display: none; /* Göm på mobil */
+}
+
+@media (min-width: 1024px) {
+  .hero-polaroid {
+    display: flex;
+    flex: 0 0 250px;
+    justify-content: center;
+    align-items: center;
+    margin-top: -600px;
+  }
+
+  .hero-polaroid-left {
+    order: 1;
+    transform: rotate(-8deg);
+  }
+
+  .hero-polaroid-right {
+    order: 3;
+    transform: rotate(5deg);
+  }
+}
+
+/* Visa polaroid under innehållet på mobil */
+.hero-mobile-polaroid {
+  display: block;
+  order: 2;
+  margin-top: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .hero-mobile-polaroid {
+    display: none;
+  }
 }
 
 .hero-intro {
@@ -26,6 +98,8 @@
   font-family: var(--font-psych);
   font-size: 15vw;
   line-height: 0.85;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
   margin: 0 0 1.5rem 0;
   /* Liquid Text Effect - ger text en "flytande" känsla */
   background: linear-gradient(45deg, var(--text-ink) 40%, var(--accent-organic) 60%);
