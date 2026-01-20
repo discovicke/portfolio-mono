@@ -3,16 +3,99 @@
  *
  * Detta är navigationsbaren som ligger fixerad längst upp på sidan.
  * Den innehåller en logo och navigeringslänkar.
+ * Länkar markeras som aktiva baserat på vilken sektion som är synlig.
  */
 
-import React from 'react';
-import NotebookNavLink from './NotebookNavLink';
+import React, { useState, useEffect } from 'react';
+import DoodleNavLink from './DoodleNavLink';
 import './Navbar.css';
 
-const Navbar: React.FC = () => (
-    <nav className="navbar">
-        {/* Logo - visas till vänster */}
-        <div className="logo" style={{width: "8rem", height: "5rem"}}>
+const Navbar: React.FC = () => {
+    // Håll reda på vilka sektioner som har scrollats förbi
+    const [activeSection, setActiveSection] = useState<string>('');
+
+    /**
+     * Scrolla till toppen av sidan
+     */
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    /**
+     * Intersection Observer för att detektera vilka sektioner som är synliga
+     */
+    useEffect(() => {
+        const sections = ['work', 'about', 'contact'];
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(entry.target.id);
+                    }
+                });
+            },
+            {
+                rootMargin: '-20% 0px -60% 0px', // Aktivera när sektionen är i övre delen av viewport
+                threshold: 0
+            }
+        );
+
+        sections.forEach((sectionId) => {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                observer.observe(element);
+            }
+        });
+
+        // Observer för Hero-sektionen - när den är synlig, rensa aktiv sektion
+        const heroObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(''); // Rensa aktiv sektion när hero är synlig
+                    }
+                });
+            },
+            {
+                rootMargin: '0px',
+                threshold: 0.5 // Hero måste vara minst 50% synlig
+            }
+        );
+
+        const heroElement = document.querySelector('.hero');
+        if (heroElement) {
+            heroObserver.observe(heroElement);
+        }
+
+        return () => {
+            observer.disconnect();
+            heroObserver.disconnect();
+        };
+    }, []);
+
+    /**
+     * Kontrollera om en sektion är "passerad" (för kumulativ markering)
+     */
+    const isSectionActive = (sectionId: string): boolean => {
+        const sections = ['work', 'about', 'contact'];
+        const currentIndex = sections.indexOf(activeSection);
+        const sectionIndex = sections.indexOf(sectionId);
+        return sectionIndex <= currentIndex && currentIndex >= 0;
+    };
+
+    return (
+        <nav className="navbar">
+            {/* Logo - klickbar, tar dig till toppen */}
+            <div
+                className="logo"
+                style={{width: "8rem", height: "5rem", cursor: "pointer"}}
+                onClick={scrollToTop}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => e.key === 'Enter' && scrollToTop()}
+                aria-label="Gå till toppen av sidan"
+            >
             <svg version="1.1"
                  id="Layer_1"
                  xmlns="http://www.w3.org/2000/svg" x="0px"
@@ -57,9 +140,9 @@ const Navbar: React.FC = () => (
 
         {/* Navigation länkar - döljs på mobil, visas på desktop */}
         <div className="nav-links">
-            <NotebookNavLink label="Projekt" href="#work"/>
-            <NotebookNavLink label="Om Mig" href="#about"/>
-            <NotebookNavLink label="Kontakt" href="#contact"/>
+            <DoodleNavLink label="Projekt" href="#work" isActive={isSectionActive('work')} />
+            <DoodleNavLink label="Om Mig" href="#about" isActive={isSectionActive('about')} />
+            <DoodleNavLink label="Kontakt" href="#contact" isActive={isSectionActive('contact')} />
         </div>
 
         {/* Mobilmeny-ikon - visas endast på mobil */}
@@ -79,7 +162,8 @@ const Navbar: React.FC = () => (
             </svg>
         </div>
     </nav>
-);
+    );
+};
 
 export default Navbar;
 
