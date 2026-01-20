@@ -6,13 +6,9 @@
  */
 
 import React from 'react';
-import BirchTree from './BirchTree';
 
 const Hero: React.FC = () => (
     <section className="hero">
-        {/* Dekorativa björkträd i bakgrunden */}
-        <BirchTree style={{ left: '-20px', bottom: 0, width: '200px' }} />
-        <BirchTree style={{ right: '-30px', bottom: '-50px', width: '150px', transform: 'scaleX(-1)' }} />
 
         {/* Huvudinnehåll - centrerat */}
         <div style={{ zIndex: 10, maxWidth: '1000px', padding: '0 1rem'}}>
