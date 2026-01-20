@@ -1,0 +1,61 @@
+/**
+ * Footer Component Styles
+ *
+ * Stilar för sidfoten.
+ */
+
+.footer {
+  padding: 5rem 1rem;
+  background-color: var(--text-ink);
+  color: var(--bg-wall);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-cta h2 {
+  font-family: var(--font-psych);
+  font-size: 3.5rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+  margin-bottom: 3rem;
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .footer-cta h2 {
+    font-size: 6rem;
+  }
+}
+
+.footer-cta h2:hover {
+  transform: skewX(-10deg);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.social-links a {
+  transition: transform 0.3s;
+}
+
+.social-links a:hover {
+  transform: scale(1.25);
+}
+
+.footer-copyright {
+  opacity: 0.5;
+}
+
+.footer-decoration {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 8rem;
+  height: 8rem;
+  opacity: 0.2;
+}
