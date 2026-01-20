@@ -1,0 +1,238 @@
+/**
+ * Modal Component Styles
+ *
+ * Stilar för projektmodalen som visar detaljerad projektinformation.
+ */
+
+/* Overlay - mörk bakgrund bakom modalen */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal container */
+.modal-container {
+  background-color: var(--bg-wall);
+  border: 3px solid var(--text-ink);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Close button */
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--bg-wall);
+  border: 2px solid var(--text-ink);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  transform: rotate(90deg) scale(1.1);
+  background-color: var(--text-ink);
+  color: var(--bg-wall);
+}
+
+/* Modal image */
+.modal-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-bottom: 2px solid var(--text-ink);
+}
+
+/* Modal content */
+.modal-content {
+  padding: 2rem;
+}
+
+/* Modal header */
+.modal-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-title {
+  font-family: var(--font-psych);
+  font-size: 2.5rem;
+  margin: 0;
+  line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+  .modal-title {
+    font-size: 3rem;
+  }
+}
+
+.modal-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.modal-category {
+  background: var(--text-ink);
+  color: var(--bg-wall);
+  padding: 0.25rem 0.75rem;
+  font-family: var(--font-doodle);
+  font-size: 0.875rem;
+  border-radius: 2px;
+  transform: rotate(-1deg);
+}
+
+.modal-year {
+  background: var(--birch-grey);
+  color: var(--text-ink);
+  padding: 0.25rem 0.75rem;
+  font-family: var(--font-doodle);
+  font-size: 0.875rem;
+  border: 1px solid var(--text-ink);
+  border-radius: 2px;
+  transform: rotate(1deg);
+}
+
+/* Modal description */
+.modal-description {
+  font-family: var(--font-doodle);
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Technologies section */
+.modal-section-title {
+  font-family: var(--font-psych);
+  font-size: 1.5rem;
+  margin: 0 0 1rem 0;
+  position: relative;
+  display: inline-block;
+}
+
+.modal-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--text-ink);
+  border-radius: 2px;
+}
+
+.modal-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.modal-tech-tag {
+  background: transparent;
+  color: var(--text-ink);
+  padding: 0.5rem 1rem;
+  font-family: var(--font-doodle);
+  font-size: 1rem;
+  border: 2px solid var(--text-ink);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  transition: all 0.3s ease;
+}
+
+.modal-tech-tag:hover {
+  background: var(--text-ink);
+  color: var(--bg-wall);
+  transform: rotate(-2deg);
+}
+
+/* Role section */
+.modal-role {
+  font-family: var(--font-doodle);
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, transparent 0%, rgba(24, 24, 24, 0.03) 100%);
+  border-left: 3px solid var(--text-ink);
+}
+
+/* Action buttons */
+.modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.modal-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-doodle);
+  font-size: 1.125rem;
+  border: 2px solid var(--text-ink);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: var(--text-ink);
+}
+
+.modal-link:hover {
+  background: var(--text-ink);
+  color: var(--bg-wall);
+  transform: rotate(-1deg) scale(1.02);
+}
+
+.modal-link-primary {
+  background: var(--text-ink);
+  color: var(--bg-wall);
+}
+
+.modal-link-primary:hover {
+  background: var(--accent-organic);
+  transform: rotate(1deg) scale(1.02);
+}
