@@ -15,6 +15,11 @@
   src: url("../assets/fonts/Shrikhand-Regular.ttf") format('truetype');
   font-weight: normal;
 }
+@font-face {
+  font-family: 'ComicNeue';
+  src: url("../assets/fonts/ComicNeue-Regular.ttf") format('truetype');
+  font-weight: normal;
+}
 
 /* CSS-variabler (globala färger och typsnitt) */
 :root {
@@ -23,7 +28,7 @@
   --birch-grey: #D6D6D2;
   --accent-organic: #2F2F2F;
   --font-psych: 'Shrikhand', cursive;
-  --font-doodle: 'Patrick Hand', cursive;
+  --font-doodle: 'ComicNeue', sans-serif;
   --font-sans: 'Inter', sans-serif;
 }
 
