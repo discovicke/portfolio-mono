@@ -40,7 +40,7 @@ const About: React.FC = () => (
                         style={{
                             textDecoration: 'underline',
                             textDecorationStyle: 'wavy',
-                            textUnderlineOffset: '4px'
+                            textUnderlineOffset: '0.4em'
                         }}
                     >
                         inget behöver vara perfekt
@@ -73,7 +73,7 @@ const About: React.FC = () => (
                         className="font-psych"
                         style={{ fontSize: '1.5rem' }}
                     >
-                        / Viktor
+                        Viktor
                     </text>
                 </svg>
             </div>
