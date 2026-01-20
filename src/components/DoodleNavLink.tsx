@@ -6,7 +6,7 @@
  * Använder Intersection Observer för att detektera vilken sektion som är synlig.
  */
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import './DoodleNavLink.css';
 
 interface DoodleNavLinkProps {
@@ -15,7 +15,27 @@ interface DoodleNavLinkProps {
     isActive: boolean;
 }
 
+// Array med tillgängliga doodle-markeringar
+const DOODLE_MARKS = [
+    '/svg/doodleX2.svg',
+    '/svg/doodleX1.svg',
+    '/svg/doodleHash.svg'
+];
+
 const DoodleNavLink: React.FC<DoodleNavLinkProps> = ({ label, href, isActive }) => {
+    /**
+     * Välj en doodle-markering baserat på href
+     * Använder en enkel hash-funktion för att få konsistent men "varierad" val
+     */
+    const doodleSrc = useMemo(() => {
+        let hash = 0;
+        for (let i = 0; i < href.length; i++) {
+            hash = href.charCodeAt(i) + ((hash << 5) - hash);
+        }
+        const index = Math.abs(hash) % DOODLE_MARKS.length;
+        return DOODLE_MARKS[index];
+    }, [href]);
+
     /**
      * Smooth scroll till sektionen
      */
@@ -39,7 +59,7 @@ const DoodleNavLink: React.FC<DoodleNavLinkProps> = ({ label, href, isActive }) 
             {/* Doodle X-markering som visas när aktiv */}
             <div className="doodle-nav-mark">
                 <img
-                    src="/svg/doodleX2.svg"
+                    src={doodleSrc}
                     alt=""
                     className="doodle-x"
                 />
