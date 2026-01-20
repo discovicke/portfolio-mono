@@ -7,6 +7,7 @@
  */
 
 import React, { useState } from 'react';
+import './NotebookNavLink.css';
 
 interface NotebookNavLinkProps {
     label: string;   // Texten som visas
