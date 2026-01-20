@@ -34,43 +34,45 @@ import About from './components/About';
 import Footer from './components/Footer';
 
 function App() {
-  return (
-    <>
-      {/* SVG Filters - Måste finnas för att CSS filter:url() ska fungera */}
-      <SVGFilters />
+    return (
+        <>
+            {/* SVG Filters - Måste finnas för att CSS filter:url() ska fungera */}
+            <SVGFilters/>
 
-      {/* ClickSpark wrapper - lägger till klickanimation över hela sidan */}
-      <ClickSpark
-        sparkColor="#181818"  // Färg på gnistor
-        sparkCount={8}         // Antal gnistor per klick
-        sparkRadius={25}       // Hur långt gnistorna flyger
-      >
-        {/* Huvudcontainer med björk-bakgrund */}
-        <div className="birch-bg">
-          {/* Fast navbar längst upp */}
-          <Navbar />
 
-          {/* Startsida/Hero */}
-          <Hero />
 
-          {/* Dekorativ avdelare */}
-          <SquigglyLine />
+                {/* ClickSpark wrapper - lägger till klickanimation över hela sidan */}
+                <ClickSpark
+                    sparkColor="#181818"  // Färg på gnistor
+                    sparkCount={8}         // Antal gnistor per klick
+                    sparkRadius={25}       // Hur långt gnistorna flyger
+                >
+                    {/* Huvudcontainer med björk-bakgrund */}
+                    <div className="birch-bg">
+                        {/* Fast navbar längst upp */}
+                        <Navbar/>
 
-          {/* Projekt-sektion */}
-          <Work />
+                        {/* Startsida/Hero */}
+                        <Hero/>
 
-          {/* Dekorativ avdelare */}
-          <SquigglyLine />
+                        {/* Dekorativ avdelare */}
+                        <SquigglyLine/>
 
-          {/* Om mig-sektion */}
-          <About />
+                        {/* Projekt-sektion */}
+                        <Work/>
 
-          {/* Sidfot */}
-          <Footer />
-        </div>
-      </ClickSpark>
-    </>
-  );
+                        {/* Dekorativ avdelare */}
+                        <SquigglyLine/>
+
+                        {/* Om mig-sektion */}
+                        <About/>
+
+                        {/* Sidfot */}
+                        <Footer/>
+                    </div>
+                </ClickSpark>
+        </>
+    );
 }
 
 export default App;
