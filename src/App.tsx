@@ -21,7 +21,7 @@
  * - CSS importeras från styles/portfolio.css
  */
 
-import './styles/portfolio.css';  // Importera all CSS
+import './styles/globals.css';  // Importera globala stilar (variabler, reset, utilities)
 
 // Importera alla komponenter
 import SVGFilters from './components/SVGFilters';
