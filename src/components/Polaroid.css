@@ -1,0 +1,231 @@
+/**
+ * Polaroid Component Styles
+ *
+ * En polaroid-inspirerad bildkomponent med handritad känsla.
+ * Monokrom som standard, färg vid hover.
+ */
+
+.polaroid-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.polaroid {
+  position: relative;
+  background: #fefefe;
+  padding: 0.75rem 0.75rem 3rem 0.75rem;
+  /* Handritad ram-effekt som matchar wobble-box */
+  border: 2px solid var(--text-ink);
+  border-radius: 3px 255px 3px 255px / 255px 3px 255px 3px;
+  box-shadow:
+    4px 4px 0px 0px rgba(0, 0, 0, 0.15),
+    8px 8px 15px -5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  max-width: 280px;
+}
+
+/* Rotation för "slängt på bordet"-känsla */
+.polaroid:nth-child(odd) {
+  transform: rotate(-3deg);
+}
+
+.polaroid:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.05) translateY(-8px);
+  box-shadow:
+    6px 6px 0px 0px rgba(0, 0, 0, 0.2),
+    12px 12px 25px -5px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+/* Polaroid-bilden */
+.polaroid-image {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  display: block;
+  /* Monokrom som standard */
+  filter: grayscale(100%) contrast(1.1) brightness(1.05);
+  transition: filter 0.5s ease;
+}
+
+.polaroid:hover .polaroid-image {
+  /* Färg vid hover */
+  filter: grayscale(0%) contrast(1) brightness(1);
+}
+
+/* Handskriven caption */
+.polaroid-caption {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: var(--font-doodle);
+  font-size: 1rem;
+  color: var(--text-ink);
+  opacity: 0.8;
+  transform: rotate(-1deg);
+}
+
+/* Tejp-effekt för extra analog känsla */
+.polaroid-tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 60px;
+  height: 24px;
+  background: rgba(255, 235, 180, 0.7);
+  border: 1px solid rgba(200, 180, 140, 0.5);
+  opacity: 0.9;
+}
+
+.polaroid-tape::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 3px,
+    rgba(200, 180, 140, 0.2) 3px,
+    rgba(200, 180, 140, 0.2) 4px
+  );
+}
+
+/* Alternativ: Post-it stil */
+.postit {
+  position: relative;
+  background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%);
+  padding: 1rem;
+  min-width: 200px;
+  max-width: 280px;
+  border: none;
+  box-shadow:
+    2px 2px 0px 0px rgba(0, 0, 0, 0.1),
+    4px 4px 10px -2px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  /* Vikt hörn-effekt */
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+}
+
+.postit::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, transparent 50%, rgba(0,0,0,0.1) 50%);
+}
+
+.postit:nth-child(odd) {
+  transform: rotate(-2deg);
+}
+
+.postit:nth-child(even) {
+  transform: rotate(3deg);
+}
+
+.postit:hover {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow:
+    4px 4px 0px 0px rgba(0, 0, 0, 0.15),
+    8px 8px 15px -2px rgba(0, 0, 0, 0.2);
+}
+
+.postit-image {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border: 2px solid var(--text-ink);
+  border-radius: 2px;
+  filter: grayscale(100%) contrast(1.1);
+  transition: filter 0.5s ease;
+}
+
+.postit:hover .postit-image {
+  filter: grayscale(0%) contrast(1);
+}
+
+.postit-text {
+  font-family: var(--font-doodle);
+  font-size: 1.1rem;
+  margin-top: 0.75rem;
+  color: var(--text-ink);
+  text-align: center;
+}
+
+/* Alternativ: Instant-kamera / Fuji-stil (rundade hörn) */
+.instant {
+  position: relative;
+  background: linear-gradient(to bottom, #f5f5f0 0%, #e8e8e3 100%);
+  padding: 0.5rem 0.5rem 2.5rem 0.5rem;
+  border: 2px solid var(--text-ink);
+  border-radius: 8px;
+  box-shadow:
+    3px 3px 0px 0px rgba(0, 0, 0, 0.1),
+    6px 6px 12px -3px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  max-width: 260px;
+}
+
+.instant::before {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 8px;
+  background: var(--birch-grey);
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.instant:nth-child(odd) {
+  transform: rotate(-4deg);
+}
+
+.instant:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+.instant:hover {
+  transform: rotate(0deg) scale(1.08) translateY(-5px);
+}
+
+.instant-image {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 4px;
+  filter: grayscale(100%) sepia(10%) contrast(1.05);
+  transition: filter 0.5s ease;
+}
+
+.instant:hover .instant-image {
+  filter: grayscale(0%) sepia(0%) contrast(1);
+}
+
+.instant-caption {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: var(--font-doodle);
+  font-size: 0.9rem;
+  color: var(--text-ink);
+  opacity: 0.7;
+}
