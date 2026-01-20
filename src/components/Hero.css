@@ -123,10 +123,25 @@
   line-height: 1.6;
 }
 
-/* Bounce Arrow Animation - Studsande pil */
+/* Bounce Arrow Animation - Studsande pil (klickbar) */
 .bounce-arrow {
   margin-top: 3rem;
   animation: bounce 2s infinite;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.bounce-arrow:hover {
+  animation-play-state: paused;
+  transform: scale(1.2);
+}
+
+.bounce-arrow:focus {
+  outline: 2px dashed var(--text-ink);
+  outline-offset: 4px;
 }
 
 @keyframes bounce {
