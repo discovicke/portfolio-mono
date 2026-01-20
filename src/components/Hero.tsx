@@ -15,19 +15,19 @@ const Hero: React.FC = () => (
         <BirchTree style={{ right: '-30px', bottom: '-50px', width: '150px', transform: 'scaleX(-1)' }} />
 
         {/* Huvudinnehåll - centrerat */}
-        <div style={{ zIndex: 10, maxWidth: '800px', padding: '0 1rem' }}>
+        <div style={{ zIndex: 10, maxWidth: '1000px', padding: '0 1rem'}}>
             {/* Introduktionstext */}
-            <p className="hero-intro">Hej, jag heter Viktor.</p>
+            <p className="hero-intro">Hej, jag heter Viktor!</p>
 
             {/* Huvudrubrik med liquid text-effekt (från SVG filter) */}
-            <h1 className="hero-title">
+            <h1 className="hero-title" style={{padding: '0 0.5rem', filter: 'url(#liquid-text)'}}>
                 PORT<br/>FOLIO
             </h1>
 
             {/* Beskrivning */}
             <p className="hero-desc">
-                <p>Kod: Skriven</p>
-                <p>Kaffe: Drucken</p>
+                <p>Systemutvecklingsstudent</p>
+                <p>.NET</p>
                 <p>Nudlar: Kokta</p>
             </p>
 
