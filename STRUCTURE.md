@@ -2,7 +2,7 @@
 
 ## 📁 Projektstruktur
 
-Jag har omstrukturerat din portfolio-template från `import.tsx` till en modulär React-applikation:
+En modulär React-applikation med komponentbaserad CSS-arkitektur:
 
 ```
 src/
@@ -10,52 +10,84 @@ src/
 ├── main.tsx                 # React entry point
 ├── index.css                # Global CSS reset
 │
-├── components/              # React-komponenter
+├── components/              # React-komponenter med tillhörande CSS
 │   ├── About.tsx           # Om mig-sektion
-│   ├── BirchTree.tsx       # Dekorativ björk-illustration
-│   ├── ClickSpark.tsx      # Klick-animation med gnistor
+│   ├── About.css           # Stilar för About
+│   ├── ClickSpark.tsx      # Klick-animation med gnistor (inline styles)
 │   ├── Footer.tsx          # Sidfot med sociala medier
+│   ├── Footer.css          # Stilar för Footer
 │   ├── Hero.tsx            # Startsida/Hero-sektion
+│   ├── Hero.css            # Stilar för Hero
+│   ├── Modal.tsx           # Modal för projektdetaljer
+│   ├── Modal.css           # Stilar för Modal
 │   ├── Navbar.tsx          # Navigation längst upp
+│   ├── Navbar.css          # Stilar för Navbar
 │   ├── NotebookNavLink.tsx # Checkbox-stil navigationslänkar
-│   ├── SquigglyLine.tsx    # Vågig avdelare
+│   ├── NotebookNavLink.css # Stilar för NotebookNavLink
+│   ├── SquigglyLine.tsx    # Vågig avdelare (inline styles)
 │   ├── SVGFilters.tsx      # SVG filter-definitioner
-│   └── Work.tsx            # Projektsektion
+│   └── Work.tsx            # Projektsektion med modal-integration
+│   └── Work.css            # Stilar för Work
 │
 ├── data/                    # Data-filer
-│   └── projects.ts         # Projektdata (kan lätt utökas)
+│   └── projects.ts         # Projektdata (med utökad info för modaler)
 │
-├── styles/                  # CSS-filer
-│   └── portfolio.css       # All styling (tidigare inline CSS)
+├── styles/                  # Globala CSS-filer
+│   ├── globals.css         # Variabler, reset, utilities
+│   └── portfolio.css       # @deprecated - behålls för referens
 │
 └── types/                   # TypeScript typer
-    └── index.ts            # Interface-definitioner
+    └── index.ts            # Interface-definitioner (Project, ClickSparkProps, etc.)
 ```
 
 ## 🎨 Hur det fungerar
 
 ### 1. **App.tsx** - Huvudfilen
-Detta är "main-filen" du nämnde. Den importerar och kombinerar alla komponenter:
+Detta är "main-filen" som importerar och kombinerar alla komponenter:
 
 ```typescript
 App.tsx
-  └─ Importerar alla komponenter
-  └─ Importerar CSS
+  └─ Importerar globals.css (variabler, reset)
+  └─ Komponenter importerar sina egna CSS-filer
   └─ Sätter ihop hela sidan i rätt ordning
 ```
 
 ### 2. **Dataflöde**
 ```
-data/projects.ts → Work.tsx → Renderas på sidan
+data/projects.ts → Work.tsx → Modal.tsx → Renderas på sidan
      ↓
-types/index.ts (definierar struktur)
+types/index.ts (definierar struktur med utökade fält)
 ```
 
-### 3. **CSS-struktur**
-- `index.css` - Minimal global reset
-- `styles/portfolio.css` - All huvudstyling (björkmönster, typsnitt, animationer, etc.)
+### 3. **CSS-arkitektur (Komponentbaserad)**
+
+**Princip:** Varje komponent importerar sin egen CSS-fil.
+
+```
+Komponent.tsx
+  └─ import './Komponent.css'
+  └─ Självständig och återanvändbar
+```
+
+- `styles/globals.css` - CSS-variabler, reset, delade utilities (.container, .section, etc.)
+- `components/[Komponent].css` - Komponent-specifik styling
+
+**Undantag (inline styles behålls i TypeScript):**
+- **ClickSpark.tsx** - Dynamiska styles baserade på props (sparkColor, sparkSize, etc.)
+- **SquigglyLine.tsx** - Enkel komponent med minimal inline styling
+- **Hero.tsx** - Vissa dynamiska filter-styles (filter: url(#liquid-text))
 
 ### 4. **Komponenter förklaring**
+
+#### **Modal.tsx** (NY!)
+- Återanvändbar modal-komponent för projektdetaljer
+- Stängs med X-knapp, overlay-klick eller Escape-tangent
+- Visar utökad projektinfo: longDesc, technologies, role, year, liveUrl, repoUrl
+
+#### **Work.tsx** (Uppdaterad!)
+- Loopar genom projektdata från `data/projects.ts`
+- **Klickbara projektkort** som öppnar Modal med mer info
+- Accessibility: role="button", tabIndex, onKeyDown
 
 #### **SVGFilters.tsx**
 - Osynlig komponent som innehåller SVG-filter
@@ -64,35 +96,46 @@ types/index.ts (definierar struktur)
 #### **ClickSpark.tsx**
 - Wrapper-komponent som lägger till klick-animation
 - Använder Canvas API för att rita gnistor
-- Wrapa innehåll med denna för att aktivera effekten
+- Behåller inline styles (dynamiska baserat på props)
 
 #### **Navbar.tsx**
 - Fast navigation längst upp
 - Använder NotebookNavLink för interaktiva länkar
 
 #### **Hero.tsx**
-- Startsida med stor rubrik
-- Innehåller björkträd-dekorationer
+- Startsida med stor rubrik och liquid text-effekt
 - Studsande pil för att indikera scroll
 
-#### **Work.tsx**
-- Loopar genom projektdata från `data/projects.ts`
-- Visar varje projekt i ett "wobble box"-kort
-- Responsivt grid-layout
-
 #### **About.tsx**
-- Om mig-sektion
-- Roterande bakgrundsform
+- Om mig-sektion med roterande bakgrundsform
 - Handskriven signatur
 
 #### **Footer.tsx**
-- Sidfot med kontaktinfo
-- Sociala medier-ikoner (från lucide-react)
+- Sidfot med kontaktinfo och sociala medier-ikoner
+
+## 🗂️ Project Interface (types/index.ts)
+
+```typescript
+interface Project {
+  id: number;
+  title: string;
+  category: string;
+  desc: string;              // Kort beskrivning (visas i kort)
+  img: string;
+  // Utökade fält för modal:
+  longDesc?: string;         // Längre beskrivning
+  technologies?: string[];   // Teknologier
+  liveUrl?: string;          // Live-länk
+  repoUrl?: string;          // GitHub-länk
+  year?: string;             // År
+  role?: string;             // Din roll
+}
+```
 
 ## 🚀 Kör projektet
 
 ```bash
-# Installera dependencies (redan gjort)
+# Installera dependencies
 npm install
 
 # Starta utvecklingsservern
