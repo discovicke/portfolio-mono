@@ -31,51 +31,62 @@ const About: React.FC = () => (
                 }}
             >
                 <p>
-                    Jag växte upp bland björkarna i Hälsingland och utbildade mig i Umeå.
-                    Därav kärleken till det monokroma och det organiska.
+                    Jag växte upp i Hudiksvall och har efter äventyr i Umeå & Örebro hittat hem till den Hälsingska idyllen igen.
                 </p>
                 <p>
-                    Min designfilosofi är att{' '}
+                    Under min uppväxt blev jag aldrig hindrad från att{' '}
                     <span
                         style={{
-                            textDecoration: 'underline',
-                            textDecorationStyle: 'wavy',
-                            textUnderlineOffset: '0.4em'
+                            position: 'relative',
+                            display: 'inline-block'
                         }}
                     >
-                        inget behöver vara perfekt
-                    </span>.
-                    Faktum är att det oftast blir bättre om det är lite skevt.
-                    Det mänskliga ögat gillar inte det exakta rutnätet lika mycket som vi tror.
+                        utforska min kreativitet,
+                        <img
+                            src="/svg/doodleDashed.svg"
+                            alt=""
+                            style={{
+                                position: 'absolute',
+                                top: '50%',
+                                transform: 'rotate(45deg)',
+                                width: '7rem',
+                                height: '1.5rem',
+                                left: '-0.5rem',
+                                zIndex: 10000,
+                            }}
+                        />
+                    </span>
+                     vilket har format min smak för det ickelinjära och skeva.
                 </p>
                 <p>
-                    När jag inte ritar pixlar eller vektorer försöker jag lära mig spela banjo
-                    eller dricker alldeles för mycket kaffe.
+                    När jag inte fördjupar mig i systemutveckling så hittar du mig framför en fotbollsmatch,
+                    runt bordet med ett sällskapsspel eller funderandes i husets skönaste fotölj.
                 </p>
             </div>
 
             {/* Handskriven signatur */}
             <div className="signature">
-                <svg width="200" height="80" viewBox="0 0 200 80">
-                    {/* SVG-path för signatur-stroke */}
-                    <path
-                        d="M10,40 Q50,10 80,40 T150,40 T190,30"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <img
+                        src="/svg/doodleUnderline.svg"
+                        alt=""
+                        style={{
+                            width: '100px',
+                            height: 'auto',
+                            opacity: 0.8,
+                            marginBottom: '-2.5rem',
+                            marginTop: '-3rem',
+                            marginLeft: '-8rem',
+                            transform: 'rotate(-40deg)',
+                        }}
                     />
-                    {/* Text under signaturen */}
-                    <text
-                        x="100"
-                        y="70"
-                        textAnchor="middle"
+                    <span
                         className="font-psych"
-                        style={{ fontSize: '1.5rem' }}
+                        style={{ fontSize: '1.5rem', marginTop: '-0.5rem', marginLeft: '-2rem' }}
                     >
                         Viktor
-                    </text>
-                </svg>
+                    </span>
+                </div>
             </div>
         </div>
     </section>
