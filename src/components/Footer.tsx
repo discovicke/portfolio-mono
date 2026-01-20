@@ -59,7 +59,7 @@ const Footer: React.FC = () => (
 
             {/* Copyright text */}
             <p className="font-doodle footer-copyright">
-                2026 Viktor Johansson.
+                2026 Viktor Johansson. Created with React.
             </p>
 
             {/* Dekorativa cirklar i hörnet */}
