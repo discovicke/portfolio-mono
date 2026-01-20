@@ -1,0 +1,61 @@
+/**
+ * Navbar Component Styles
+ *
+ * Stilar för navigationsbaren som ligger fixerad längst upp på sidan.
+ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  backdrop-filter: blur(2px);
+  mix-blend-mode: multiply;
+}
+
+.logo {
+  font-family: var(--font-psych);
+  font-size: 1.5rem;
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.logo:hover {
+  transform: rotate(2deg);
+}
+
+.nav-links {
+  display: none;
+  gap: 2rem;
+  font-family: var(--font-doodle);
+  font-size: 1.25rem;
+}
+
+/* Responsiv design - visa nav-länkar på större skärmar */
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+  }
+  .logo {
+    font-size: 2rem;
+  }
+}
+
+.mobile-menu-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu-icon {
+    display: none;
+  }
+}

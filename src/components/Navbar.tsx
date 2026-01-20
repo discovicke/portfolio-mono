@@ -7,6 +7,7 @@
 
 import React from 'react';
 import NotebookNavLink from './NotebookNavLink';
+import './Navbar.css';
 
 const Navbar: React.FC = () => (
     <nav className="navbar">
