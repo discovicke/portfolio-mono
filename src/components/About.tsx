@@ -22,7 +22,7 @@ const About: React.FC = () => (
             {/* Bio-text uppdelad i paragrafer */}
             <div
                 style={{
-                    fontFamily: 'var(--font-doodle)',
+                    fontFamily: 'var(--fonts-doodle)',
                     fontSize: '1.5rem',
                     lineHeight: '1.6',
                     display: 'flex',
