@@ -1,33 +1,93 @@
-# React + TypeScript + Vite
+# Viktor Johansson - Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern portfolio-hemsida byggd med React, TypeScript och Vite. Featuring handritad design-estetik inspirerad av 70/80-talets psych och björkskogar.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19** - UI framework
+- **TypeScript** - Type safety
+- **Vite** - Build tool & dev server
+- **Lucide React** - Icons
+- **CSS Modules** - Komponent-baserade stilar
 
-## React Compiler
+## 📦 Installation
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+```
 
-## Expanding the ESLint configuration
+## 🛠️ Development
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```bash
+npm run dev
+```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Öppna [http://localhost:5173](http://localhost:5173) i din webbläsare.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
+## 🏗️ Build
+
+```bash
+npm run build
+```
+
+Bygger projektet till `dist/` mappen.
+
+## 🌐 Deploy till Vercel
+
+### Automatisk Deploy (Rekommenderat)
+
+1. Pusha ditt repo till GitHub
+2. Gå till [vercel.com](https://vercel.com)
+3. Importera ditt GitHub-repo
+4. Vercel detekterar automatiskt Vite och använder rätt inställningar från `vercel.json`
+
+### Manuella inställningar (om behövs)
+
+- **Build Command:** `npm run build`
+- **Output Directory:** `dist`
+- **Install Command:** `npm install`
+- **Framework Preset:** Vite
+
+### Första gången du pushar
+
+```bash
+git add .
+git commit -m "Initial commit - Portfolio ready for deploy"
+git push
+```
+
+## 📁 Projektstruktur
+
+```
+src/
+├── components/          # React-komponenter med CSS
+│   ├── Hero.tsx/.css
+│   ├── Work.tsx/.css
+│   ├── About.tsx/.css
+│   ├── Footer.tsx/.css
+│   ├── Modal.tsx/.css
+│   ├── Polaroid.tsx/.css
+│   └── DoodleNavLink.tsx/.css
+├── data/               # Projektdata
+├── styles/             # Globala stilar
+├── types/              # TypeScript interfaces
+└── assets/             # Fonts & bilder
+
+public/                 # Statiska filer (bilder, SVG:er)
+```
+
+## ✨ Features
+
+- 🎨 Handritad design-estetik
+- 📱 Fullständigt responsiv
+- 🖼️ Polaroid-galleri
+- 🔍 Projekt-modal med detaljerad info
+- 🎯 Scroll-baserad navigation
+- ♿ Tillgänglighet (keyboard navigation, ARIA-labels)
+
+## 📝 Licens
+
+© 2026 Viktor Johansson
       tseslint.configs.stylisticTypeChecked,
 
       // Other configs...
