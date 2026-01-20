@@ -7,11 +7,19 @@
 
 // Interface för ett enskilt projekt
 export interface Project {
-    id: number;          // Unikt ID för projektet
-    title: string;       // Projektets titel
-    category: string;    // Kategori (t.ex. "Branding", "Web Design")
-    desc: string;        // Beskrivning av projektet
-    img: string;         // URL till projektbild
+    id: number;                    // Unikt ID för projektet
+    title: string;                 // Projektets titel
+    category: string;              // Kategori (t.ex. "Branding", "Web Design")
+    desc: string;                  // Kort beskrivning av projektet (visas i kortet)
+    img: string;                   // URL till projektbild
+    // Utökade fält för modal
+    longDesc?: string;             // Längre beskrivning (visas i modal)
+    technologies?: string[];       // Lista med teknologier som använts
+    liveUrl?: string;              // URL till live-version av projektet
+    repoUrl?: string;              // URL till GitHub-repo
+    screenshots?: string[];        // Extra skärmbilder
+    year?: string;                 // År projektet gjordes
+    role?: string;                 // Din roll i projektet
 }
 
 // Interface för ClickSpark-komponentens props (inställningar)
