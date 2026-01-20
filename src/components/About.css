@@ -1,0 +1,99 @@
+/**
+ * About Component Styles
+ *
+ * Stilar för om mig-sektionen.
+ */
+
+.about-section {
+  padding: 8rem 1rem;
+  text-align: center;
+  position: relative;
+}
+
+.about-content {
+  max-width: 48rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Rotating background shape - Roterande bakgrundsform */
+.about-bg-shape {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 80%;
+  border: 2px dashed var(--birch-grey);
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  z-index: 0;
+  animation: spin 60s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.signature {
+  margin-top: 3rem;
+  transform: rotate(-5deg);
+  display: inline-block;
+}
+
+/* About bio text styling */
+.about-bio {
+  font-family: var(--font-doodle);
+  font-size: 1.5rem;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-bio p {
+  margin: 0;
+}
+
+.about-highlight {
+  position: relative;
+  display: inline-block;
+}
+
+.about-highlight-decoration {
+  position: absolute;
+  top: 50%;
+  transform: rotate(45deg);
+  width: 7rem;
+  height: 1.5rem;
+  left: -0.5rem;
+  z-index: 10000;
+}
+
+.signature-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signature-underline {
+  width: 100px;
+  height: auto;
+  opacity: 0.8;
+  margin-bottom: -2.5rem;
+  margin-top: -3rem;
+  margin-left: -8rem;
+  transform: rotate(-40deg);
+}
+
+.signature-name {
+  font-size: 1.5rem;
+  margin-top: -0.5rem;
+  margin-left: -2rem;
+}
