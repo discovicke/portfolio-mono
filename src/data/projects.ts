@@ -31,17 +31,10 @@ export const projects: Project[] = [
     },
     {
         id: 4,
-        title: "Doodledagboken",
-        category: "Illustration",
-        desc: "365 dagar av snabba skisser.",
-        img: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=1000&auto=format&fit=crop"
+        title: "Ink & Render",
+        category: "Parsing & AST",
+        desc: "En liten, ramverksfri Markdown-editor med realtidsförhandsvisning, byggd som ett modulärt projekt i ren vanilla JavaScript.",
+        img: "/ink&render-preview.png"
     },
-    {
-        id: 5,
-        title: "Glömma köpa kattmat",
-        category: "Fullstack retardness",
-        desc: "En evig besvikelse som pojkvän",
-        img: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1000&auto=format&fit=crop"
-    }
 ];
 
