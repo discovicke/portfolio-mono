@@ -1,0 +1,95 @@
+/**
+ * Globala stilar för applikationen
+ *
+ * Denna fil innehåller:
+ * - Font-face definitioner
+ * - CSS-variabler (färger, typsnitt)
+ * - Reset & Base stilar
+ * - Typografi-klasser
+ * - Utility-klasser som används av flera komponenter
+ */
+
+/* Importera Google Fonts */
+@font-face {
+  font-family: 'Shrikhand';
+  src: url("../assets/fonts/Shrikhand-Regular.ttf") format('truetype');
+  font-weight: normal;
+}
+
+/* CSS-variabler (globala färger och typsnitt) */
+:root {
+  --bg-wall: #EFEFEA;
+  --text-ink: #181818;
+  --birch-grey: #D6D6D2;
+  --accent-organic: #2F2F2F;
+  --font-psych: 'Shrikhand', cursive;
+  --font-doodle: 'Patrick Hand', cursive;
+  --font-sans: 'Inter', sans-serif;
+}
+
+/* Reset & Base - Grundläggande stilar för alla element */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-wall);
+  color: var(--text-ink);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Typography Classes - Typsnittklasser */
+.font-psych {
+  font-family: var(--font-psych);
+  letter-spacing: 0.02em;
+}
+
+.font-doodle {
+  font-family: var(--font-doodle);
+}
+
+/* Utilities - Hjälpklasser */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section {
+  padding: 5rem 1rem;
+  position: relative;
+}
+
+/* Birch Background - Björkträds-randig bakgrund */
+.birch-bg {
+  background-image: repeating-linear-gradient(
+    180deg,
+    transparent,
+    transparent 40px,
+    rgba(24, 24, 24, 0.03) 40px,
+    rgba(24, 24, 24, 0.03) 42px
+  );
+  min-height: 100vh;
+}
+
+/* Shared section title - Delad rubrikstil */
+.section-title {
+  font-family: var(--font-psych);
+  font-size: 3rem;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 4.5rem;
+  }
+}
+
