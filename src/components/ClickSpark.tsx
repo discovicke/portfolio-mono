@@ -19,7 +19,7 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
     duration = 400,              // Default duration (millisekunder)
     easing = 'ease-out',         // Default easing-funktion
     extraScale = 1.0,            // Default extra skalning
-    children                      // Barn-komponenter som wrapas
+    children,                    // Barn-komponenter som wrapas
 }) => {
     // useRef används för att lagra referenser som inte ska trigga re-render
     const canvasRef = useRef<HTMLCanvasElement>(null);        // Referens till canvas-element
