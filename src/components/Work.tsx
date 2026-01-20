@@ -14,7 +14,7 @@ const Work: React.FC = () => (
         {/* Sektion-header med titel och undertext */}
         <div className="work-header">
             <h2 className="work-title">
-                Utvalda<br/>Projekt
+                Utvalda Projekt
             </h2>
             <span className="work-subtitle">
                 (Det jag är stoltast över just nu)
