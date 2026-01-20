@@ -7,6 +7,7 @@
 
 import React from 'react';
 import {Mail, Instagram, Linkedin, Github} from 'lucide-react';
+import './Footer.css';
 
 const Footer: React.FC = () => (
     <footer id="contact" className="footer">
@@ -57,22 +58,12 @@ const Footer: React.FC = () => (
 
 
             {/* Copyright text */}
-            <p className="font-doodle" style={{ opacity: 0.5 }}>
+            <p className="font-doodle footer-copyright">
                 2026 Viktor Johansson.
             </p>
 
             {/* Dekorativa cirklar i hörnet */}
-            <svg
-                style={{
-                    position: 'absolute',
-                    bottom: 0,
-                    left: 0,
-                    width: '8rem',
-                    height: '8rem',
-                    opacity: 0.2
-                }}
-                viewBox="0 0 100 100"
-            >
+            <svg className="footer-decoration" viewBox="0 0 100 100">
                 <circle cx="20" cy="80" r="15" fill="none" stroke="currentColor" strokeWidth="2" />
                 <circle cx="50" cy="90" r="8" fill="none" stroke="currentColor" strokeWidth="2" />
             </svg>
