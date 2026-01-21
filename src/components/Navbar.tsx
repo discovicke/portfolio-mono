@@ -146,9 +146,9 @@ const Navbar: React.FC = () => {
 
         {/* Navigation länkar - döljs på mobil, visas på desktop */}
         <div className="nav-links">
-            <DoodleNavLink label={t.nav.projects} href="#work" isActive={isSectionActive('work')} />
-            <DoodleNavLink label={t.nav.about} href="#about" isActive={isSectionActive('about')} />
-            <DoodleNavLink label={t.nav.contact} href="#contact" isActive={isSectionActive('contact')} />
+            <DoodleNavLink label={t.nav.projects} href="#work" isActive={isSectionActive('work')} orderIndex={0} />
+            <DoodleNavLink label={t.nav.about} href="#about" isActive={isSectionActive('about')} orderIndex={1} />
+            <DoodleNavLink label={t.nav.contact} href="#contact" isActive={isSectionActive('contact')} orderIndex={2} />
             <LanguageToggle />
         </div>
     </nav>

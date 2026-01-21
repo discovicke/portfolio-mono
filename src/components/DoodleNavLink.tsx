@@ -13,28 +13,28 @@ interface DoodleNavLinkProps {
     label: string;
     href: string;
     isActive: boolean;
+    /**
+     * Vilken doodle-variant som ska användas (0-baserad index)
+     * Om ej satt används första i listan.
+     */
+    orderIndex?: number;
 }
 
 // Array med tillgängliga doodle-markeringar
 const DOODLE_MARKS = [
+    '/svg/doodleHash.svg',
     '/svg/doodleX2.svg',
     '/svg/doodleX1.svg',
-    '/svg/doodleHash.svg'
 ];
 
-const DoodleNavLink: React.FC<DoodleNavLinkProps> = ({ label, href, isActive }) => {
+const DoodleNavLink: React.FC<DoodleNavLinkProps> = ({ label, href, isActive, orderIndex = 0 }) => {
     /**
-     * Välj en doodle-markering baserat på href
-     * Använder en enkel hash-funktion för att få konsistent men "varierad" val
+     * Välj doodle efter ordning i arrayen baserat på givet index
      */
     const doodleSrc = useMemo(() => {
-        let hash = 0;
-        for (let i = 0; i < href.length; i++) {
-            hash = href.charCodeAt(i) + ((hash << 5) - hash);
-        }
-        const index = Math.abs(hash) % DOODLE_MARKS.length;
-        return DOODLE_MARKS[index];
-    }, [href]);
+        const idx = Math.abs(orderIndex) % DOODLE_MARKS.length;
+        return DOODLE_MARKS[idx];
+    }, [orderIndex]);
 
     /**
      * Smooth scroll till sektionen
