@@ -9,14 +9,21 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: var(--navbar-height, 100px);
-  padding: 0.5rem;
+  height: var(--navbar-height, 110px);
+  padding: 0.5rem 1rem;
   z-index: 50;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(8px);
+  /* Bättre kontrast mot mörka bakgrundsbilder */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(255, 255, 255, 0.6) 70%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .logo {
@@ -36,6 +43,8 @@
   gap: 2rem;
   font-family: var(--font-doodle);
   font-size: 1.25rem;
+  /* Subtil text-skugga för bättre läsbarhet mot mörka bakgrunder */
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 /* Responsiv design - visa nav-länkar på större skärmar */

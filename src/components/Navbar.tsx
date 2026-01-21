@@ -8,11 +8,16 @@
 
 import React, { useState, useEffect } from 'react';
 import DoodleNavLink from './DoodleNavLink';
+import LanguageToggle from './LanguageToggle';
+import { useLanguage } from '../i18n/LanguageContext';
 import './Navbar.css';
 
 const Navbar: React.FC = () => {
     // Håll reda på vilka sektioner som har scrollats förbi
     const [activeSection, setActiveSection] = useState<string>('');
+
+    // Hämta översättningar
+    const { t } = useLanguage();
 
     /**
      * Scrolla till toppen av sidan
@@ -94,7 +99,7 @@ const Navbar: React.FC = () => {
                 role="button"
                 tabIndex={0}
                 onKeyDown={(e) => e.key === 'Enter' && scrollToTop()}
-                aria-label="Gå till toppen av sidan"
+                aria-label={t.nav.goToTop}
             >
             <svg version="1.1"
                  id="Layer_1"
@@ -140,9 +145,10 @@ const Navbar: React.FC = () => {
 
         {/* Navigation länkar - döljs på mobil, visas på desktop */}
         <div className="nav-links">
-            <DoodleNavLink label="Projekt" href="#work" isActive={isSectionActive('work')} />
-            <DoodleNavLink label="Om Mig" href="#about" isActive={isSectionActive('about')} />
-            <DoodleNavLink label="Kontakt" href="#contact" isActive={isSectionActive('contact')} />
+            <DoodleNavLink label={t.nav.projects} href="#work" isActive={isSectionActive('work')} />
+            <DoodleNavLink label={t.nav.about} href="#about" isActive={isSectionActive('about')} />
+            <DoodleNavLink label={t.nav.contact} href="#contact" isActive={isSectionActive('contact')} />
+            <LanguageToggle />
         </div>
     </nav>
     );
