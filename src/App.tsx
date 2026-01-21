@@ -33,9 +33,12 @@ import Work from './components/Work';
 import About from './components/About';
 import Footer from './components/Footer';
 
+// Språkhantering
+import { LanguageProvider } from './i18n/LanguageContext';
+
 function App() {
     return (
-        <>
+        <LanguageProvider>
             {/* SVG Filters - Måste finnas för att CSS filter:url() ska fungera */}
             <SVGFilters/>
 
@@ -71,7 +74,7 @@ function App() {
                         <Footer/>
                     </div>
                 </ClickSpark>
-        </>
+        </LanguageProvider>
     );
 }
 
