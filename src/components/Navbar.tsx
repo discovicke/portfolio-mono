@@ -89,7 +89,7 @@ const Navbar: React.FC = () => {
             {/* Logo - klickbar, tar dig till toppen */}
             <div
                 className="logo"
-                style={{width: "8rem", height: "5rem", cursor: "pointer"}}
+                style={{width: "7rem", height: "4.5rem", cursor: "pointer"}}
                 onClick={scrollToTop}
                 role="button"
                 tabIndex={0}

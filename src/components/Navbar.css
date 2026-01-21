@@ -9,26 +9,26 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1rem;
+  height: var(--navbar-height, 100px);
+  padding: 0.5rem;
   z-index: 50;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: transparent;
-  backdrop-filter: blur(6px);
-  mix-blend-mode: multiply;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
 }
 
 .logo {
   font-family: var(--font-psych);
-  font-size: 1.5rem;
+  font-size: 1rem;
   transform: rotate(-2deg);
   transition: transform 0.3s ease;
   cursor: pointer;
 }
 
 .logo:hover {
-  transform: rotate(2deg);
+  transform: rotate(2deg) scale(1.05);
 }
 
 .nav-links {
