@@ -10,7 +10,7 @@ import React from 'react';
 
 const SVGFilters: React.FC = () => (
     // SVG:n är osynlig (width/height 0) men dess filter är tillgängliga globalt
-    <svg style={{ position: 'absolute', width: 0, height: 0, pointerEvents: 'none' }}>
+    <svg style={{ position: 'absolute', width: 0, height: 0, pointerEvents: 'none' }} aria-hidden="true" role="presentation">
         <defs>
             {/* Liquid Text Filter - Ger text en "flytande" våg-effekt */}
             <filter id="wavy">
@@ -48,4 +48,3 @@ const SVGFilters: React.FC = () => (
 );
 
 export default SVGFilters;
-
