@@ -8,6 +8,7 @@
 import React, { useEffect, useCallback } from 'react';
 import { X, ExternalLink, Github } from 'lucide-react';
 import type { Project } from '../types';
+import { useLanguage } from '../i18n/LanguageContext';
 import './Modal.css';
 
 interface ModalProps {
@@ -17,6 +18,12 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, project }) => {
+    // Hämta översättningar
+    const { t } = useLanguage();
+
+    // Hämta översatt projektdata om den finns
+    const translatedProject = project ? t.projects[project.id] : null;
+
     /**
      * Hantera Escape-tangent för att stänga modalen
      */
@@ -61,14 +68,14 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, project }) => {
         <div className="modal-overlay" onClick={handleOverlayClick}>
             <div className="modal-container" role="dialog" aria-modal="true" aria-labelledby="modal-title">
                 {/* Stäng-knapp */}
-                <button className="modal-close" onClick={onClose} aria-label="Stäng modal">
+                <button className="modal-close" onClick={onClose} aria-label={t.modal.close}>
                     <X size={24} />
                 </button>
 
                 {/* Projektbild */}
                 <img
                     src={project.img}
-                    alt={project.title}
+                    alt={translatedProject?.title || project.title}
                     className="modal-image"
                 />
 
@@ -76,9 +83,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, project }) => {
                 <div className="modal-content">
                     {/* Header med titel och metadata */}
                     <div className="modal-header">
-                        <h2 id="modal-title" className="modal-title">{project.title}</h2>
+                        <h2 id="modal-title" className="modal-title">{translatedProject?.title || project.title}</h2>
                         <div className="modal-meta">
-                            <span className="modal-category">{project.category}</span>
+                            <span className="modal-category">{translatedProject?.category || project.category}</span>
                             {project.year && (
                                 <span className="modal-year">{project.year}</span>
                             )}
@@ -87,21 +94,21 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, project }) => {
 
                     {/* Beskrivning */}
                     <p className="modal-description">
-                        {project.longDesc || project.desc}
+                        {translatedProject?.longDesc || project.longDesc || translatedProject?.desc || project.desc}
                     </p>
 
                     {/* Roll */}
-                    {project.role && (
+                    {(translatedProject?.role || project.role) && (
                         <>
-                            <h3 className="modal-section-title">Min roll</h3>
-                            <p className="modal-role">{project.role}</p>
+                            <h3 className="modal-section-title">{t.modal.myRole}</h3>
+                            <p className="modal-role">{translatedProject?.role || project.role}</p>
                         </>
                     )}
 
                     {/* Teknologier */}
                     {project.technologies && project.technologies.length > 0 && (
                         <>
-                            <h3 className="modal-section-title">Teknologier</h3>
+                            <h3 className="modal-section-title">{t.modal.technologies}</h3>
                             <div className="modal-technologies">
                                 {project.technologies.map((tech, index) => (
                                     <span key={index} className="modal-tech-tag">
@@ -122,7 +129,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, project }) => {
                                 className="modal-link modal-link-primary"
                             >
                                 <ExternalLink size={18} />
-                                Besök projektet
+                                {t.modal.viewLive}
                             </a>
                         )}
                         {project.repoUrl && (
@@ -133,7 +140,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, project }) => {
                                 className="modal-link"
                             >
                                 <Github size={18} />
-                                Se koden
+                                {t.modal.viewCode}
                             </a>
                         )}
                     </div>
