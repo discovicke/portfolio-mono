@@ -13,7 +13,8 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  padding: 4rem 1rem 2rem 1rem;
+  /* padding-top matchar navbar-höjden för att undvika överlapp */
+  padding: calc(var(--navbar-height, 70px) + 2rem) 1rem 2rem 1rem;
 }
 
 /* Layout-container: tre kolumner på desktop */
