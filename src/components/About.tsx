@@ -8,81 +8,66 @@
 import React from 'react';
 import './About.css';
 import { Polaroid } from './Polaroid';
+import { useLanguage } from '../i18n/LanguageContext';
 
-const About: React.FC = () => (
-    <section id="about" className="about-section">
-        {/* Roterande dekorativ bakgrundsform */}
-        {/* <div className="about-bg-shape" /> */}
+const About: React.FC = () => {
+    const { t } = useLanguage();
 
-        {/* Huvudinnehåll - två kolumner på desktop */}
-        <div className="about-content">
-            {/* Rubrik - centrerad ovanför */}
-            <h2 className="work-title about-title">
-                Lite mer om mig
-            </h2>
+    return (
+        <section id="about" className="about-section">
+            {/* Roterande dekorativ bakgrundsform */}
+            {/* <div className="about-bg-shape" /> */}
 
-            {/* Grid-container: tre kolumner på desktop */}
-            <div className="about-layout">
-                {/* Vänster kolumn: Tom för balans (samma bredd som polaroid-kolumnen) */}
-                <div className="about-spacer-column" />
+            {/* Huvudinnehåll - två kolumner på desktop */}
+            <div className="about-content">
+                {/* Rubrik - centrerad ovanför */}
+                <h2 className="work-title about-title">
+                    {t.about.title}
+                </h2>
 
-                {/* Mitten kolumn: Bio-text */}
-                <div className="about-text-column">
-                    <div className="about-bio">
-                        <p>
-                            Jag är en fullstack-utvecklare med fokus på .NET, med en bakgrund inom pedagogik, kreativt arbete
-                            och
-                            lång erfarenhet av att arbeta nära människor.
-                            Jag har alltid trivts i sammanhang där kreativitet, struktur och samarbete möts.
-                        </p>
-                        <p>
-                            Efter år inom musikproduktion, undervisning och elevstöd har jag samlat på mig erfarenheter som
-                            kretsar kring samma sak:
-                            att förstå människor och lösa problem på ett sätt som fungerar i vardagen.
-                            I dag gör jag det genom systemutveckling.
-                        </p>
-                        <p>
-                            När jag inte kodar hittar du mig med musikprojekt, framför en fotbollsmatch eller samtalandes runt
-                            sällskapsspel eller ett bastuaggregat.
-                        </p>
-                        <p>
-                            Jag studerar till Systemutvecklare .NET med AI-kompetens på Edugrade i Hudiksvall och drivs av att
-                            bygga tydliga, användbara lösningar tillsammans med andra.
-                        </p>
-                        <p>
-                            Just nu söker jag en miljö där jag kan fortsätta växa tekniskt och bidra i ett team.
-                        </p>
-                    </div>
+                {/* Grid-container: tre kolumner på desktop */}
+                <div className="about-layout">
+                    {/* Vänster kolumn: Tom för balans (samma bredd som polaroid-kolumnen) */}
+                    <div className="about-spacer-column" />
 
-                    {/* Handskriven signatur */}
-                    <div className="signature">
-                        <div className="signature-container">
-                            <img
-                                src="/svg/doodleUnderline.svg"
-                                alt=""
-                                className="signature-underline"
-                            />
-                            <span className="font-psych signature-name">
-                                Viktor
-                            </span>
+                    {/* Mitten kolumn: Bio-text */}
+                    <div className="about-text-column">
+                        <div className="about-bio">
+                            {t.about.bio.map((paragraph, index) => (
+                                <p key={index}>{paragraph}</p>
+                            ))}
+                        </div>
+
+                        {/* Handskriven signatur */}
+                        <div className="signature">
+                            <div className="signature-container">
+                                <img
+                                    src="/svg/doodleUnderline.svg"
+                                    alt=""
+                                    className="signature-underline"
+                                />
+                                <span className="font-psych signature-name">
+                                    {t.about.signature}
+                                </span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                {/* Höger kolumn: Polaroid */}
-                <div className="about-polaroid-column">
-                    <Polaroid
-                        src="/IMG_6448.PNG"
-                        alt="En bild på Viktor Johansson när han blickar bort från kameran"
-                        caption=" "
-                        variant="polaroid"
-                        showTape={false}
-                    />
+                    {/* Höger kolumn: Polaroid */}
+                    <div className="about-polaroid-column">
+                        <Polaroid
+                            src="/IMG_6448.PNG"
+                            alt={t.about.photoAlt}
+                            caption=" "
+                            variant="polaroid"
+                            showTape={false}
+                        />
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-);
+        </section>
+    );
+};
 
 export default About;
 
