@@ -8,8 +8,10 @@
 import React from 'react';
 import './Hero.css';
 import { Polaroid } from './Polaroid';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Hero: React.FC = () => {
+    const { t } = useLanguage();
     /**
      * Scrolla till projektsektionen
      */
@@ -28,7 +30,7 @@ const Hero: React.FC = () => {
             <div className="hero-polaroid hero-polaroid-left">
                 <Polaroid
                     src="/IMG_6450.PNG"
-                    alt="En bild på Viktor Johansson när han ler mot kameran"
+                    alt={t.hero.photoAlt}
                     caption=" "
                     variant="polaroid"
                     showTape={false}
@@ -38,7 +40,7 @@ const Hero: React.FC = () => {
             {/* Huvudinnehåll - centrerat */}
             <div className="hero-content">
                 {/* Introduktionstext */}
-                <p className="hero-intro">Hej, jag heter Viktor!</p>
+                <p className="hero-intro">{t.hero.greeting}</p>
 
                 {/* Huvudrubrik med liquid text-effekt (från SVG filter) */}
                 <h1 className="hero-title" style={{ filter: 'url(#liquid-text)' }}>
@@ -47,16 +49,16 @@ const Hero: React.FC = () => {
 
                 {/* Beskrivning */}
                 <p className="hero-desc">
-                    Systemutvecklare .NET<br />
-                    Hudiksvall, Hälsingland<br />
-                    LIA DEC 2026 - MAJ 2027
+                    {t.hero.role}<br />
+                    {t.hero.location}<br />
+                    {t.hero.lia}
                 </p>
 
                 {/* Polaroid för mobil (visas bara på små skärmar) */}
                 <div className="hero-mobile-polaroid">
                     <Polaroid
                         src="/IMG_6450.PNG"
-                        alt="En bild på Viktor Johansson när han ler mot kameran"
+                        alt={t.hero.photoAlt}
                         caption=" "
                         variant="polaroid"
                         showTape={false}
@@ -67,7 +69,7 @@ const Hero: React.FC = () => {
                 <button
                     className="bounce-arrow"
                     onClick={scrollToProjects}
-                    aria-label="Scrolla till projekt"
+                    aria-label={t.hero.scrollToProjects}
                     type="button"
                 >
                     <svg
