@@ -1,0 +1,57 @@
+/**
+ * LanguageToggle Component Styles
+ *
+ * Diskret och stilren design som matchar portfolions handritade estetik.
+ */
+
+.language-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.4rem 0.6rem;
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px solid var(--color-dark, #181818);
+    border-radius: 6px;
+    font-family: var(--font-doodle);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    transform: rotate(-1deg);
+}
+
+.language-toggle:hover {
+    transform: rotate(1deg) scale(1.05);
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.language-toggle:focus {
+    outline: 2px solid var(--color-dark, #181818);
+    outline-offset: 2px;
+}
+
+.lang-option {
+    color: var(--color-muted, #666);
+    transition: all 0.2s ease;
+    font-weight: 400;
+}
+
+.lang-option.active {
+    color: var(--color-dark, #181818);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-underline-offset: 3px;
+}
+
+.lang-divider {
+    color: var(--color-muted, #666);
+    font-weight: 300;
+}
+
+/* Desktop anpassning */
+@media (min-width: 768px) {
+    .language-toggle {
+        font-size: 1rem;
+        padding: 0.5rem 0.75rem;
+    }
+}
