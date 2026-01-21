@@ -5,7 +5,7 @@
  * Varje projekt följer Project-interfacet från types/index.ts
  */
 
-import {type Project } from '../types';
+import {type Project} from '../types';
 
 export const projects: Project[] = [
     {
@@ -69,5 +69,21 @@ export const projects: Project[] = [
         year: "2025",
         role: "Ensam utvecklare - designade och implementerade hela parsningslogiken från grunden."
     },
+    {
+        id: 5,
+        title: "Personliga hemsidan",
+        category: "React + TypeScript",
+        desc: "Min personliga portfolio-webbplats byggd med React och TypeScript.",
+        img: "/ViktorJohanssonHero.png",
+        longDesc:
+            "Denna portfolio-webbplats är byggd med React och TypeScript för att visa upp mina projekt och färdigheter. " +
+            "Webbplatsen är responsiv, tillgänglig och använder moderna webbutvecklingstekniker. " +
+            "Den inkluderar sektioner för projekt, om mig, kontaktinformation samt en anpassad modal för projektvisning." +
+            " Webbplatsen är också flerspråkig med stöd för i18n. Jag valde att utmana mig själv genom att hålla hemsidan monokrom och använda mig av negativa utrymmen och storlekar för att ge en naturlig hierarki i användarupplevelsen.",
+        technologies: ["React", "TypeScript", "CSS3", "HTML5", "i18n"],
+        repoUrl: "https://github.com/discovicke/portfolio-mono",
+        year: "2026",
+        role: "Ensam utvecklare - designade och implementerade hela webbplatsen från grunden."
+    }
 ];
 
