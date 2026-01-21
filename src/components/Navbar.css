@@ -9,13 +9,13 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1.5rem;
+  padding: 1rem;
   z-index: 50;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: transparent;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(6px);
   mix-blend-mode: multiply;
 }
 

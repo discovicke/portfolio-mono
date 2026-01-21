@@ -144,23 +144,6 @@ const Navbar: React.FC = () => {
             <DoodleNavLink label="Om Mig" href="#about" isActive={isSectionActive('about')} />
             <DoodleNavLink label="Kontakt" href="#contact" isActive={isSectionActive('contact')} />
         </div>
-
-        {/* Mobilmeny-ikon - visas endast på mobil */}
-        <div className="mobile-menu-icon">
-            <svg
-                width="30"
-                height="30"
-                viewBox="0 0 30 30"
-                stroke="currentColor"
-                strokeWidth="3"
-                strokeLinecap="round"
-            >
-                {/* Tre linjer som ger en handritad känsla */}
-                <path d="M5,10 L25,8"/>
-                <path d="M5,15 L25,16"/>
-                <path d="M5,20 L25,24"/>
-            </svg>
-        </div>
     </nav>
     );
 };
