@@ -11,12 +11,16 @@ import { ArrowRight } from 'lucide-react';
 import { projects } from '../data/projects';
 import type { Project } from '../types';
 import Modal from './Modal';
+import { useLanguage } from '../i18n/LanguageContext';
 import './Work.css';
 
 const Work: React.FC = () => {
     // State för att hålla reda på vilket projekt som är valt och om modalen är öppen
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    // Hämta översättningar
+    const { t } = useLanguage();
 
     /**
      * Öppna modal med valt projekt
@@ -41,55 +45,63 @@ const Work: React.FC = () => {
                 {/* Sektion-header med titel och undertext */}
                 <div className="work-header">
                     <h2 className="work-title">
-                        Utvalda Projekt
+                        {t.work.title}
                     </h2>
                     <span className="work-subtitle">
-                        (Det jag är stoltast över just nu)
+                        {t.work.subtitle}
                     </span>
                 </div>
 
                 {/* Projekt-rutnät */}
                 <div className="projects-grid">
                     {/* Loopa igenom alla projekt från data/projects.ts */}
-                    {projects.map((p, i) => (
-                        <div
-                            key={p.id}
-                            className={`project-card ${i % 2 !== 0 ? 'offset' : ''}`}
-                            onClick={() => handleProjectClick(p)}
-                            role="button"
-                            tabIndex={0}
-                            onKeyDown={(e) => {
-                                if (e.key === 'Enter' || e.key === ' ') {
-                                    e.preventDefault();
-                                    handleProjectClick(p);
-                                }
-                            }}
-                            aria-label={`Öppna projekt: ${p.title}`}
-                        >
-                            {/* Wobble Box - bildcontainer med handritad ram */}
-                            <div className="wobble-box">
-                                <img src={p.img} alt={p.title} />
+                    {projects.map((p, i) => {
+                        // Hämta översatt projektdata om den finns
+                        const translatedProject = t.projects[p.id];
+                        const title = translatedProject?.title || p.title;
+                        const category = translatedProject?.category || p.category;
+                        const desc = translatedProject?.desc || p.desc;
 
-                                {/* Kategori-sticker i hörnet */}
-                                <div className="sticker">
-                                    {p.category}
+                        return (
+                            <div
+                                key={p.id}
+                                className={`project-card ${i % 2 !== 0 ? 'offset' : ''}`}
+                                onClick={() => handleProjectClick(p)}
+                                role="button"
+                                tabIndex={0}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter' || e.key === ' ') {
+                                        e.preventDefault();
+                                        handleProjectClick(p);
+                                    }
+                                }}
+                                aria-label={`${t.work.openProject} ${title}`}
+                            >
+                                {/* Wobble Box - bildcontainer med handritad ram */}
+                                <div className="wobble-box">
+                                    <img src={p.img} alt={title} />
+
+                                    {/* Kategori-sticker i hörnet */}
+                                    <div className="sticker">
+                                        {category}
+                                    </div>
+                                </div>
+
+                                {/* Projekt-information under bilden */}
+                                <div className="project-info">
+                                    <div>
+                                        <h3>{title}</h3>
+                                        <p>{desc}</p>
+                                    </div>
+
+                                    {/* Pil-ikon som indikerar att man kan klicka */}
+                                    <div className="project-arrow">
+                                        <ArrowRight size={32} strokeWidth={1.5} />
+                                    </div>
                                 </div>
                             </div>
-
-                            {/* Projekt-information under bilden */}
-                            <div className="project-info">
-                                <div>
-                                    <h3>{p.title}</h3>
-                                    <p>{p.desc}</p>
-                                </div>
-
-                                {/* Pil-ikon som indikerar att man kan klicka */}
-                                <div className="project-arrow">
-                                    <ArrowRight size={32} strokeWidth={1.5} />
-                                </div>
-                            </div>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
             </section>
 
