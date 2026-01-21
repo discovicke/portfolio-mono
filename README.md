@@ -1,133 +1,46 @@
-# Viktor Johansson - Portfolio
+# Viktor Johansson — Portfolio
 
-Modern portfolio-hemsida byggd med React, TypeScript och Vite. Featuring handritad design-estetik inspirerad av 70/80-talets psych och björkskogar.
+A modern, minimalist portfolio built with React, TypeScript, and Vite. The design leans into a monochrome aesthetic, negative space, and clear typographic hierarchy to keep focus on content.
 
-## 🚀 Tech Stack
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white)](https://vitejs.dev)
+[![Lucide](https://img.shields.io/badge/Lucide-React-000000?logo=lucide&logoColor=white)](https://lucide.dev)
+[![CSS](https://img.shields.io/badge/CSS-Modules-2965f1?logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
-- **React 19** - UI framework
-- **TypeScript** - Type safety
-- **Vite** - Build tool & dev server
-- **Lucide React** - Icons
-- **CSS Modules** - Komponent-baserade stilar
+## Overview
 
-## 📦 Installation
+This portfolio showcases selected projects, a short bio, and a clean modal-driven project viewer. It’s responsive and accessible, with language support via a simple i18n setup.
+
+## Aesthetics & Design Challenge
+
+I challenged myself to:
+- Keep the site fully monochrome to reduce visual noise and emphasize structure.
+- Use negative space and scale to create a natural information hierarchy.
+- Avoid heavy frameworks on the styling side; prefer straightforward CSS modules and semantic HTML.
+
+The result is a calm, readable interface where content leads and decoration follows.
+
+## Quick Start
 
 ```bash
 npm install
-```
-
-## 🛠️ Development
-
-```bash
 npm run dev
 ```
+Open http://localhost:5173 in your browser.
 
-Öppna [http://localhost:5173](http://localhost:5173) i din webbläsare.
-
-## 🏗️ Build
+## Build
 
 ```bash
 npm run build
 ```
+Outputs production files to the `dist/` folder.
 
-Bygger projektet till `dist/` mappen.
+## Deploy
 
-## 🌐 Deploy till Vercel
+- Optimized for Vercel; see `vercel.json` for defaults.
+- Typical settings: build `npm run build`, output `dist`, install `npm install`.
 
-### Automatisk Deploy (Rekommenderat)
-
-1. Pusha ditt repo till GitHub
-2. Gå till [vercel.com](https://vercel.com)
-3. Importera ditt GitHub-repo
-4. Vercel detekterar automatiskt Vite och använder rätt inställningar från `vercel.json`
-
-### Manuella inställningar (om behövs)
-
-- **Build Command:** `npm run build`
-- **Output Directory:** `dist`
-- **Install Command:** `npm install`
-- **Framework Preset:** Vite
-
-### Första gången du pushar
-
-```bash
-git add .
-git commit -m "Initial commit - Portfolio ready for deploy"
-git push
-```
-
-## 📁 Projektstruktur
-
-```
-src/
-├── components/          # React-komponenter med CSS
-│   ├── Hero.tsx/.css
-│   ├── Work.tsx/.css
-│   ├── About.tsx/.css
-│   ├── Footer.tsx/.css
-│   ├── Modal.tsx/.css
-│   ├── Polaroid.tsx/.css
-│   └── DoodleNavLink.tsx/.css
-├── data/               # Projektdata
-├── styles/             # Globala stilar
-├── types/              # TypeScript interfaces
-└── assets/             # Fonts & bilder
-
-public/                 # Statiska filer (bilder, SVG:er)
-```
-
-## ✨ Features
-
-- 🎨 Handritad design-estetik
-- 📱 Fullständigt responsiv
-- 🖼️ Polaroid-galleri
-- 🔍 Projekt-modal med detaljerad info
-- 🎯 Scroll-baserad navigation
-- ♿ Tillgänglighet (keyboard navigation, ARIA-labels)
-
-## 📝 Licens
+## License
 
 © 2026 Viktor Johansson
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
