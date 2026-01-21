@@ -13,7 +13,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  padding: 2rem 1rem;
+  padding: 4rem 1rem 2rem 1rem;
 }
 
 /* Layout-container: tre kolumner på desktop */
@@ -26,15 +26,6 @@
   gap: 2rem;
 }
 
-@media (min-width: 1024px) {
-  .hero-layout {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-  }
-}
-
 /* Huvudinnehåll (centrerat) */
 .hero-content {
   z-index: 10;
@@ -43,35 +34,10 @@
   order: 1; /* På mobil: först */
 }
 
-@media (min-width: 1024px) {
-  .hero-content {
-    order: 2; /* På desktop: i mitten */
-  }
-}
 
 /* Polaroid-kolumner */
 .hero-polaroid {
   display: none; /* Göm på mobil */
-}
-
-@media (min-width: 1024px) {
-  .hero-polaroid {
-    display: flex;
-    flex: 0 0 250px;
-    justify-content: center;
-    align-items: center;
-    margin-top: -600px;
-  }
-
-  .hero-polaroid-left {
-    order: 1;
-    transform: rotate(-8deg);
-  }
-
-  .hero-polaroid-right {
-    order: 3;
-    transform: rotate(5deg);
-  }
 }
 
 /* Visa polaroid under innehållet på mobil */
@@ -81,11 +47,6 @@
   margin-top: 2rem;
 }
 
-@media (min-width: 1024px) {
-  .hero-mobile-polaroid {
-    display: none;
-  }
-}
 
 .hero-intro {
   font-family: var(--font-doodle);
@@ -109,11 +70,6 @@
   filter: url(#wavy);
 }
 
-@media (min-width: 768px) {
-  .hero-title {
-    font-size: 9rem;
-  }
-}
 
 .hero-desc {
   font-family: var(--font-doodle);
@@ -143,6 +99,46 @@
   outline: 2px dashed var(--text-ink);
   outline-offset: 4px;
 }
+
+@media (min-width: 1024px) {
+  .hero-layout {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+  .hero-content {
+    order: 2; /* På desktop: i mitten */
+  }
+  .hero-polaroid {
+    display: flex;
+    flex: 0 0 250px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 250px;
+  }
+
+  .hero-polaroid-left {
+    order: 1;
+    transform: rotate(-8deg);
+  }
+
+  .hero-polaroid-right {
+    order: 3;
+    transform: rotate(5deg);
+  }
+
+  .hero-mobile-polaroid {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 9rem;
+  }
+}
+
 
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
