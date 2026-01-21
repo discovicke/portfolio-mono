@@ -7,15 +7,19 @@
 
 import React from 'react';
 import {Mail, Instagram, Linkedin, Github} from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
 import './Footer.css';
 
-const Footer: React.FC = () => (
-    <footer id="contact" className="footer">
-        <div className="container">
-            {/* Call-to-action rubrik */}
-            <div className="footer-cta">
-                <h2>Hör av dig!</h2>
-            </div>
+const Footer: React.FC = () => {
+    const { t } = useLanguage();
+
+    return (
+        <footer id="contact" className="footer">
+            <div className="container">
+                {/* Call-to-action rubrik */}
+                <div className="footer-cta">
+                    <h2>{t.footer.cta}</h2>
+                </div>
 
             {/* Sociala medier länkar */}
             <div className="social-links">
@@ -59,7 +63,7 @@ const Footer: React.FC = () => (
 
             {/* Copyright text */}
             <p className="font-doodle footer-copyright">
-                2026 Viktor Johansson. Created with React.
+                {t.footer.copyright}
             </p>
 
             {/* Dekorativa cirklar i hörnet */}
@@ -69,7 +73,8 @@ const Footer: React.FC = () => (
             </svg>
         </div>
     </footer>
-);
+    );
+};
 
 export default Footer;
 
