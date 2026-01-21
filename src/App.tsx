@@ -55,23 +55,26 @@ function App() {
                         {/* Fast navbar längst upp */}
                         <Navbar/>
 
-                        {/* Startsida/Hero */}
-                        <Hero/>
+                        {/* Main landmark for primary content */}
+                        <main id="main">
+                            {/* Startsida/Hero */}
+                            <Hero/>
 
-                        {/* Dekorativ avdelare */}
-                        <SquigglyLine/>
+                            {/* Dekorativ avdelare */}
+                            <SquigglyLine/>
 
-                        {/* Projekt-sektion */}
-                        <Work/>
+                            {/* Projekt-sektion */}
+                            <Work/>
 
-                        {/* Dekorativ avdelare */}
-                        <SquigglyLine/>
+                            {/* Dekorativ avdelare */}
+                            <SquigglyLine/>
 
-                        {/* Om mig-sektion */}
-                        <About/>
+                            {/* Om mig-sektion */}
+                            <About/>
 
-                        {/* Sidfot */}
-                        <Footer/>
+                            {/* Sidfot */}
+                            <Footer/>
+                        </main>
                     </div>
                 </ClickSpark>
         </LanguageProvider>
