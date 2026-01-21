@@ -30,6 +30,7 @@
   --font-psych: 'Shrikhand', cursive;
   --font-doodle: 'ComicNeue', sans-serif;
   --font-sans: 'Inter', sans-serif;
+  --navbar-height: 110px;
 }
 
 /* Reset & Base - Grundläggande stilar för alla element */
