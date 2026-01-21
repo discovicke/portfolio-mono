@@ -141,6 +141,13 @@ export const translations: Record<Language, TranslationStrings> = {
                 longDesc: 'Ink & Render är en från-grunden-byggd Markdown-editor som demonstrerar parsning och AST-hantering (Abstract Syntax Tree). Editorn konverterar Markdown till HTML i realtid utan externa bibliotek. Projektet är uppbyggt modulärt med separation mellan lexer, parser och renderer, vilket gör koden lätt att förstå och utöka.',
                 role: 'Ensam utvecklare - designade och implementerade hela parsningslogiken från grunden.',
             },
+            5: {
+                title: 'Portfolio',
+                category: 'React + TypeScript',
+                desc: 'Min personliga portfolio-webbplats byggd med React och TypeScript.',
+                longDesc: 'Denna portfolio-webbplats är byggd med React och TypeScript för att visa upp mina projekt och färdigheter. Webbplatsen är responsiv, tillgänglig och använder moderna webbutvecklingstekniker. Den inkluderar sektioner för projekt, om mig, kontaktinformation samt en anpassad modal för projektvisning. Webbplatsen är också flerspråkig med stöd för i18n. Jag valde att utmana mig själv genom att hålla hemsidan monokrom och använda mig av negativa utrymmen och storlekar för att ge en naturlig hierarki i användarupplevelsen.',
+                role: 'Ensam utvecklare - designade och implementerade hela webbplatsen från grunden.',
+            },
         },
     },
     en: {
@@ -214,6 +221,13 @@ export const translations: Record<Language, TranslationStrings> = {
                 desc: 'A framework-free Markdown editor with live preview, built as a modular project in pure vanilla JavaScript.',
                 longDesc: "Ink & Render is a from-scratch Markdown editor that demonstrates parsing and AST (Abstract Syntax Tree) handling. The editor converts Markdown to HTML in real-time without external libraries. The project is built modularly with separation between lexer, parser, and renderer, making the code easy to understand and extend.",
                 role: 'Solo developer - designed and implemented the entire parsing logic from scratch.',
+            },
+            5: {
+                title: 'Personal Portfolio Website',
+                category: 'React + TypeScript',
+                desc: 'My personal portfolio website built with React and TypeScript.',
+                longDesc: 'This portfolio website is built with React and TypeScript to showcase my projects and skills. The site is responsive, accessible, and uses modern web development techniques. It includes sections for projects, about me, contact information, and a custom modal for project viewing. The website is also multilingual with i18n support. I challenged myself by keeping the site monochrome and using negative space and scale to create a natural hierarchy in the user experience.',
+                role: 'Solo developer - designed and implemented the entire website from scratch.',
             },
         },
     },
