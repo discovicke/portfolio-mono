@@ -1,0 +1,199 @@
+/**
+ * Skills Component Styles
+ *
+ * Stilar för skills-sektionen som visar tekniska färdigheter.
+ * Följer den handritade estetiken från modalen.
+ */
+
+/* Skills section */
+.skills-section {
+  padding: 3rem 0.5rem;
+  position: relative;
+}
+
+/* Skills header */
+.skills-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.skills-title {
+  display: inline-block;
+  position: relative;
+}
+
+.skills-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 4px;
+  background: var(--text-ink);
+  border-radius: 2px;
+}
+
+.skills-subtitle {
+  font-family: var(--font-doodle);
+  font-size: 1.25rem;
+  color: var(--accent-organic);
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+/* Skills grid - categories */
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Skill category */
+.skill-category {
+  background: transparent;
+  padding: 1rem;
+  border: 3px solid var(--text-ink);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  position: relative;
+}
+
+.skill-category:nth-child(2) {
+  border-radius: 15px 225px 15px 255px / 225px 15px 255px 15px;
+}
+
+.skill-category:nth-child(3) {
+  border-radius: 225px 15px 255px 15px / 15px 255px 15px 225px;
+}
+
+.skill-category-title {
+  font-family: var(--font-psych);
+  font-size: 1.5rem;
+  margin: 0 0 1.25rem 0;
+  position: relative;
+  display: inline-block;
+}
+
+.skill-category-title::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--text-ink);
+  border-radius: 2px;
+}
+
+/* Skill list */
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.skill-item {
+  margin: 0;
+  padding: 0;
+}
+
+/* Skill card - the interactive element */
+.skill-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.5rem;
+  background: transparent;
+  border: 2px solid var(--text-ink);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  cursor: default;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card:hover,
+.skill-card:focus {
+  background: var(--text-ink);
+  transform: rotate(-1deg) scale(1.05);
+  outline: none;
+}
+
+.skill-card:hover .skill-icon,
+.skill-card:focus .skill-icon {
+  filter: invert(1);
+}
+
+/* Alternate rotation on hover for variety */
+.skill-item:nth-child(even) .skill-card:hover,
+.skill-item:nth-child(even) .skill-card:focus {
+  transform: rotate(1deg) scale(1.05);
+}
+
+/* Skill icon */
+.skill-icon {
+  height: 28px;
+  width: auto;
+  border-radius: 4px;
+  transition: filter 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .skills-section {
+    padding: 5rem 1rem;
+  }
+
+  .skills-grid {
+    gap: 2rem;
+  }
+
+  .skill-category {
+    padding: 1.5rem;
+  }
+
+  .skill-category-title {
+    font-size: 1.5rem;
+  }
+
+  .skill-list {
+    gap: 0.5rem;
+  }
+
+  .skill-icon {
+    height: 24px;
+  }
+}
+
+/* Larger screens - larger badges */
+@media (min-width: 1024px) {
+  .skills-grid {
+    gap: 2rem;
+  }
+
+  .skill-category {
+    padding: 2rem;
+  }
+
+  .skill-category-title {
+    font-size: 1.75rem;
+  }
+
+  .skill-card {
+    padding: 0.6rem 1.25rem;
+  }
+
+  .skill-icon {
+    height: 26px;
+  }
+}
+
+/* Focus visible for keyboard navigation */
+.skill-card:focus-visible {
+  box-shadow: 0 0 0 3px var(--bg-wall), 0 0 0 5px var(--text-ink);
+}
