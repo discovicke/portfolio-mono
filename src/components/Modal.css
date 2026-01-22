@@ -236,3 +236,19 @@
   background: var(--accent-organic);
   transform: rotate(1deg) scale(1.02);
 }
+
+/* Disabled state for unavailable live demos */
+.modal-link-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--birch-grey);
+  color: var(--text-ink);
+  border-color: var(--birch-grey);
+}
+
+.modal-link-disabled:hover {
+  background: var(--birch-grey);
+  color: var(--text-ink);
+  transform: none;
+}
+

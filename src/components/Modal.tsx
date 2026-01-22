@@ -121,23 +121,37 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, project }) => {
 
                     {/* Actionknappar */}
                     <div className="modal-actions">
-                        {project.liveUrl && (
+                        {/* Live demo knapp - alltid synlig, disabled om ingen URL */}
+                        {project.liveUrl ? (
                             <a
                                 href={project.liveUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="modal-link modal-link-primary"
+                                aria-label={`${t.modal.viewLive}: ${translatedProject?.title || project.title}`}
                             >
                                 <ExternalLink size={18} />
                                 {t.modal.viewLive}
                             </a>
+                        ) : (
+                            <button
+                                className="modal-link modal-link-primary modal-link-disabled"
+                                disabled
+                                aria-label={`${t.modal.liveUnavailable}: ${translatedProject?.title || project.title}`}
+                            >
+                                <ExternalLink size={18} />
+                                {t.modal.liveUnavailable}
+                            </button>
                         )}
+
+                        {/* GitHub repo knapp */}
                         {project.repoUrl && (
                             <a
                                 href={project.repoUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="modal-link"
+                                aria-label={`${t.modal.viewCode}: ${translatedProject?.title || project.title}`}
                             >
                                 <Github size={18} />
                                 {t.modal.viewCode}
