@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
      * Intersection Observer för att detektera vilka sektioner som är synliga
      */
     useEffect(() => {
-        const sections = ['work', 'about', 'contact'];
+        const sections = ['skills', 'work', 'about', 'contact'];
 
         const observer = new IntersectionObserver(
             (entries) => {
@@ -83,7 +83,7 @@ const Navbar: React.FC = () => {
      * Kontrollera om en sektion är "passerad" (för kumulativ markering)
      */
     const isSectionActive = (sectionId: string): boolean => {
-        const sections = ['work', 'about', 'contact'];
+        const sections = ['skills', 'work', 'about', 'contact'];
         const currentIndex = sections.indexOf(activeSection);
         const sectionIndex = sections.indexOf(sectionId);
         return sectionIndex <= currentIndex && currentIndex >= 0;
@@ -146,9 +146,10 @@ const Navbar: React.FC = () => {
 
         {/* Navigation länkar - döljs på mobil, visas på desktop */}
         <div className="nav-links">
-            <DoodleNavLink label={t.nav.projects} href="#work" isActive={isSectionActive('work')} orderIndex={0} />
-            <DoodleNavLink label={t.nav.about} href="#about" isActive={isSectionActive('about')} orderIndex={1} />
-            <DoodleNavLink label={t.nav.contact} href="#contact" isActive={isSectionActive('contact')} orderIndex={2} />
+            <DoodleNavLink label={t.nav.skills} href="#skills" isActive={isSectionActive('skills')} orderIndex={0} />
+            <DoodleNavLink label={t.nav.projects} href="#work" isActive={isSectionActive('work')} orderIndex={1} />
+            <DoodleNavLink label={t.nav.about} href="#about" isActive={isSectionActive('about')} orderIndex={2} />
+            <DoodleNavLink label={t.nav.contact} href="#contact" isActive={isSectionActive('contact')} orderIndex={3} />
             <LanguageToggle />
         </div>
     </nav>
