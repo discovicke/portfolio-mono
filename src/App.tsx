@@ -29,6 +29,7 @@ import ClickSpark from './components/ClickSpark';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import SquigglyLine from './components/SquigglyLine';
+import Skills from './components/Skills';
 import Work from './components/Work';
 import About from './components/About';
 import Footer from './components/Footer';
@@ -59,6 +60,12 @@ function App() {
                         <main id="main">
                             {/* Startsida/Hero */}
                             <Hero/>
+
+                            {/* Dekorativ avdelare */}
+                            <SquigglyLine/>
+
+                            {/* Skills-sektion */}
+                            <Skills/>
 
                             {/* Dekorativ avdelare */}
                             <SquigglyLine/>
