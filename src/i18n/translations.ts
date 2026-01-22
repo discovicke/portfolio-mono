@@ -10,6 +10,7 @@ export type Language = 'sv' | 'en';
 export interface TranslationStrings {
     // Navbar
     nav: {
+        skills: string;
         projects: string;
         about: string;
         contact: string;
@@ -56,6 +57,15 @@ export interface TranslationStrings {
         viewCode: string;
     };
 
+    // Skills section
+    skills: {
+        title: string;
+        subtitle: string;
+        frontend: string;
+        backend: string;
+        tools: string;
+    };
+
     // Projects (behåller struktur men med översättningar)
     projects: {
         [key: number]: {
@@ -71,6 +81,7 @@ export interface TranslationStrings {
 export const translations: Record<Language, TranslationStrings> = {
     sv: {
         nav: {
+            skills: 'Kunskaper',
             projects: 'Projekt',
             about: 'Om Mig',
             contact: 'Kontakt',
@@ -112,6 +123,13 @@ export const translations: Record<Language, TranslationStrings> = {
             viewLive: 'Se live',
             viewCode: 'Se kod',
         },
+        skills: {
+            title: 'Mina Kunskaper',
+            subtitle: '(Tekniker jag kan hantera)',
+            frontend: 'Frontend',
+            backend: 'Backend & Språk',
+            tools: 'Databaser & Verktyg',
+        },
         projects: {
             1: {
                 title: 'Ducklord Chatking',
@@ -152,6 +170,7 @@ export const translations: Record<Language, TranslationStrings> = {
     },
     en: {
         nav: {
+            skills: 'Skills',
             projects: 'Projects',
             about: 'About',
             contact: 'Contact',
@@ -192,6 +211,13 @@ export const translations: Record<Language, TranslationStrings> = {
             technologies: 'Technologies',
             viewLive: 'View Live',
             viewCode: 'View Code',
+        },
+        skills: {
+            title: 'My Skills',
+            subtitle: '(Technologies I can handle)',
+            frontend: 'Frontend',
+            backend: 'Backend & Languages',
+            tools: 'Databases & Tools',
         },
         projects: {
             1: {
