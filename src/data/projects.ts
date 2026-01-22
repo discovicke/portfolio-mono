@@ -65,6 +65,7 @@ export const projects: Project[] = [
             "Editorn konverterar Markdown till HTML i realtid utan externa bibliotek. " +
             "Projektet är uppbyggt modulärt med separation mellan lexer, parser och renderer, vilket gör koden lätt att förstå och utöka.",
         technologies: ["JavaScript", "Parsing", "AST", "Lexer", "HTML5", "CSS3"],
+        liveUrl: "https://inkandrender.vercel.app/",
         repoUrl: "https://github.com/discovicke/Ink-and-Render-The-Markdown-Live-Preview-Editor",
         year: "2025",
         role: "Ensam utvecklare - designade och implementerade hela parsningslogiken från grunden."
