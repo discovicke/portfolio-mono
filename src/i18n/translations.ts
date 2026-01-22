@@ -55,6 +55,7 @@ export interface TranslationStrings {
         technologies: string;
         viewLive: string;
         viewCode: string;
+        liveUnavailable: string;
     };
 
     // Skills section
@@ -122,6 +123,7 @@ export const translations: Record<Language, TranslationStrings> = {
             technologies: 'Teknologier',
             viewLive: 'Se live',
             viewCode: 'Se kod',
+            liveUnavailable: 'Ej tillgänglig på webben',
         },
         skills: {
             title: 'Mina Kunskaper',
@@ -211,6 +213,7 @@ export const translations: Record<Language, TranslationStrings> = {
             technologies: 'Technologies',
             viewLive: 'View Live',
             viewCode: 'View Code',
+            liveUnavailable: 'Not available online',
         },
         skills: {
             title: 'My Skills',
