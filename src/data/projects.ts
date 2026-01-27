@@ -25,18 +25,20 @@ export const projects: Project[] = [
     },
     {
         id: 2,
-        title: "Advent of Code 2025",
-        category: "Algoritmiska pussel",
-        desc: "Mina lösningar för AoC 2025, skrivna i C#",
-        img: "/AoC25.png",
+        title: "Personliga hemsidan",
+        category: "React + TypeScript",
+        desc: "Min personliga portfolio-webbplats byggd med React och TypeScript.",
+        img: "/ViktorJohanssonHero.png",
         longDesc:
-            "Advent of Code är en årlig programmeringsutmaning med dagliga pussel i form av en julkalender, " +
-            "som går av stapeln under december månad. Mina lösningar är skrivna i C# och fokuserar på läsbarhet och effektivitet. " +
-            "Varje dag presenterar unika algoritmiska utmaningar, från strängmanipulation till graftraversering och dynamisk programmering.",
-        technologies: ["C#", ".NET", "Algoritmer", "Datastrukturer", "LINQ"],
-        repoUrl: "https://github.com/discovicke/AdventOfCode2025",
-        year: "2025",
-        role: "Löste samtliga pussel självständigt och dokumenterade lösningarna."
+            "Denna portfolio-webbplats är byggd med React och TypeScript för att visa upp mina projekt och färdigheter. " +
+            "Webbplatsen är responsiv, tillgänglig och använder moderna webbutvecklingstekniker. " +
+            "Den inkluderar sektioner för projekt, om mig, kontaktinformation samt en anpassad modal för projektvisning." +
+            " Webbplatsen är också flerspråkig med stöd för i18n. Jag valde att utmana mig själv genom att hålla hemsidan monokrom och använda mig av negativa utrymmen och storlekar för att ge en naturlig hierarki i användarupplevelsen.",
+        technologies: ["React", "TypeScript", "CSS3", "HTML5", "i18n"],
+        liveUrl: "https://viktorjohansson.vercel.app/",
+        repoUrl: "https://github.com/discovicke/portfolio-mono",
+        year: "2026",
+        role: "Ensam utvecklare - designade och implementerade hela webbplatsen från grunden."
     },
     {
         id: 3,
@@ -72,20 +74,27 @@ export const projects: Project[] = [
     },
     {
         id: 5,
-        title: "Personliga hemsidan",
-        category: "React + TypeScript",
-        desc: "Min personliga portfolio-webbplats byggd med React och TypeScript.",
-        img: "/ViktorJohanssonHero.png",
+        title: 'Google Drive Clone',
+        category: 'Angular + Node.js',
+        desc: 'En fullstack Google Drive-klon byggd som proof-of-concept med Angular 21 och Node.js, med fokus på typsäkerhet, modulär arkitektur och filhantering.',
+        img: '/duckdrive-preview.png',
         longDesc:
-            "Denna portfolio-webbplats är byggd med React och TypeScript för att visa upp mina projekt och färdigheter. " +
-            "Webbplatsen är responsiv, tillgänglig och använder moderna webbutvecklingstekniker. " +
-            "Den inkluderar sektioner för projekt, om mig, kontaktinformation samt en anpassad modal för projektvisning." +
-            " Webbplatsen är också flerspråkig med stöd för i18n. Jag valde att utmana mig själv genom att hålla hemsidan monokrom och använda mig av negativa utrymmen och storlekar för att ge en naturlig hierarki i användarupplevelsen.",
-        technologies: ["React", "TypeScript", "CSS3", "HTML5", "i18n"],
-        liveUrl: "https://viktorjohansson.vercel.app/",
-        repoUrl: "https://github.com/discovicke/portfolio-mono",
-        year: "2026",
-        role: "Ensam utvecklare - designade och implementerade hela webbplatsen från grunden."
-    }
+            'Detta projekt är en fullstack proof-of-concept av en Google Drive-liknande applikation, byggd med Angular 21 i frontend och Node.js med Express i backend. Applikationen stödjer säker filuppladdning via drag-and-drop, nedladdning, förhandsvisning och permanent borttagning av filer, kompletterat med realtidsbaserad fuzzy-sökning för snabb och fel­tolerant filhantering.\n' +
+            '\n' +
+            'Arkitekturen är modulär och typ­säker genom hela stacken, med delade DTO:er i TypeScript mellan klient och server. Backend använder Multer för filhantering, Zod för validering och Helmet för grundläggande säkerhet. En egenutvecklad DbService abstraherar fil-I/O och möjliggör persistens via en JSON-baserad datalagring utan extern databas.',
+        technologies: [
+            'Angular 21',
+            'TypeScript',
+            'Node.js',
+            'Express',
+            'SCSS',
+            'Zod',
+            'Fuzzysort'
+        ],
+        liveUrl: 'https://google-drive-clone-demo.onrender.com/',
+        repoUrl: 'https://github.com/discovicke/google-drive-clone',
+        year: '2026',
+        role: 'Fullstack-utvecklare i team'
+    },
 ];
 
