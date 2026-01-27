@@ -1,0 +1,298 @@
+/**
+ * ExperienceModal Component Styles
+ *
+ * Stilar för CV-modalen som visar alla erfarenheter.
+ * Följer samma handritade estetik som projekt-modalen.
+ */
+
+/* Overlay - matchar projektmodalen */
+.exp-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    animation: expFadeIn 0.3s ease-out;
+}
+
+@keyframes expFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Container - matchar projektmodalen (3px border, ingen box-shadow) */
+.exp-modal-container {
+    position: relative;
+    background-color: var(--bg-wall);
+    border: 3px solid var(--text-ink);
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 2rem;
+    animation: expSlideUp 0.3s ease-out;
+}
+
+@keyframes expSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Close button - matchar projektmodalen exakt */
+.exp-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--bg-wall);
+    border: 2px solid var(--text-ink);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 10;
+    color: var(--text-ink);
+}
+
+.exp-modal-close:hover {
+    transform: rotate(90deg) scale(1.1);
+    background-color: var(--text-ink);
+    color: var(--bg-wall);
+}
+
+/* Header */
+.exp-modal-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-right: 2rem;
+}
+
+.exp-modal-title {
+    font-family: var(--font-psych);
+    font-size: 2rem;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+}
+
+.exp-modal-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 4px;
+    background: var(--text-ink);
+    border-radius: 2px;
+}
+
+/* Content */
+.exp-modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Section */
+.exp-modal-section {
+    border-top: 2px dashed var(--accent-organic);
+    padding-top: 1.5rem;
+}
+
+.exp-modal-section:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+.exp-modal-section-title {
+    font-family: var(--font-psych);
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+    color: var(--text-ink);
+    position: relative;
+    display: inline-block;
+}
+
+.exp-modal-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--accent-organic);
+    border-radius: 2px;
+}
+
+/* Cards container */
+.exp-modal-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Individual card */
+.exp-modal-card {
+    background: transparent;
+    border: 2px solid var(--text-ink);
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+    padding: 1.25rem;
+    transition: all 0.2s ease;
+}
+
+/* Varierande border-radius för visuell variation */
+.exp-modal-card:nth-child(2) {
+    border-radius: 15px 225px 15px 255px / 225px 15px 255px 15px;
+}
+
+.exp-modal-card:nth-child(3) {
+    border-radius: 225px 15px 255px 15px / 15px 255px 15px 225px;
+}
+
+.exp-modal-card:nth-child(4) {
+    border-radius: 15px 255px 15px 225px / 255px 15px 225px 15px;
+}
+
+.exp-modal-card:hover {
+    transform: translateX(4px);
+    box-shadow: 4px 4px 0 var(--accent-organic);
+}
+
+/* Card header */
+.exp-modal-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.exp-modal-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 2px solid var(--text-ink);
+    border-radius: 50%;
+    flex-shrink: 0;
+    color: var(--text-ink);
+}
+
+.exp-modal-card-titles {
+    flex: 1;
+}
+
+.exp-modal-card-title {
+    font-family: var(--font-doodle);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-ink);
+}
+
+.exp-modal-card-company {
+    font-family: var(--font-doodle);
+    font-size: 0.95rem;
+    color: var(--accent-organic);
+    margin: 0.25rem 0 0 0;
+    font-style: italic;
+}
+
+/* Card meta */
+.exp-modal-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    font-family: var(--font-doodle);
+    font-size: 0.85rem;
+    color: var(--text-ink);
+    opacity: 0.8;
+}
+
+.exp-modal-card-date,
+.exp-modal-card-location {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+/* Card description */
+.exp-modal-card-desc {
+    font-family: var(--font-doodle);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    color: var(--text-ink);
+}
+
+/* Card skills */
+.exp-modal-card-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.exp-modal-skill-tag {
+    font-family: var(--font-doodle);
+    font-size: 0.8rem;
+    padding: 0.25rem 0.75rem;
+    background: transparent;
+    border: 1px solid var(--text-ink);
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+    color: var(--text-ink);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .exp-modal-container {
+        padding: 2.5rem;
+    }
+
+    .exp-modal-title {
+        font-size: 2.5rem;
+    }
+
+    .exp-modal-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+/* Scrollbar styling */
+.exp-modal-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.exp-modal-container::-webkit-scrollbar-track {
+    background: var(--bg-wall);
+}
+
+.exp-modal-container::-webkit-scrollbar-thumb {
+    background: var(--accent-organic);
+    border-radius: 4px;
+}
+
+.exp-modal-container::-webkit-scrollbar-thumb:hover {
+    background: var(--text-ink);
+}
