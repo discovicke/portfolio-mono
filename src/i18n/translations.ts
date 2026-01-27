@@ -67,6 +67,45 @@ export interface TranslationStrings {
         tools: string;
     };
 
+    // Experience/CV section
+    experience: {
+        title: string;
+        subtitle: string;
+        viewAll: string;
+        current: string;
+        types: {
+            work: string;
+            education: string;
+            certificate: string;
+            volunteer: string;
+        };
+    };
+
+    // Experience modal
+    experienceModal: {
+        title: string;
+        close: string;
+        period: string;
+        location: string;
+        skills: string;
+        types: {
+            work: string;
+            education: string;
+            certificate: string;
+            volunteer: string;
+        };
+    };
+
+    // Experience entries (translations per ID)
+    experiences: {
+        [key: number]: {
+            title: string;
+            company: string;
+            description: string;
+            longDescription?: string;
+        };
+    };
+
     // Projects (behåller struktur men med översättningar)
     projects: {
         [key: number]: {
@@ -126,11 +165,122 @@ export const translations: Record<Language, TranslationStrings> = {
             liveUnavailable: 'Ej tillgänglig på webben',
         },
         skills: {
-            title: 'Mina Kunskaper',
+            title: 'Kompetens',
             subtitle: '(Tekniker jag kan hantera)',
             frontend: 'Frontend',
             backend: 'Backend & Språk',
             tools: 'Databaser & Verktyg',
+        },
+        experience: {
+            title: 'Erfarenhet',
+            subtitle: '(Vad jag har gjort)',
+            viewAll: 'Visa alla',
+            current: 'Pågående',
+            types: {
+                work: 'Arbete',
+                education: 'Utbildning',
+                certificate: 'Certifikat',
+                volunteer: 'Ideellt',
+            },
+        },
+        experienceModal: {
+            title: 'Min Erfarenhet',
+            close: 'Stäng',
+            period: 'Period',
+            location: 'Plats',
+            skills: 'Färdigheter',
+            types: {
+                work: 'Arbetslivserfarenhet',
+                education: 'Utbildning',
+                certificate: 'Certifikat',
+                volunteer: 'Ideellt arbete',
+            },
+        },
+        experiences: {
+            1: {
+                title: 'Elevhandledare',
+                company: 'Nordanstigs kommun',
+                description: 'Stöttade elever med särskilda behov i grundskolan.',
+                longDescription: 'Arbetade som elevhandledare med fokus på att stödja elever med NPF-diagnoser och olika inlärningsbehov. Samarbetade nära elever, pedagoger och vårdnadshavare för att skapa trygghet, struktur, individuellt lärande och personlig utveckling.',
+            },
+            2: {
+                title: 'Elevresurs',
+                company: 'Lekebergs kommun',
+                description: 'Stöttade elever med särskilda behov i grundskolan.',
+                longDescription: 'Resurs i F–9-verksamhet med ansvar för elever med diabetes. Arbetade även på fritids. Kombinerade praktiskt ansvar med omsorg och socialt stöd.',
+            },
+            3: {
+                title: 'Kursledare i Musik & Ljudproduktion',
+                company: 'Egen regi',
+                description: 'Undervisade elever i musik och ljudproduktion på fritidsnivå.',
+                longDescription: 'Ledde onlinekurser i musikproduktion för ungdomar (åldrarna 13–21) med fokus på ljudproduktion, musikteori och instrumentundervisning. Utvecklade individuella lektionsplaner, organiserade konserter och workshops samt inspirerade elever att utforska sin kreativitet genom musik.',
+            },
+            4: {
+                title: 'Butiksbiträde',
+                company: 'Systembolaget',
+                description: 'Arbetade i kundservice och försäljning på Systembolaget.',
+                longDescription: 'Säsongsbetonat arbete. Ansvarade för kundservice, produktkunskap och kassahantering i en butiksmiljö. Hjälpte kunder att hitta produkter, gav rekommendationer efter kundens behov samt utvecklade mina logistiska kunskaper.',
+            },
+            5: {
+                title: 'Vikarierande museipedagog',
+                company: 'Hudiksvalls museum',
+                description: 'Ledde workshops och guidade besökare på museet.',
+                longDescription: 'Arbetade som vikarie på Hudiksvalls museum under höstsäsongen. Ledde pedagogiska workshops för barn och vuxna, guidade grupper genom utställningar och hjälpte till med evenemangsplanering. Fick erfarenhet av att kommunicera historiskt innehåll på ett engagerande sätt.',
+            },
+            6: {
+                title: 'Lärarvikarie & Elevresurs',
+                company: 'Hudiksvalls kommun',
+                description: 'Vikarierade som lärare & senare som elevresurs i grundskolan och gymnasium.',
+                longDescription: 'Arbetade som lärarvikarie i grundskolan med ansvar för att undervisa. Senare anställdes jag som elevresurs för att stödja elever med särskilda behov. Samarbetade med lärare och föräldrar för att skapa en inkluderande lärmiljö.',
+            },
+            7: {
+                title: 'Vårdbiträde & Personlig Assistent',
+                company: 'Hudiksvalls kommun',
+                description: 'Säsongsbetonat arbetade som vårdbiträde på hemtjänst, gruppboende och personlig assistent.',
+                longDescription: 'Erbjöd omsorg och stöd till äldre och personer med funktionsnedsättningar. Arbetet inkluderade personlig hygien, medicinering, måltidsstöd och social interaktion. Utvecklade empati, tålamod och förmåga att arbeta i team inom vårdsektorn.',
+            },
+            8: {
+                title: 'Ljudtekniker & Musikproducent',
+                company: 'Egen regi, Gigant Kulturkollektiv',
+                description: 'Arbetar med ljudproduktion och live-ljudteknik.',
+                longDescription: 'Ansvarar för ljudproduktion, mixning och mastering av musikprojekt. Producerar musik och samarbetar med artister inom pop, hiphop och elektronisk musik. Ansvarar för hela produktionskedjan, från idé till färdig master.',
+            },
+            9: {
+                title: 'Receptionspersonal',
+                company: 'Perth Youth Hostel',
+                description: 'Ansvarade för in- och utcheckning samt kundservice.',
+                longDescription: 'Arbetade som receptionspersonal på ett vandrarhem i Perth, Skottland. Hanterade in- och utcheckningar, bokningar och gav information om lokala sevärdheter. Utvecklade starka kommunikationsfärdigheter och förmåga att arbeta i en snabb miljö med internationella gäster.',
+            },
+            10: {
+                title: 'Konfirmationsledare',
+                company: 'Forsa-Högs församling',
+                description: 'Ledde konfirmandgrupper och organiserade aktiviteter för ungdomar.',
+                longDescription: 'Ideellt arbete som konfirmationsledare i Forsa-Högs församling. Ansvarade för att planera, genomföra samt leda gruppaktiviteter och skapa en trygg miljö för ungdomar att utforska sin personliga utveckling. Med åren ökade mitt ansvar då jag blev drivande i att utveckla och stötta ledargruppen med fokus på gruppdynamik, planering och social utveckling.',
+            },
+            11: {
+                title: 'Klassrepresentant i ledningsgrupp',
+                company: 'Edugrade',
+                description: 'Representerar studenternas åsikter och bidrar till utbildningens utveckling.',
+                longDescription: 'Representerar eleverna i ledningsgruppen och deltar i beslut om utbildningens innehåll, kvalitet och utveckling. Bidrar med elevperspektiv och kommunikation mellan klass, skolledning och branschen.',
+            },
+            12: {
+                title: 'Systemutvecklare .NET med AI-kompetens',
+                company: 'Edugrade',
+                description: 'Tvåårig YH-utbildning med fokus på systemutveckling i .NET, webbutveckling, databaser och AI.',
+                longDescription: 'Tvåårig yrkeshögskoleutbildning med fokus på objektorienterad programmering i C# och .NET. Utbildningen omfattar frontendutveckling med HTML, CSS och JavaScript, backendutveckling i ASP.NET, databaser, designmönster, arkitektur samt projektledning med agila metoder. Innehåller även kurser i DevOps, molnbaserade AI-komponenter i Microsoft Azure samt en längre LIA-period och examensarbete med tydlig koppling till näringslivet.',
+            },
+            13: {
+                title: 'Musikproduktion & Ljudteknik',
+                company: 'Umeå Universitet',
+                description: 'Skapande Musik - Musikproduktion & Ljudteknik',
+                longDescription: 'Musikproduktion & Ljudteknik med inriktning mot skapande musik. Studier inkluderade ljudinspelning, mixning, mastering, musikteori, arrangering och produktionstekniker. Praktiska projekt inom olika musikgenrer samt samarbete med artister och producenter för att utveckla en professionell portfölj.',
+            },
+            14: {
+                title: 'Gymnasieexamen, Samhällsvetenskapliga programmet - Medier, information & kommunikation',
+                company: 'Bromangymnasiet',
+                description: 'Samhällsvetenskapliga programmet med inriktning mot medier, information & kommunikation.',
+                longDescription: 'Studier inom samhällsvetenskap med fokus på medier, information och kommunikation. Kurser inkluderade journalistik, medieproduktion, kommunikationsteori, samhällskunskap och projektarbete inom medieproduktion. Praktiska erfarenheter av att skapa innehåll för olika medier samt utveckling av kritiskt tänkande och analysförmåga.',
+            },
         },
         projects: {
             1: {
@@ -221,6 +371,117 @@ export const translations: Record<Language, TranslationStrings> = {
             frontend: 'Frontend',
             backend: 'Backend & Languages',
             tools: 'Databases & Tools',
+        },
+        experience: {
+            title: 'Experience',
+            subtitle: '(What I\'ve done)',
+            viewAll: 'View all',
+            current: 'Current',
+            types: {
+                work: 'Work',
+                education: 'Education',
+                certificate: 'Certificate',
+                volunteer: 'Volunteer',
+            },
+        },
+        experienceModal: {
+            title: 'My Experience',
+            close: 'Close',
+            period: 'Period',
+            location: 'Location',
+            skills: 'Skills',
+            types: {
+                work: 'Work Experience',
+                education: 'Education',
+                certificate: 'Certificates',
+                volunteer: 'Volunteer Work',
+            },
+        },
+        experiences: {
+            1: {
+                title: 'Student Supervisor',
+                company: 'Nordanstig Municipality',
+                description: 'Supported students with special needs in elementary school.',
+                longDescription: 'Worked as a student supervisor focusing on supporting students with neuropsychiatric diagnoses and various learning needs. Collaborated closely with students, educators, and guardians to create safety, structure, individualized learning, and personal development.',
+            },
+            2: {
+                title: 'Student Support Worker',
+                company: 'Lekeberg Municipality',
+                description: 'Supported students with special needs in elementary school.',
+                longDescription: 'Resource in K-9 education with responsibility for students with diabetes. Also worked in after-school care. Combined practical responsibility with care and social support.',
+            },
+            3: {
+                title: 'Music & Audio Production Instructor',
+                company: 'Self-employed',
+                description: 'Taught students music and audio production at a recreational level.',
+                longDescription: 'Led online courses in music production for youth (ages 13–21) focusing on audio production, music theory, and instrument instruction. Developed individual lesson plans, organized concerts and workshops, and inspired students to explore their creativity through music.',
+            },
+            4: {
+                title: 'Sales Associate',
+                company: 'Systembolaget',
+                description: 'Worked in customer service and sales at Systembolaget.',
+                longDescription: 'Seasonal work. Responsible for customer service, product knowledge, and cash handling in a retail environment. Helped customers find products, provided recommendations based on customer needs, and developed logistics skills.',
+            },
+            5: {
+                title: 'Substitute Museum Educator',
+                company: 'Hudiksvall Museum',
+                description: 'Led workshops and guided visitors at the museum.',
+                longDescription: 'Worked as a substitute at Hudiksvall Museum during the autumn season. Led educational workshops for children and adults, guided groups through exhibitions, and assisted with event planning. Gained experience communicating historical content in an engaging way.',
+            },
+            6: {
+                title: 'Substitute Teacher & Student Support',
+                company: 'Hudiksvall Municipality',
+                description: 'Substitute teacher & later student support in elementary and high school.',
+                longDescription: 'Worked as a substitute teacher in elementary school with responsibility for teaching. Later employed as student support to help students with special needs. Collaborated with teachers and parents to create an inclusive learning environment.',
+            },
+            7: {
+                title: 'Care Assistant & Personal Assistant',
+                company: 'Hudiksvall Municipality',
+                description: 'Seasonal work as care assistant in home care, group housing, and personal assistant.',
+                longDescription: 'Provided care and support to elderly and people with disabilities. Work included personal hygiene, medication, meal support, and social interaction. Developed empathy, patience, and ability to work in teams within the healthcare sector.',
+            },
+            8: {
+                title: 'Audio Engineer & Music Producer',
+                company: 'Self-employed, Gigant Kulturkollektiv',
+                description: 'Works with audio production and live sound engineering.',
+                longDescription: 'Responsible for audio production, mixing, and mastering of music projects. Produces music and collaborates with artists in pop, hip-hop, and electronic music. Manages the entire production chain, from idea to finished master.',
+            },
+            9: {
+                title: 'Reception Staff',
+                company: 'Perth Youth Hostel',
+                description: 'Responsible for check-in/check-out and customer service.',
+                longDescription: 'Worked as reception staff at a youth hostel in Perth, Scotland. Handled check-ins and check-outs, bookings, and provided information about local attractions. Developed strong communication skills and ability to work in a fast-paced environment with international guests.',
+            },
+            10: {
+                title: 'Confirmation Leader',
+                company: 'Forsa-Högs Parish',
+                description: 'Led confirmation groups and organized activities for youth.',
+                longDescription: 'Volunteer work as confirmation leader in Forsa-Högs parish. Responsible for planning, executing, and leading group activities and creating a safe environment for youth to explore their personal development. Over the years, my responsibility increased as I became a driving force in developing and supporting the leadership team with focus on group dynamics, planning, and social development.',
+            },
+            11: {
+                title: 'Class Representative in Management Group',
+                company: 'Edugrade',
+                description: 'Represents student opinions and contributes to education development.',
+                longDescription: 'Represents students in the management group and participates in decisions about education content, quality, and development. Contributes with student perspective and communication between class, school management, and industry.',
+            },
+            12: {
+                title: '.NET Systems Developer with AI Competence',
+                company: 'Edugrade',
+                description: 'Two-year vocational education focusing on .NET systems development, web development, databases, and AI.',
+                longDescription: 'Two-year vocational higher education focusing on object-oriented programming in C# and .NET. The education covers frontend development with HTML, CSS, and JavaScript, backend development in ASP.NET, databases, design patterns, architecture, and project management with agile methods. Also includes courses in DevOps, cloud-based AI components in Microsoft Azure, and an extended internship period and thesis with clear industry connection.',
+            },
+            13: {
+                title: 'Music Production & Audio Engineering',
+                company: 'Umeå University',
+                description: 'Creative Music - Music Production & Audio Engineering',
+                longDescription: 'Music Production & Audio Engineering with focus on creative music. Studies included audio recording, mixing, mastering, music theory, arranging, and production techniques. Practical projects in various music genres and collaboration with artists and producers to develop a professional portfolio.',
+            },
+            14: {
+                title: 'High School Diploma, Social Sciences - Media, Information & Communication',
+                company: 'Bromangymnasiet',
+                description: 'Social Sciences program with focus on media, information & communication.',
+                longDescription: 'Studies in social sciences with focus on media, information, and communication. Courses included journalism, media production, communication theory, social studies, and project work in media production. Practical experience creating content for various media and development of critical thinking and analytical skills.',
+            },
         },
         projects: {
             1: {
