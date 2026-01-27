@@ -377,7 +377,7 @@ export const translations: Record<Language, TranslationStrings> = {
                 desc: 'En fullstack Google Drive-klon byggd som PoC med Angular 21 och Node.js, med fokus på typsäkerhet, modulär arkitektur och filhantering.',
                 longDesc: 'Detta projekt är en fullstack proof-of-concept av en Google Drive-liknande applikation, byggd med Angular 21 i frontend och Node.js med Express i backend. Applikationen stödjer säker filuppladdning via drag-and-drop, nedladdning, förhandsvisning och permanent borttagning av filer, kompletterat med realtidsbaserad fuzzy-sökning för snabb och fel­tolerant filhantering.' +
                     'Arkitekturen är modulär och typ­säker genom hela stacken, med delade DTO:er i TypeScript mellan klient och server. Backend använder Multer för filhantering, Zod för validering och Helmet för grundläggande säkerhet. En egenutvecklad DbService abstraherar fil-I/O och möjliggör persistens via en JSON-baserad datalagring utan extern databas.',
-                role: 'Utvecklade hela applikationen från grunden, inklusive frontend, backend-integration och användarautentisering.',
+                role: 'Fullstack-utvecklare i team',
             },
         },
     },
@@ -641,7 +641,7 @@ export const translations: Record<Language, TranslationStrings> = {
                 category: 'Angular + Node.js',
                 desc: 'A fullstack Google Drive clone built as a proof-of-concept with Angular 21 and Node.js, focusing on type safety, modular architecture, and file management.',
                 longDesc: 'This project is a fullstack proof-of-concept of a Google Drive-like application, built with Angular 21 on the frontend and Node.js with Express on the backend. The application supports secure file upload via drag-and-drop, download, preview, and permanent deletion of files, complemented by real-time fuzzy search for fast and fault-tolerant file management. The architecture is modular and type-safe throughout the entire stack, with shared DTOs in TypeScript between client and server. The backend uses Multer for file handling, Zod for validation, and Helmet for basic security. A custom-built DbService abstracts file I/O and enables persistence through JSON-based data storage without an external database.',
-                role: 'Developed the entire application from scratch, including frontend, backend integration, and user authentication.',
+                role: 'Fullstack developer in team',
             },
         },
     },
