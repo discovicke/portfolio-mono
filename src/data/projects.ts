@@ -82,6 +82,7 @@ export const projects: Project[] = [
             "Den inkluderar sektioner för projekt, om mig, kontaktinformation samt en anpassad modal för projektvisning." +
             " Webbplatsen är också flerspråkig med stöd för i18n. Jag valde att utmana mig själv genom att hålla hemsidan monokrom och använda mig av negativa utrymmen och storlekar för att ge en naturlig hierarki i användarupplevelsen.",
         technologies: ["React", "TypeScript", "CSS3", "HTML5", "i18n"],
+        liveUrl: "https://viktorjohansson.vercel.app/",
         repoUrl: "https://github.com/discovicke/portfolio-mono",
         year: "2026",
         role: "Ensam utvecklare - designade och implementerade hela webbplatsen från grunden."
