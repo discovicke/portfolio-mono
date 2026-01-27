@@ -38,7 +38,19 @@ const allExperiences: Experience[] = [
         skills: ['Pedagogik', 'Kommunikation', 'Problemlösning', 'Anpassningsförmåga'],
     },
     {
-        id: 3,
+      id: 3,
+        type: 'work',
+        title: 'Reservdelsförsäljare',
+        company: 'John Deere Forestry Sverige',
+        startDate: '2022-05',
+        endDate: '2022-08',
+        description: 'Arbetade med kundservice och försäljning av reservdelar inom skogsbruksindustrin.',
+        longDescription: 'Säsongsbetonat arbete i kundservice och försäljning av reservdelar. Hjälpte kunder att hitta rätt produkter, gav teknisk rådgivning och hanterade lagerlogistik. Utvecklade mina kunskaper inom fordonsdelar och ERP-system, förbättrade min problemlösnings- samt logistiska förmåga.',
+        location: 'Delsbo',
+        skills: ['Kundservice', 'Försäljning', 'Produktkunskap', 'Lagerhantering'],
+    },
+    {
+        id: 4,
         type: 'work',
         title: 'Kursledare i Musik & Ljudproduktion',
         company: 'Egen regi',
@@ -50,7 +62,7 @@ const allExperiences: Experience[] = [
         skills: ['Undervisning', 'Musikteori', 'Ljudproduktion', 'Kommunikation'],
     },
     {
-        id: 4,
+        id: 5,
         type: 'work',
         title: 'Butiksbiträde',
         company: 'Systembolaget',
@@ -62,7 +74,7 @@ const allExperiences: Experience[] = [
         skills: ['Kundservice', 'Försäljning', 'Produktkunskap', 'Kassahantering'],
     },
     {
-        id: 5,
+        id: 6,
         type: 'work',
         title: 'Vikarierande museipedagog',
         company: 'Hudiksvalls museum',
@@ -74,7 +86,7 @@ const allExperiences: Experience[] = [
         skills: ['Pedagogik', 'Kommunikation', 'Eventplanering', 'Kundservice'],
     },
     {
-        id: 6,
+        id: 7,
         type: 'work',
         title: 'Lärarvikarie & Elevresurs',
         company: 'Hudiksvalls kommun',
@@ -86,7 +98,7 @@ const allExperiences: Experience[] = [
         skills: ['Lyhördhet', 'Pedagogik', 'Anpassningsförmåga', 'Kommunikation'],
     },
     {
-        id: 7,
+        id: 8,
         type: 'work',
         title: 'Vårdbiträde & Personlig Assistent',
         company: 'Hudiksvalls kommun',
@@ -98,7 +110,7 @@ const allExperiences: Experience[] = [
         skills: ['Omsorg', 'Empati', 'Kommunikation', 'Tålamod'],
     },
     {
-        id: 8,
+        id: 9,
         type: 'work',
         title: 'Ljudtekniker & Musikproducent',
         company: 'Egen regi, Gigant Kulturkollektiv',
@@ -110,7 +122,7 @@ const allExperiences: Experience[] = [
         skills: ['Ljudproduktion', 'Mixning', 'Mastering', 'Live-ljudteknik', 'Kundkontakt'],
     },
     {
-        id: 9,
+        id: 10,
         type: 'work',
         title: 'Receptionspersonal',
         company: 'Perth Youth Hostel',
@@ -123,7 +135,7 @@ const allExperiences: Experience[] = [
     },
     // === IDEELLT ARBETE ===
     {
-        id: 10,
+        id: 11,
         type: 'volunteer',
         title: 'Konfirmationsledare',
         company: 'Forsa-Högs församling',
@@ -135,7 +147,7 @@ const allExperiences: Experience[] = [
         skills: ['Ledarskap', 'Pedagogik', 'Kommunikation', 'Organisationsförmåga'],
     },
     {
-        id: 11,
+        id: 12,
         type: 'volunteer',
         title: 'Klassrepresentant i ledningsgrupp',
         company: 'Edugrade',
@@ -148,7 +160,7 @@ const allExperiences: Experience[] = [
     },
     // === UTBILDNING ===
     {
-        id: 12,
+        id: 13,
         type: 'education',
         title: 'Systemutvecklare .NET med AI-kompetens',
         company: 'Edugrade',
@@ -174,7 +186,7 @@ const allExperiences: Experience[] = [
         ],
     },
     {
-        id: 13,
+        id: 14,
         type: 'education',
         title: 'Musikproduktion & Ljudteknik',
         company: 'Umeå Universitet',
@@ -194,7 +206,7 @@ const allExperiences: Experience[] = [
         ],
     },
     {
-        id: 14,
+        id: 15,
         type: 'education',
         title: 'Gymnasieexamen, Samhällsvetenskapliga programmet - Medier, information & kommunikation',
         company: 'Bromangymnasiet',
@@ -225,7 +237,7 @@ const allExperiences: Experience[] = [
 
 // Bestäm vilka ID:n som visas på hemsidan (max 3 rekommenderas)
 // Ändra denna array för att visa andra entries på hemsidan
-const featuredIds: number[] = [12, 9, 7];
+const featuredIds: number[] = [13, 12, 1];
 
 // Exportera konfiguration
 export const experienceConfig: ExperienceConfig = {
