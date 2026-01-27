@@ -79,8 +79,7 @@ export const projects: Project[] = [
         desc: 'En fullstack Google Drive-klon byggd som proof-of-concept med Angular 21 och Node.js, med fokus på typsäkerhet, modulär arkitektur och filhantering.',
         img: '/duckdrive-preview.png',
         longDesc:
-            'Detta projekt är en fullstack proof-of-concept av en Google Drive-liknande applikation, byggd med Angular 21 i frontend och Node.js med Express i backend. Applikationen stödjer säker filuppladdning via drag-and-drop, nedladdning, förhandsvisning och permanent borttagning av filer, kompletterat med realtidsbaserad fuzzy-sökning för snabb och fel­tolerant filhantering.\n' +
-            '\n' +
+            'Detta projekt är en fullstack proof-of-concept av en Google Drive-liknande applikation, byggd med Angular 21 i frontend och Node.js med Express i backend. Applikationen stödjer säker filuppladdning via drag-and-drop, nedladdning, förhandsvisning och permanent borttagning av filer, kompletterat med realtidsbaserad fuzzy-sökning för snabb och fel­tolerant filhantering.' +
             'Arkitekturen är modulär och typ­säker genom hela stacken, med delade DTO:er i TypeScript mellan klient och server. Backend använder Multer för filhantering, Zod för validering och Helmet för grundläggande säkerhet. En egenutvecklad DbService abstraherar fil-I/O och möjliggör persistens via en JSON-baserad datalagring utan extern databas.',
         technologies: [
             'Angular 21',
