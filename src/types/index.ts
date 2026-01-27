@@ -42,3 +42,23 @@ export interface Spark {
     startTime: number;   // När gnistan skapades
 }
 
+// Interface för en CV-entry (arbete, utbildning, certifikat, ideellt arbete)
+export interface Experience {
+    id: number;                          // Unikt ID
+    type: 'work' | 'education' | 'certificate' | 'volunteer';  // Typ av åtagande
+    title: string;                       // Titel/position
+    company: string;                     // Företag/organisation/skola
+    startDate: string;                   // Startdatum (t.ex. "2023-01" eller "2023")
+    endDate?: string;                    // Slutdatum (valfritt, om pågående)
+    isCurrent?: boolean;                 // Om det är pågående
+    description: string;                 // Kort beskrivning för kortet
+    longDescription?: string;            // Längre beskrivning för modal
+    location?: string;                   // Plats (valfritt)
+    skills?: string[];                   // Relevanta färdigheter (valfritt)
+}
+
+// Interface för att hantera vilka experiences som visas på hemsidan
+export interface ExperienceConfig {
+    featured: number[];    // Array med ID:n för de som visas på hemsidan
+    all: Experience[];     // Alla experiences
+}
