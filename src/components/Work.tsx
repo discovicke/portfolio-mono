@@ -47,9 +47,9 @@ const Work: React.FC = () => {
                     <h2 className="work-title">
                         {t.work.title}
                     </h2>
-                    <span className="work-subtitle">
+                    <p className="work-subtitle">
                         {t.work.subtitle}
-                    </span>
+                    </p>
                 </div>
 
                 {/* Projekt-rutnät */}
