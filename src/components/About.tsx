@@ -6,6 +6,7 @@
  */
 
 import React from 'react';
+import { Download } from 'lucide-react';
 import './About.css';
 import { Polaroid } from './Polaroid';
 import { useLanguage } from '../i18n/LanguageContext';
@@ -64,6 +65,20 @@ const About: React.FC = () => {
                         />
                     </div>
                 </div>
+                <div className="cv-download">
+                    <h3 className="cv-download-title font-doodle">{t.about.cvDownload.title}</h3>
+                    <div className="cv-buttons">
+                        <a href="/cv/CV-Viktor-Johansson-NETdev.pdf" download className="cv-button font-doodle">
+                            {t.about.cvDownload.buttonSv}
+                            <Download size={18} strokeWidth={2} />
+                        </a>
+                        <a href="/cv/CV-Viktor-Johansson-NETdev-EN.pdf" download className="cv-button font-doodle">
+                            {t.about.cvDownload.buttonEn}
+                            <Download size={18} strokeWidth={2} />
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </section>
     );
