@@ -10,38 +10,6 @@ import {type Project} from '../types';
 export const projects: Project[] = [
     {
         id: 1,
-        title: "Ducklord Chatking",
-        category: "C# + ASP.NET",
-        desc: "En chatklient skapad i C# med hjälp av ramverket Raylib.",
-        img: "/ducklord-preview.png",
-        longDesc:
-            "Ducklord Chatking är en realtids-chatklient utvecklad i C# med Raylib-ramverket. " +
-            "Programmet visar hur man kan hantera användargränssnitt, trådar och grafisk rendering i ett chattprogram. " +
-            "Klienten har stöd för flera användare, möjlighet att välja inloggningsuppgifter, färgkodade meddelanden samt en charmig anka som maskot.",
-        technologies: ["C#", "Raylib", "Multithreading", ".NET", "ASP.NET"],
-        repoUrl: "https://github.com/discovicke/DucklordChatking",
-        year: "2025",
-        role: "Fullstack-utvecklare i team - klient-server-kommunikation och bidrog till UI-implementation för att visualisera och hantera kommunikationsdata."
-    },
-    {
-        id: 2,
-        title: "Personliga hemsidan",
-        category: "React + TypeScript",
-        desc: "Min personliga portfolio-webbplats byggd med React och TypeScript.",
-        img: "/ViktorJohanssonHero.png",
-        longDesc:
-            "Denna portfolio-webbplats är byggd med React och TypeScript för att visa upp mina projekt och färdigheter. " +
-            "Webbplatsen är responsiv, tillgänglig och använder moderna webbutvecklingstekniker. " +
-            "Den inkluderar sektioner för projekt, om mig, kontaktinformation samt en anpassad modal för projektvisning." +
-            " Webbplatsen är också flerspråkig med stöd för i18n. Jag valde att utmana mig själv genom att hålla hemsidan monokrom och använda mig av negativa utrymmen och storlekar för att ge en naturlig hierarki i användarupplevelsen.",
-        technologies: ["React", "TypeScript", "CSS3", "HTML5", "i18n"],
-        liveUrl: "https://viktorjohansson.vercel.app/",
-        repoUrl: "https://github.com/discovicke/portfolio-mono",
-        year: "2026",
-        role: "Ensam utvecklare - designade och implementerade hela webbplatsen från grunden."
-    },
-    {
-        id: 3,
         title: "ELLA - Edugrade Location & Logistics Assistant",
         category: "Fullstack WEB App",
         desc: "Rumboknings- och hanteringssystem byggt med Node.js, Express, SQLite och vanilla JavaScript",
@@ -52,12 +20,13 @@ export const projects: Project[] = [
             "Frontend är byggd med vanilla JavaScript, medan backend använder Node.js med Express och SQLite för datalagring. " +
             "Projektet inkluderar ett responsivt gränssnitt och realtidsuppdateringar.",
         technologies: ["Node.js", "Express", "SQLite", "JavaScript", "HTML5", "CSS3", "REST API"],
+        liveUrl: 'https://ella-fullstack-booking-system.onrender.com/',
         repoUrl: "https://github.com/discovicke/ELLA-room-booking-system",
         year: "2025",
         role: "Fullstack-utvecklare i team - extra fokus på backend-arkitektur och databasdesign."
     },
     {
-        id: 4,
+        id: 2,
         title: "Ink & Render",
         category: "Parsing & AST",
         desc: "En ramverksfri Markdown-editor med realtidsförhandsvisning, byggd som ett modulärt projekt i ren vanilla JavaScript.",
@@ -73,8 +42,8 @@ export const projects: Project[] = [
         role: "Ensam utvecklare - designade och implementerade hela parsningslogiken från grunden."
     },
     {
-        id: 5,
-        title: 'Google Drive Clone',
+        id: 3,
+        title: 'Google Drive-klon',
         category: 'Angular + Node.js',
         desc: 'En fullstack Google Drive-klon byggd som proof-of-concept med Angular 21 och Node.js, med fokus på typsäkerhet, modulär arkitektur och filhantering.',
         img: '/duckdrive-preview.png',
@@ -94,6 +63,38 @@ export const projects: Project[] = [
         repoUrl: 'https://github.com/discovicke/google-drive-clone',
         year: '2026',
         role: 'Fullstack-utvecklare i team'
+    },
+    {
+        id: 4,
+        title: "Ducklord Chatking",
+        category: "C# + ASP.NET",
+        desc: "En chatklient skapad i C# med hjälp av ramverket Raylib.",
+        img: "/ducklord-preview.png",
+        longDesc:
+            "Ducklord Chatking är en realtids-chatklient utvecklad i C# med Raylib-ramverket. " +
+            "Programmet visar hur man kan hantera användargränssnitt, trådar och grafisk rendering i ett chattprogram. " +
+            "Klienten har stöd för flera användare, möjlighet att välja inloggningsuppgifter, färgkodade meddelanden samt en charmig anka som maskot.",
+        technologies: ["C#", "Raylib", "Multithreading", ".NET", "ASP.NET"],
+        repoUrl: "https://github.com/discovicke/DucklordChatking",
+        year: "2025",
+        role: "Fullstack-utvecklare i team - klient-server-kommunikation och bidrog till UI-implementation för att visualisera och hantera kommunikationsdata."
+    },
+    {
+        id: 5,
+        title: "Personliga hemsidan",
+        category: "React + TypeScript",
+        desc: "Min personliga portfolio-webbplats byggd med React och TypeScript.",
+        img: "/ViktorJohanssonHero.png",
+        longDesc:
+            "Denna portfolio-webbplats är byggd med React och TypeScript för att visa upp mina projekt och färdigheter. " +
+            "Webbplatsen är responsiv, tillgänglig och använder moderna webbutvecklingstekniker. " +
+            "Den inkluderar sektioner för projekt, om mig, kontaktinformation samt en anpassad modal för projektvisning." +
+            " Webbplatsen är också flerspråkig med stöd för i18n. Jag valde att utmana mig själv genom att hålla hemsidan monokrom och använda mig av negativa utrymmen och storlekar för att ge en naturlig hierarki i användarupplevelsen.",
+        technologies: ["React", "TypeScript", "CSS3", "HTML5", "i18n"],
+        liveUrl: "https://viktorjohansson.vercel.app/",
+        repoUrl: "https://github.com/discovicke/portfolio-mono",
+        year: "2026",
+        role: "Ensam utvecklare - designade och implementerade hela webbplatsen från grunden."
     },
 ];
 

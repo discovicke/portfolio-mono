@@ -40,6 +40,11 @@ export interface TranslationStrings {
         bio: string[];
         signature: string;
         photoAlt: string;
+        cvDownload: {
+            title: string;
+            buttonSv: string;
+            buttonEn: string;
+        };
     };
 
     // Footer
@@ -153,6 +158,11 @@ export const translations: Record<Language, TranslationStrings> = {
             ],
             signature: 'Viktor',
             photoAlt: 'En bild på Viktor Johansson när han blickar bort från kameran',
+            cvDownload: {
+                title: 'Ta med mitt CV',
+                buttonSv: 'CV (Svenska)',
+                buttonEn: 'CV (English)',
+            },
         },
         footer: {
             cta: 'Hör av dig!',
@@ -344,40 +354,40 @@ export const translations: Record<Language, TranslationStrings> = {
         },
         projects: {
             1: {
-                title: 'Ducklord Chatking',
-                category: 'C# + ASP.NET',
-                desc: 'En chatklient skapad i C# med hjälp av ramverket Raylib.',
-                longDesc: 'Ducklord Chatking är en realtids-chatklient utvecklad i C# med Raylib-ramverket. Programmet visar hur man kan hantera användargränssnitt, trådar och grafisk rendering i ett chattprogram. Klienten har stöd för flera användare, möjlighet att välja inloggningsuppgifter, färgkodade meddelanden samt en charmig anka som maskot.',
-                role: 'Fullstack-utvecklare i team - klient-server-kommunikation och bidrog till UI-implementation för att visualisera och hantera kommunikationsdata.',
-            },
-            2: {
-                title: 'Portfolio',
-                category: 'React + TypeScript',
-                desc: 'Min personliga portfolio-webbplats byggd med React och TypeScript.',
-                longDesc: 'Denna portfolio-webbplats är byggd med React och TypeScript för att visa upp mina projekt och färdigheter. Webbplatsen är responsiv, tillgänglig och använder moderna webbutvecklingstekniker. Den inkluderar sektioner för projekt, om mig, kontaktinformation samt en anpassad modal för projektvisning. Webbplatsen är också flerspråkig med stöd för i18n. Jag valde att utmana mig själv genom att hålla hemsidan monokrom och använda mig av negativa utrymmen och storlekar för att ge en naturlig hierarki i användarupplevelsen.',
-                role: 'Ensam utvecklare - designade och implementerade hela webbplatsen från grunden.',
-            },
-            3: {
                 title: 'ELLA - Edugrade Location & Logistics Assistant',
                 category: 'Fullstack WEB App',
                 desc: 'Rumboknings- och hanteringssystem byggt med Node.js, Express, SQLite och vanilla JavaScript',
                 longDesc: 'ELLA är ett komplett rumbokningssystem utvecklat för Edugrade. Systemet hanterar rumsreservationer, användarautentisering och administratörsverktyg. Frontend är byggd med vanilla JavaScript, medan backend använder Node.js med Express och SQLite för datalagring. Projektet inkluderar ett responsivt gränssnitt och realtidsuppdateringar.',
                 role: 'Fullstack-utvecklare i team - extra fokus på backend-arkitektur och databasdesign.',
             },
-            4: {
+            2: {
                 title: 'Ink & Render',
                 category: 'Parsing & AST',
                 desc: 'En ramverksfri Markdown-editor med realtidsförhandsvisning, byggd som ett modulärt projekt i ren vanilla JavaScript.',
                 longDesc: 'Ink & Render är en från-grunden-byggd Markdown-editor som demonstrerar parsning och AST-hantering (Abstract Syntax Tree). Editorn konverterar Markdown till HTML i realtid utan externa bibliotek. Projektet är uppbyggt modulärt med separation mellan lexer, parser och renderer, vilket gör koden lätt att förstå och utöka.',
                 role: 'Ensam utvecklare - designade och implementerade hela parsningslogiken från grunden.',
             },
-            5: {
-                title: 'Google Drive Clone',
+            3: {
+                title: 'Google Drive-klon',
                 category: 'Angular + Node.js',
-                desc: 'En fullstack Google Drive-klon byggd som PoC med Angular 21 och Node.js, med fokus på typsäkerhet, modulär arkitektur och filhantering.',
+                desc: 'En fullstack Google Drive-klon byggd som proof-of-concept med Angular 21 och Node.js, med fokus på typsäkerhet, modulär arkitektur och filhantering.',
                 longDesc: 'Detta projekt är en fullstack proof-of-concept av en Google Drive-liknande applikation, byggd med Angular 21 i frontend och Node.js med Express i backend. Applikationen stödjer säker filuppladdning via drag-and-drop, nedladdning, förhandsvisning och permanent borttagning av filer, kompletterat med realtidsbaserad fuzzy-sökning för snabb och fel­tolerant filhantering.' +
                     'Arkitekturen är modulär och typ­säker genom hela stacken, med delade DTO:er i TypeScript mellan klient och server. Backend använder Multer för filhantering, Zod för validering och Helmet för grundläggande säkerhet. En egenutvecklad DbService abstraherar fil-I/O och möjliggör persistens via en JSON-baserad datalagring utan extern databas.',
                 role: 'Fullstack-utvecklare i team',
+            },
+            4: {
+                title: 'Ducklord Chatking',
+                category: 'C# + ASP.NET',
+                desc: 'En chatklient skapad i C# med hjälp av ramverket Raylib.',
+                longDesc: 'Ducklord Chatking är en realtids-chatklient utvecklad i C# med Raylib-ramverket. Programmet visar hur man kan hantera användargränssnitt, trådar och grafisk rendering i ett chattprogram. Klienten har stöd för flera användare, möjlighet att välja inloggningsuppgifter, färgkodade meddelanden samt en charmig anka som maskot.',
+                role: 'Fullstack-utvecklare i team - klient-server-kommunikation och bidrog till UI-implementation för att visualisera och hantera kommunikationsdata.',
+            },
+            5: {
+                title: 'Personliga hemsidan',
+                category: 'React + TypeScript',
+                desc: 'Min personliga portfolio-webbplats byggd med React och TypeScript.',
+                longDesc: 'Denna portfolio-webbplats är byggd med React och TypeScript för att visa upp mina projekt och färdigheter. Webbplatsen är responsiv, tillgänglig och använder moderna webbutvecklingstekniker. Den inkluderar sektioner för projekt, om mig, kontaktinformation samt en anpassad modal för projektvisning. Webbplatsen är också flerspråkig med stöd för i18n. Jag valde att utmana mig själv genom att hålla hemsidan monokrom och använda mig av negativa utrymmen och storlekar för att ge en naturlig hierarki i användarupplevelsen.',
+                role: 'Ensam utvecklare - designade och implementerade hela webbplatsen från grunden.',
             },
         },
     },
@@ -413,6 +423,11 @@ export const translations: Record<Language, TranslationStrings> = {
             ],
             signature: 'Viktor',
             photoAlt: 'A photo of Viktor Johansson looking away from the camera',
+            cvDownload: {
+                title: 'Get my CV',
+                buttonSv: 'CV (Swedish)',
+                buttonEn: 'CV (English)',
+            },
         },
         footer: {
             cta: 'Get in touch!',
@@ -609,39 +624,39 @@ export const translations: Record<Language, TranslationStrings> = {
         },
         projects: {
             1: {
-                title: 'Ducklord Chatking',
-                category: 'C# + ASP.NET',
-                desc: 'A chat client built in C# using the Raylib framework.',
-                longDesc: "Ducklord Chatking is a real-time chat client developed in C# with the Raylib framework. The program demonstrates how to handle user interfaces, threads, and graphical rendering in a chat application. The client supports multiple users, login credential selection, color-coded messages, and features a charming duck mascot.",
-                role: 'Fullstack developer in team - client-server communication and contributed to UI implementation for visualizing and handling communication data.',
-            },
-            2: {
-                title: 'Personal Portfolio Website',
-                category: 'React + TypeScript',
-                desc: 'My personal portfolio website built with React and TypeScript.',
-                longDesc: 'This portfolio website is built with React and TypeScript to showcase my projects and skills. The site is responsive, accessible, and uses modern web development techniques. It includes sections for projects, about me, contact information, and a custom modal for project viewing. The website is also multilingual with i18n support. I challenged myself by keeping the site monochrome and using negative space and scale to create a natural hierarchy in the user experience.',
-                role: 'Solo developer - designed and implemented the entire website from scratch.',
-            },
-            3: {
                 title: 'ELLA - Edugrade Location & Logistics Assistant',
                 category: 'Fullstack Web App',
                 desc: 'Room booking and management system built with Node.js, Express, SQLite and vanilla JavaScript',
                 longDesc: "ELLA is a complete room booking system developed for Edugrade. The system handles room reservations, user authentication, and admin tools. Frontend is built with vanilla JavaScript, while backend uses Node.js with Express and SQLite for data storage. The project includes a responsive interface and real-time updates.",
                 role: 'Fullstack developer in team - extra focus on backend architecture and database design.',
             },
-            4: {
+            2: {
                 title: 'Ink & Render',
                 category: 'Parsing & AST',
                 desc: 'A framework-free Markdown editor with live preview, built as a modular project in pure vanilla JavaScript.',
                 longDesc: "Ink & Render is a from-scratch Markdown editor that demonstrates parsing and AST (Abstract Syntax Tree) handling. The editor converts Markdown to HTML in real-time without external libraries. The project is built modularly with separation between lexer, parser, and renderer, making the code easy to understand and extend.",
                 role: 'Solo developer - designed and implemented the entire parsing logic from scratch.',
             },
-            5: {
+            3: {
                 title: 'Google Drive Clone',
                 category: 'Angular + Node.js',
                 desc: 'A fullstack Google Drive clone built as a proof-of-concept with Angular 21 and Node.js, focusing on type safety, modular architecture, and file management.',
                 longDesc: 'This project is a fullstack proof-of-concept of a Google Drive-like application, built with Angular 21 on the frontend and Node.js with Express on the backend. The application supports secure file upload via drag-and-drop, download, preview, and permanent deletion of files, complemented by real-time fuzzy search for fast and fault-tolerant file management. The architecture is modular and type-safe throughout the entire stack, with shared DTOs in TypeScript between client and server. The backend uses Multer for file handling, Zod for validation, and Helmet for basic security. A custom-built DbService abstracts file I/O and enables persistence through JSON-based data storage without an external database.',
                 role: 'Fullstack developer in team',
+            },
+            4: {
+                title: 'Ducklord Chatking',
+                category: 'C# + ASP.NET',
+                desc: 'A chat client built in C# using the Raylib framework.',
+                longDesc: "Ducklord Chatking is a real-time chat client developed in C# with the Raylib framework. The program demonstrates how to handle user interfaces, threads, and graphical rendering in a chat application. The client supports multiple users, login credential selection, color-coded messages, and features a charming duck mascot.",
+                role: 'Fullstack developer in team - client-server communication and contributed to UI implementation for visualizing and handling communication data.',
+            },
+            5: {
+                title: 'Personal Portfolio Website',
+                category: 'React + TypeScript',
+                desc: 'My personal portfolio website built with React and TypeScript.',
+                longDesc: 'This portfolio website is built with React and TypeScript to showcase my projects and skills. The site is responsive, accessible, and uses modern web development techniques. It includes sections for projects, about me, contact information, and a custom modal for project viewing. The website is also multilingual with i18n support. I challenged myself by keeping the site monochrome and using negative space and scale to create a natural hierarchy in the user experience.',
+                role: 'Solo developer - designed and implemented the entire website from scratch.',
             },
         },
     },
