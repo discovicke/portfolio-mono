@@ -33,7 +33,7 @@ export const projects: Project[] = [
         img: "/asciiforge-preview.png",
         longDesc: "Detta projekt är en fullstack webbaserad ASCII-generator som konverterar bilder till textbaserad grafik i realtid. Frontend är byggd i Angular och erbjuder ett terminalinspirerat gränssnitt med direkta visuella uppdateringar baserat på användarens inställningar. Backend är implementerad i ASP.NET och ansvarar för bildbehandling, luminansberäkning och mappning av pixlar till olika ASCII-teckenuppsättningar.\n" +
             "Applikationen stödjer flera ASCII-bibliotek samt justering av bredd, ljusstyrka, gamma och färginvertering. Kommunikationen mellan klient och server sker via API-anrop med FormData, där bild och konfigurationsdata behandlas effektivt utan att lagras permanent. Arkitekturen är uppdelad i tydliga lager för presentation, API och bearbetningslogik, med fokus på deterministiska resultat, god prestanda och ett konsekvent visuellt uttryck.",
-        technologies: ["Angular", "ASP.NET", "C#", "REST API"],
+        technologies: [ "Angular", "ASP.NET", "C#", "REST API", "SCSS", "Image Processing" ],
         liveUrl: "https://asciiforge.vercel.app/",
         repoUrl: "https://github.com/discovicke/Image2Ascii",
         year: "2026",
