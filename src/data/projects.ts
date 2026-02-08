@@ -27,6 +27,20 @@ export const projects: Project[] = [
     },
     {
         id: 2,
+        title: "[ ASCII_FORGE ]",
+        category: "Fullstack WEB App",
+        desc: "En fullstack webbaserad ASCII-generator som konverterar bilder till textbaserad grafik i realtid, byggd med Angular och ASP.NET.",
+        img: "/asciiforge-preview.png",
+        longDesc: "Detta projekt är en fullstack webbaserad ASCII-generator som konverterar bilder till textbaserad grafik i realtid. Frontend är byggd i Angular och erbjuder ett terminalinspirerat gränssnitt med direkta visuella uppdateringar baserat på användarens inställningar. Backend är implementerad i ASP.NET och ansvarar för bildbehandling, luminansberäkning och mappning av pixlar till olika ASCII-teckenuppsättningar.\n" +
+            "Applikationen stödjer flera ASCII-bibliotek samt justering av bredd, ljusstyrka, gamma och färginvertering. Kommunikationen mellan klient och server sker via API-anrop med FormData, där bild och konfigurationsdata behandlas effektivt utan att lagras permanent. Arkitekturen är uppdelad i tydliga lager för presentation, API och bearbetningslogik, med fokus på deterministiska resultat, god prestanda och ett konsekvent visuellt uttryck.",
+        technologies: ["Angular", "ASP.NET", "C#", "REST API"],
+        liveUrl: "https://asciiforge.vercel.app/",
+        repoUrl: "https://github.com/discovicke/Image2Ascii",
+        year: "2026",
+        role: "Ensam utvecklare"
+    },
+    {
+        id: 3,
         title: "Ink & Render",
         category: "Parsing & AST",
         desc: "En ramverksfri Markdown-editor med realtidsförhandsvisning, byggd som ett modulärt projekt i ren vanilla JavaScript.",
@@ -42,7 +56,7 @@ export const projects: Project[] = [
         role: "Ensam utvecklare - designade och implementerade hela parsningslogiken från grunden."
     },
     {
-        id: 3,
+        id: 4,
         title: 'Google Drive-klon',
         category: 'Angular + Node.js',
         desc: 'En fullstack Google Drive-klon byggd som proof-of-concept med Angular 21 och Node.js, med fokus på typsäkerhet, modulär arkitektur och filhantering.',
@@ -65,7 +79,7 @@ export const projects: Project[] = [
         role: 'Fullstack-utvecklare i team'
     },
     {
-        id: 4,
+        id: 5,
         title: "Ducklord Chatking",
         category: "C# + ASP.NET",
         desc: "En chatklient skapad i C# med hjälp av ramverket Raylib.",
@@ -80,7 +94,7 @@ export const projects: Project[] = [
         role: "Fullstack-utvecklare i team - klient-server-kommunikation och bidrog till UI-implementation för att visualisera och hantera kommunikationsdata."
     },
     {
-        id: 5,
+        id: 6,
         title: "Personliga hemsidan",
         category: "React + TypeScript",
         desc: "Min personliga portfolio-webbplats byggd med React och TypeScript.",
