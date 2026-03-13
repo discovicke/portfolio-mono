@@ -419,7 +419,7 @@ export const translations: Record<Language, TranslationStrings> = {
                 "After years in music production, teaching, and student support, I've gathered experiences that revolve around the same thing: understanding people and solving problems in ways that work in everyday life. Today, I do that through systems development.",
                 "When I'm not coding, you'll find me working on music projects, watching a football match, or chatting around board games or a sauna.",
                 "I'm studying to become a .NET Systems Developer with AI competence at Edugrade in Hudiksvall, driven by building clear, useful solutions together with others.",
-                "Right now, I'm looking for an environment where I can continue to grow technically and contribute to a team.",
+                "I'm driven by continuing to grow technically and contributing to a team.",
             ],
             signature: 'Viktor',
             photoAlt: 'A photo of Viktor Johansson looking away from the camera',

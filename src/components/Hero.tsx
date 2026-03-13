@@ -8,7 +8,7 @@
 import React from 'react';
 import './Hero.css';
 import { Polaroid } from './Polaroid';
-import { useLanguage } from '../i18n/LanguageContext';
+import { useLanguage } from '../i18n';
 
 const Hero: React.FC = () => {
     const { t } = useLanguage();
@@ -50,8 +50,7 @@ const Hero: React.FC = () => {
                 {/* Beskrivning */}
                 <p className="hero-desc">
                     {t.hero.role}<br />
-                    {t.hero.location}<br />
-                    {t.hero.lia}
+                    {t.hero.location}
                 </p>
 
                 {/* Polaroid för mobil (visas bara på små skärmar) */}
