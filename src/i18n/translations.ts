@@ -154,7 +154,7 @@ export const translations: Record<Language, TranslationStrings> = {
                 'Efter år inom musikproduktion, undervisning och elevstöd har jag samlat på mig erfarenheter som kretsar kring samma sak: att förstå människor och lösa problem på ett sätt som fungerar i vardagen. I dag gör jag det genom systemutveckling.',
                 'När jag inte kodar hittar du mig med musikprojekt, framför en fotbollsmatch eller samtalandes runt sällskapsspel eller ett bastuaggregat.',
                 'Jag studerar till Systemutvecklare .NET med AI-kompetens på Edugrade i Hudiksvall och drivs av att bygga tydliga, användbara lösningar tillsammans med andra.',
-                'Just nu söker jag en miljö där jag kan fortsätta växa tekniskt och bidra i ett team.',
+                'Jag drivs av att fortsätta växa tekniskt och bidra i ett team.',
             ],
             signature: 'Viktor',
             photoAlt: 'En bild på Viktor Johansson när han blickar bort från kameran',
