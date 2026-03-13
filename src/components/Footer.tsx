@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
             {/* Sociala medier länkar */}
             <div className="social-links">
                 <a
-                    href="mailto:lohappaprod@gmail.com?subject=Kontakt%20via%20portfolio&body=Hej%20Viktor%2C"
+                    href="mailto:johanssonviktor@pm.me?subject=Kontakt%20via%20portfolio&body=Hej%20Viktor%2C"
                     aria-label="Email"
                     target="_blank"
                     rel="noopener noreferrer"

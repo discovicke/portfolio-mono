@@ -361,13 +361,20 @@ export const translations: Record<Language, TranslationStrings> = {
                 role: 'Fullstack-utvecklare i team - extra fokus på backend-arkitektur och databasdesign.',
             },
             2: {
+                title: '[ ASCII_FORGE ]',
+                category: 'Fullstack WEB App',
+                desc: 'En fullstack webbaserad ASCII-generator som konverterar bilder till textbaserad grafik i realtid, byggd med Angular och ASP.NET.',
+                longDesc: 'Detta projekt är en fullstack webbaserad ASCII-generator som konverterar bilder till textbaserad grafik i realtid. Frontend är byggd i Angular och erbjuder ett terminalinspirerat gränssnitt med direkta visuella uppdateringar baserat på användarens inställningar. Backend är implementerad i ASP.NET och ansvarar för bildbehandling, luminansberäkning och mappning av pixlar till olika ASCII-teckenuppsättningar.\nApplikationen stödjer flera ASCII-bibliotek samt justering av bredd, ljusstyrka, gamma och färginvertering. Kommunikationen mellan klient och server sker via API-anrop med FormData, där bild och konfigurationsdata behandlas effektivt utan att lagras permanent. Arkitekturen är uppdelad i tydliga lager för presentation, API och bearbetningslogik, med fokus på deterministiska resultat, god prestanda och ett konsekvent visuellt uttryck.',
+                role: 'Ensam utvecklare',
+            },
+            3: {
                 title: 'Ink & Render',
                 category: 'Parsing & AST',
                 desc: 'En ramverksfri Markdown-editor med realtidsförhandsvisning, byggd som ett modulärt projekt i ren vanilla JavaScript.',
                 longDesc: 'Ink & Render är en från-grunden-byggd Markdown-editor som demonstrerar parsning och AST-hantering (Abstract Syntax Tree). Editorn konverterar Markdown till HTML i realtid utan externa bibliotek. Projektet är uppbyggt modulärt med separation mellan lexer, parser och renderer, vilket gör koden lätt att förstå och utöka.',
                 role: 'Ensam utvecklare - designade och implementerade hela parsningslogiken från grunden.',
             },
-            3: {
+            4: {
                 title: 'Google Drive-klon',
                 category: 'Angular + Node.js',
                 desc: 'En fullstack Google Drive-klon byggd som proof-of-concept med Angular 21 och Node.js, med fokus på typsäkerhet, modulär arkitektur och filhantering.',
@@ -375,14 +382,14 @@ export const translations: Record<Language, TranslationStrings> = {
                     'Arkitekturen är modulär och typ­säker genom hela stacken, med delade DTO:er i TypeScript mellan klient och server. Backend använder Multer för filhantering, Zod för validering och Helmet för grundläggande säkerhet. En egenutvecklad DbService abstraherar fil-I/O och möjliggör persistens via en JSON-baserad datalagring utan extern databas.',
                 role: 'Fullstack-utvecklare i team',
             },
-            4: {
+            5: {
                 title: 'Ducklord Chatking',
                 category: 'C# + ASP.NET',
                 desc: 'En chatklient skapad i C# med hjälp av ramverket Raylib.',
                 longDesc: 'Ducklord Chatking är en realtids-chatklient utvecklad i C# med Raylib-ramverket. Programmet visar hur man kan hantera användargränssnitt, trådar och grafisk rendering i ett chattprogram. Klienten har stöd för flera användare, möjlighet att välja inloggningsuppgifter, färgkodade meddelanden samt en charmig anka som maskot.',
                 role: 'Fullstack-utvecklare i team - klient-server-kommunikation och bidrog till UI-implementation för att visualisera och hantera kommunikationsdata.',
             },
-            5: {
+            6: {
                 title: 'Personliga hemsidan',
                 category: 'React + TypeScript',
                 desc: 'Min personliga portfolio-webbplats byggd med React och TypeScript.',
@@ -631,27 +638,34 @@ export const translations: Record<Language, TranslationStrings> = {
                 role: 'Fullstack developer in team - extra focus on backend architecture and database design.',
             },
             2: {
+                title: '[ ASCII_FORGE ]',
+                category: 'Fullstack Web App',
+                desc: 'A fullstack web-based ASCII generator that converts images to text-based graphics in real-time, built with Angular and ASP.NET.',
+                longDesc: 'This project is a fullstack web-based ASCII generator that converts images to text-based graphics in real-time. The frontend is built in Angular and offers a terminal-inspired interface with direct visual updates based on user settings. The backend is implemented in ASP.NET and handles image processing, luminance calculation, and mapping of pixels to various ASCII character sets.\nThe application supports multiple ASCII libraries as well as adjustment of width, brightness, gamma, and color inversion. Communication between client and server occurs via API calls with FormData, where image and configuration data are processed efficiently without being stored permanently. The architecture is divided into clear layers for presentation, API, and processing logic, with focus on deterministic results, good performance, and a consistent visual expression.',
+                role: 'Solo developer',
+            },
+            3: {
                 title: 'Ink & Render',
                 category: 'Parsing & AST',
                 desc: 'A framework-free Markdown editor with live preview, built as a modular project in pure vanilla JavaScript.',
                 longDesc: "Ink & Render is a from-scratch Markdown editor that demonstrates parsing and AST (Abstract Syntax Tree) handling. The editor converts Markdown to HTML in real-time without external libraries. The project is built modularly with separation between lexer, parser, and renderer, making the code easy to understand and extend.",
                 role: 'Solo developer - designed and implemented the entire parsing logic from scratch.',
             },
-            3: {
+            4: {
                 title: 'Google Drive Clone',
                 category: 'Angular + Node.js',
                 desc: 'A fullstack Google Drive clone built as a proof-of-concept with Angular 21 and Node.js, focusing on type safety, modular architecture, and file management.',
                 longDesc: 'This project is a fullstack proof-of-concept of a Google Drive-like application, built with Angular 21 on the frontend and Node.js with Express on the backend. The application supports secure file upload via drag-and-drop, download, preview, and permanent deletion of files, complemented by real-time fuzzy search for fast and fault-tolerant file management. The architecture is modular and type-safe throughout the entire stack, with shared DTOs in TypeScript between client and server. The backend uses Multer for file handling, Zod for validation, and Helmet for basic security. A custom-built DbService abstracts file I/O and enables persistence through JSON-based data storage without an external database.',
                 role: 'Fullstack developer in team',
             },
-            4: {
+            5: {
                 title: 'Ducklord Chatking',
                 category: 'C# + ASP.NET',
                 desc: 'A chat client built in C# using the Raylib framework.',
                 longDesc: "Ducklord Chatking is a real-time chat client developed in C# with the Raylib framework. The program demonstrates how to handle user interfaces, threads, and graphical rendering in a chat application. The client supports multiple users, login credential selection, color-coded messages, and features a charming duck mascot.",
                 role: 'Fullstack developer in team - client-server communication and contributed to UI implementation for visualizing and handling communication data.',
             },
-            5: {
+            6: {
                 title: 'Personal Portfolio Website',
                 category: 'React + TypeScript',
                 desc: 'My personal portfolio website built with React and TypeScript.',
