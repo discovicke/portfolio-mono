@@ -22,7 +22,6 @@ export interface TranslationStrings {
         greeting: string;
         role: string;
         location: string;
-        lia: string;
         scrollToProjects: string;
         photoAlt: string;
     };
@@ -138,7 +137,6 @@ export const translations: Record<Language, TranslationStrings> = {
             greeting: 'Hej, jag heter Viktor!',
             role: 'Systemutvecklare .NET',
             location: 'Hudiksvall, Hälsingland',
-            lia: 'LIA DEC 2026 - MAJ 2027',
             scrollToProjects: 'Scrolla till projekt',
             photoAlt: 'En bild på Viktor Johansson när han ler mot kameran',
         },
@@ -410,7 +408,6 @@ export const translations: Record<Language, TranslationStrings> = {
             greeting: "Hi, I'm Viktor!",
             role: '.NET Systems Developer',
             location: 'Hudiksvall, Sweden',
-            lia: 'INTERNSHIP DEC 2026 - MAY 2027',
             scrollToProjects: 'Scroll to projects',
             photoAlt: 'A photo of Viktor Johansson smiling at the camera',
         },
