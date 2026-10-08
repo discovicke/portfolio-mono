@@ -54,8 +54,8 @@ const Work: React.FC = () => {
 
                 {/* Projekt-rutnät */}
                 <div className="projects-grid">
-                    {/* Loopa igenom alla projekt från data/projects.ts */}
-                    {projects.map((p, i) => {
+                    {/* Nyast först: högst id syns först, äldst har id 1 */}
+                    {[...projects].sort((a, b) => b.id - a.id).map((p, i) => {
                         // Hämta översatt projektdata om den finns
                         const translatedProject = t.projects[p.id];
                         const title = translatedProject?.title || p.title;

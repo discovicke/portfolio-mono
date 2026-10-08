@@ -17,6 +17,8 @@ export interface Project {
     technologies?: string[];       // Lista med teknologier som använts
     liveUrl?: string;              // URL till live-version av projektet
     repoUrl?: string;              // URL till GitHub-repo
+    relatedUrl?: string;           // URL till relaterad sida (t.ex. produkten en MVP byggdes mot)
+    relatedLabel?: string;         // Etikett för relaterad länk (t.ex. "Nostos")
     screenshots?: string[];        // Extra skärmbilder
     year?: string;                 // År projektet gjordes
     role?: string;                 // Din roll i projektet
