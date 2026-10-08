@@ -20,7 +20,7 @@ interface Skill {
 }
 
 interface SkillCategory {
-    titleKey: 'frontend' | 'backend' | 'tools';
+    titleKey: 'frontend' | 'backend' | 'tools' | 'aidata';
     skills: Skill[];
 }
 
@@ -34,6 +34,8 @@ const skillCategories: SkillCategory[] = [
             { name: 'TypeScript', icon: 'https://img.shields.io/badge/TypeScript-181818?style=for-the-badge&logo=typescript&logoColor=EFEFEA' },
             { name: 'Angular', icon: 'https://img.shields.io/badge/Angular-181818?style=for-the-badge&logo=angular&logoColor=EFEFEA' },
             { name: 'React', icon: 'https://img.shields.io/badge/React-181818?style=for-the-badge&logo=react&logoColor=EFEFEA' },
+            { name: 'Vite', icon: 'https://img.shields.io/badge/Vite-181818?style=for-the-badge&logo=vite&logoColor=EFEFEA' },
+            { name: 'SCSS', icon: 'https://img.shields.io/badge/SCSS-181818?style=for-the-badge&logo=sass&logoColor=EFEFEA' },
         ],
     },
     {
@@ -44,6 +46,9 @@ const skillCategories: SkillCategory[] = [
             { name: 'ASP.NET', icon: 'https://img.shields.io/badge/ASP.NET-181818?style=for-the-badge&logo=dotnet&logoColor=EFEFEA' },
             { name: 'Node.js', icon: 'https://img.shields.io/badge/Node.js-181818?style=for-the-badge&logo=nodedotjs&logoColor=EFEFEA' },
             { name: 'Entity Framework', icon: 'https://img.shields.io/badge/Entity_Framework-181818?style=for-the-badge&logo=dotnet&logoColor=EFEFEA' },
+            { name: 'Dapper', icon: 'https://img.shields.io/badge/Dapper-181818?style=for-the-badge&logo=dotnet&logoColor=EFEFEA' },
+            { name: 'Blazor', icon: 'https://img.shields.io/badge/Blazor-181818?style=for-the-badge&logo=blazor&logoColor=EFEFEA' },
+            { name: 'xUnit', icon: 'https://img.shields.io/badge/xUnit-181818?style=for-the-badge&logo=dotnet&logoColor=EFEFEA' },
         ],
     },
     {
@@ -55,6 +60,18 @@ const skillCategories: SkillCategory[] = [
             { name: 'VS Code', icon: 'https://img.shields.io/badge/VS_Code-181818?style=for-the-badge&logo=visualstudiocode&logoColor=EFEFEA' },
             { name: 'JetBrains', icon: 'https://img.shields.io/badge/JetBrains-181818?style=for-the-badge&logo=jetbrains&logoColor=EFEFEA' },
             { name: 'Postman', icon: 'https://img.shields.io/badge/Postman-181818?style=for-the-badge&logo=postman&logoColor=EFEFEA' },
+            { name: 'SQLite', icon: 'https://img.shields.io/badge/SQLite-181818?style=for-the-badge&logo=sqlite&logoColor=EFEFEA' },
+            { name: 'PostgreSQL', icon: 'https://img.shields.io/badge/PostgreSQL-181818?style=for-the-badge&logo=postgresql&logoColor=EFEFEA' },
+            { name: 'Docker', icon: 'https://img.shields.io/badge/Docker-181818?style=for-the-badge&logo=docker&logoColor=EFEFEA' },
+            { name: 'NuGet', icon: 'https://img.shields.io/badge/NuGet-181818?style=for-the-badge&logo=nuget&logoColor=EFEFEA' },
+        ],
+    },
+    {
+        titleKey: 'aidata',
+        skills: [
+            { name: 'Azure OpenAI', icon: 'https://img.shields.io/badge/Azure_OpenAI-181818?style=for-the-badge&logo=openai&logoColor=EFEFEA' },
+            { name: 'Puppeteer', icon: 'https://img.shields.io/badge/Puppeteer-181818?style=for-the-badge&logo=puppeteer&logoColor=EFEFEA' },
+            { name: 'JWT', icon: 'https://img.shields.io/badge/JWT-181818?style=for-the-badge&logo=jsonwebtokens&logoColor=EFEFEA' },
         ],
     },
 ];
