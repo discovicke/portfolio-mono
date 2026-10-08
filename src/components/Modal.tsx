@@ -144,6 +144,20 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, project }) => {
                             </button>
                         )}
 
+                        {/* Relaterad länk (t.ex. produkten en MVP byggdes mot) */}
+                        {project.relatedUrl && (
+                            <a
+                                href={project.relatedUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="modal-link"
+                                aria-label={`${project.relatedLabel || project.relatedUrl}: ${translatedProject?.title || project.title}`}
+                            >
+                                <ExternalLink size={18} />
+                                {project.relatedLabel || project.relatedUrl}
+                            </a>
+                        )}
+
                         {/* GitHub repo knapp */}
                         {project.repoUrl && (
                             <a

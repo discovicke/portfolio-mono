@@ -55,38 +55,24 @@ export const projects: Project[] = [
     },
     {
         id: 4,
-        title: "ELLA - Edugrade Location & Logistics Assistant",
-        category: "Fullstack WEB App",
-        desc: "Rumboknings- och hanteringssystem byggt med Node.js, Express, SQLite och vanilla JavaScript",
-        img: "/ella-preview.png",
-        longDesc:
-            "ELLA är ett komplett rumbokningssystem utvecklat för Edugrade. " +
-            "Systemet hanterar rumsreservationer, användarautentisering och administratörsverktyg. " +
-            "Frontend är byggd med vanilla JavaScript, medan backend använder Node.js med Express och SQLite för datalagring. " +
-            "Projektet inkluderar ett responsivt gränssnitt och realtidsuppdateringar.",
-        technologies: ["Node.js", "Express", "SQLite", "JavaScript", "HTML5", "CSS3", "REST API"],
-        liveUrl: 'https://ella-fullstack-booking-system.onrender.com/',
-        repoUrl: "https://github.com/discovicke/ELLA-room-booking-system",
-        year: "2025",
-        role: "Fullstack-utvecklare i team - extra fokus på backend-arkitektur och databasdesign."
-    },
-    {
-        id: 5,
         title: "ELLA 2.0 - Booking & Admin System",
         category: "Fullstack + ABAC",
         desc: "Boknings och administrationssystem för skolor med flera studieorter, byggt med Angular och ASP.NET Core.",
         img: "/ella-2-preview.png",
         longDesc:
-            "ELLA 2.0 är vidareutvecklingen av ELLA 1.0 och ett komplett boknings och administrationssystem för skolor med flera studieorter. " +
+            "ELLA 2.0 är en ombyggnad av ELLA 1.0 och ett komplett boknings och administrationssystem för skolor med flera studieorter. " +
+            "Där ettan var byggd med Node.js, Express och vanilla JavaScript är tvåan byggd med Angular och ASP.NET Core. " +
             "Elever och lärare bokar salar och resurser, bjuder in klasser och administrerar allt i en rollstyrd adminpanel. " +
             "Systemet har dynamiska rollmallar med individuella overrides, CSV import av antagningslistor, återkommande bokningsserier och publika bokningslänkar för externa gäster.",
         technologies: ["Angular", "ASP.NET Core", "Dapper", "SQLite", "PostgreSQL", "JWT", "ABAC", "DayPilot"],
         repoUrl: "https://github.com/discovicke/Ella-2.0",
+        relatedUrl: "https://github.com/discovicke/ELLA-room-booking-system",
+        relatedLabel: "ELLA 1.0",
         year: "2026",
         role: "Fullstack-utvecklare i team - backend, behörighetssystem och bokningsflöden."
     },
     {
-        id: 6,
+        id: 5,
         title: "Buggernaut",
         category: "CLI + LLM",
         desc: "CLI verktyg i .NET som genererar C# övningar med buggar via valfri LLM leverantör.",
@@ -101,7 +87,7 @@ export const projects: Project[] = [
         role: "Ensam utvecklare - designade och implementerade hela verktyget från grunden."
     },
     {
-        id: 7,
+        id: 6,
         title: "Bedömningsverktyg",
         category: "Angular + ASP.NET",
         desc: "Mobilanpassat webbverktyg som förenklar dokumentation och bedömning vid beredskapsutbildningar.",
@@ -114,6 +100,21 @@ export const projects: Project[] = [
         repoUrl: "https://github.com/discovicke/EdugradeGradingHelper",
         year: "2026",
         role: "Utvecklare i team - testade även rollen som scrum master."
+    },
+    {
+        id: 7,
+        title: "30-0 - Allsvenskt Draftspel",
+        category: "React + C# + Spel",
+        desc: "Webbaserat draftspel där du bygger ett Allsvenskt drömlag från 25 säsonger och spelar en 30 matchers säsong.",
+        img: "/30-0-preview-1.png",
+        longDesc:
+            "30-0 är den allsvenska versionen av 82-0 och 38-0. Du bygger en all-star XI från fler än 6 700 spelarsäsonger från 2001 till idag, snurrar hjulet för att landa på en klubb och säsong, draftar spelare till din formation och simulerar sedan en hel 30 matchers säsong mot 15 AI styrda motståndare. " +
+            "Spelet har sex formationer, squad first och position first draft, reroll mekanik, OVR betyg per position, season och peak lägen, minut för minut matchmotor och ett Text TV inspirerat gränssnitt med sidor för trupp, odds, resultat, tabell och säsongsartikel. Datan kommer från FBref och bearbetas med C# till statiska datafiler.",
+        technologies: ["React 19", "Vite", "TypeScript", "SCSS", "C#", ".NET", "Vercel", "RNG", "Speldesign"],
+        liveUrl: "https://www.30-0.se/",
+        repoUrl: "https://github.com/discovicke/30-0",
+        year: "2026",
+        role: "Ensam utvecklare - speldesign, data, simulering och frontend från grunden."
     },
     {
         id: 8,
@@ -142,22 +143,9 @@ export const projects: Project[] = [
             "ChatService bygger systemprompt av roll plus bok plus anteckningar plus historik och strömmar svar som SSE från Azure OpenAI. Första meddelandet skapar samtalet automatiskt och pågående svar kan avbrytas och genereras om.",
         technologies: [".NET 10", "C#", "Minimal API", "EF Core", "SQLite", "React 19", "Vite", "Azure OpenAI", "SSE"],
         repoUrl: "https://github.com/discovicke/preNostros-aichatt",
+        relatedUrl: "https://nostos.page/",
+        relatedLabel: "Nostos",
         year: "2026",
         role: "Ensam utvecklare - designade och implementerade backend, frontend och AI flöde från grunden."
-    },
-    {
-        id: 10,
-        title: "30-0 - Allsvenskt Draftspel",
-        category: "React + C# + Spel",
-        desc: "Webbaserat draftspel där du bygger ett Allsvenskt drömlag från 25 säsonger och spelar en 30 matchers säsong.",
-        img: "/30-0-preview-1.png",
-        longDesc:
-            "30-0 är den allsvenska versionen av 82-0 och 38-0. Du bygger en all-star XI från fler än 6 700 spelarsäsonger från 2001 till idag, snurrar hjulet för att landa på en klubb och säsong, draftar spelare till din formation och simulerar sedan en hel 30 matchers säsong mot 15 AI styrda motståndare. " +
-            "Spelet har sex formationer, squad first och position first draft, reroll mekanik, OVR betyg per position, season och peak lägen, minut för minut matchmotor och ett Text TV inspirerat gränssnitt med sidor för trupp, odds, resultat, tabell och säsongsartikel. Datan kommer från FBref och bearbetas med C# till statiska datafiler.",
-        technologies: ["React 19", "Vite", "TypeScript", "SCSS", "C#", ".NET", "Vercel", "RNG", "Speldesign"],
-        liveUrl: "https://www.30-0.se/",
-        repoUrl: "https://github.com/discovicke/30-0",
-        year: "2026",
-        role: "Ensam utvecklare - speldesign, data, simulering och frontend från grunden."
     },
 ];

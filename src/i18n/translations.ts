@@ -375,32 +375,32 @@ export const translations: Record<Language, TranslationStrings> = {
                 role: 'Ensam utvecklare',
             },
             4: {
-                title: 'ELLA - Edugrade Location & Logistics Assistant',
-                category: 'Fullstack WEB App',
-                desc: 'Rumboknings- och hanteringssystem byggt med Node.js, Express, SQLite och vanilla JavaScript',
-                longDesc: 'ELLA är ett komplett rumbokningssystem utvecklat för Edugrade. Systemet hanterar rumsreservationer, användarautentisering och administratörsverktyg. Frontend är byggd med vanilla JavaScript, medan backend använder Node.js med Express och SQLite för datalagring. Projektet inkluderar ett responsivt gränssnitt och realtidsuppdateringar.',
-                role: 'Fullstack-utvecklare i team - extra fokus på backend-arkitektur och databasdesign.',
-            },
-            5: {
                 title: 'ELLA 2.0 - Booking & Admin System',
                 category: 'Fullstack + ABAC',
                 desc: 'Boknings och administrationssystem för skolor med flera studieorter, byggt med Angular och ASP.NET Core.',
-                longDesc: 'ELLA 2.0 är vidareutvecklingen av ELLA 1.0 och ett komplett boknings och administrationssystem för skolor med flera studieorter. Elever och lärare bokar salar och resurser, bjuder in klasser och administrerar allt i en rollstyrd adminpanel. Systemet har dynamiska rollmallar med individuella overrides, CSV import av antagningslistor, återkommande bokningsserier och publika bokningslänkar för externa gäster.',
+                longDesc: 'ELLA 2.0 är en ombyggnad av ELLA 1.0 och ett komplett boknings och administrationssystem för skolor med flera studieorter. Där ettan var byggd med Node.js, Express och vanilla JavaScript är tvåan byggd med Angular och ASP.NET Core. Elever och lärare bokar salar och resurser, bjuder in klasser och administrerar allt i en rollstyrd adminpanel. Systemet har dynamiska rollmallar med individuella overrides, CSV import av antagningslistor, återkommande bokningsserier och publika bokningslänkar för externa gäster.',
                 role: 'Fullstack-utvecklare i team - backend, behörighetssystem och bokningsflöden.',
             },
-            6: {
+            5: {
                 title: 'Buggernaut',
                 category: 'CLI + LLM',
                 desc: 'CLI verktyg i .NET som genererar C# övningar med buggar via valfri LLM leverantör.',
                 longDesc: 'Buggernaut är ett CLI verktyg som genererar C# övningar med inbyggda buggar via en LLM leverantör du själv väljer. Du kör ett kommando, verktyget frågar en AI om en övning och skriver ut en .cs fil med en medveten bugg plus en tillhörande testfil. Din uppgift är att hitta och fixa buggen tills testerna blir gröna. Verktyget har också hint och explain kommandon och stödjer Gemini, OpenAI, Anthropic, Mistral, Ollama och OpenRouter.',
                 role: 'Ensam utvecklare - designade och implementerade hela verktyget från grunden.',
             },
-            7: {
+            6: {
                 title: 'Bedömningsverktyg',
                 category: 'Angular + ASP.NET',
                 desc: 'Mobilanpassat webbverktyg som förenklar dokumentation och bedömning vid beredskapsutbildningar.',
                 longDesc: 'Bedömningsverktyget är framtaget för Johan Delin och ersätter manuell hantering av foton, anteckningar och bedömningar med ett mobilanpassat webbgränssnitt. Användaren skapar utbildningstillfällen med grupper och deltagare i en egen mappstruktur, tar anteckningar, foton och ljudinspelningar kopplat till utbildning, grupp eller deltagare och får en sammanställd vy per deltagare som förenklar rapportering. Backend är ASP.NET Core Minimal API med SQLite och EF Core, frontend är Angular och drift sker med Docker.',
                 role: 'Utvecklare i team - testade även rollen som scrum master.',
+            },
+            7: {
+                title: '30-0 - Allsvenskt Draftspel',
+                category: 'React + C# + Spel',
+                desc: 'Webbaserat draftspel där du bygger ett Allsvenskt drömlag från 25 säsonger och spelar en 30 matchers säsong.',
+                longDesc: '30-0 är den allsvenska versionen av 82-0 och 38-0. Du bygger en all-star XI från fler än 6 700 spelarsäsonger från 2001 till idag, snurrar hjulet för att landa på en klubb och säsong, draftar spelare till din formation och simulerar sedan en hel 30 matchers säsong mot 15 AI styrda motståndare. Spelet har sex formationer, squad first och position first draft, reroll mekanik, OVR betyg per position, season och peak lägen, minut för minut matchmotor och ett Text TV inspirerat gränssnitt. Datan kommer från FBref och bearbetas med C# till statiska datafiler.',
+                role: 'Ensam utvecklare - speldesign, data, simulering och frontend från grunden.',
             },
             8: {
                 title: 'Learnpoint Extension (EPA)',
@@ -415,13 +415,6 @@ export const translations: Record<Language, TranslationStrings> = {
                 desc: 'Bokcirkelchatt med generativ AI där du diskuterar böcker med en AI samtalspartner och sparar anteckningar och betyg.',
                 longDesc: 'preNostros är en chatt där du diskuterar böcker med en AI samtalspartner och sparar citat, tankar, analyser och betyg som anteckningar. Tanken är en MVP som visar att det går att integrera LLM mot Nostos produkten. Backend är ett Minimal API med EF Core och SQLite, frontend i React är en terminalren yta där alla vägar in går via kommandon som /bok och /samtal. ChatService bygger systemprompt av roll plus bok plus anteckningar plus historik och strömmar svar som SSE från Azure OpenAI.',
                 role: 'Ensam utvecklare - designade och implementerade backend, frontend och AI flöde från grunden.',
-            },
-            10: {
-                title: '30-0 - Allsvenskt Draftspel',
-                category: 'React + C# + Spel',
-                desc: 'Webbaserat draftspel där du bygger ett Allsvenskt drömlag från 25 säsonger och spelar en 30 matchers säsong.',
-                longDesc: '30-0 är den allsvenska versionen av 82-0 och 38-0. Du bygger en all-star XI från fler än 6 700 spelarsäsonger från 2001 till idag, snurrar hjulet för att landa på en klubb och säsong, draftar spelare till din formation och simulerar sedan en hel 30 matchers säsong mot 15 AI styrda motståndare. Spelet har sex formationer, squad first och position first draft, reroll mekanik, OVR betyg per position, season och peak lägen, minut för minut matchmotor och ett Text TV inspirerat gränssnitt. Datan kommer från FBref och bearbetas med C# till statiska datafiler.',
-                role: 'Ensam utvecklare - speldesign, data, simulering och frontend från grunden.',
             },
         },
     },
@@ -679,32 +672,32 @@ export const translations: Record<Language, TranslationStrings> = {
                 role: 'Solo developer',
             },
             4: {
-                title: 'ELLA - Edugrade Location & Logistics Assistant',
-                category: 'Fullstack Web App',
-                desc: 'Room booking and management system built with Node.js, Express, SQLite and vanilla JavaScript',
-                longDesc: 'ELLA is a complete room booking system developed for Edugrade. The system handles room reservations, user authentication and admin tools. Frontend is built with vanilla JavaScript, while backend uses Node.js with Express and SQLite for data storage. The project includes a responsive interface and real-time updates.',
-                role: 'Fullstack developer in team - extra focus on backend architecture and database design.',
-            },
-            5: {
                 title: 'ELLA 2.0 - Booking & Admin System',
                 category: 'Fullstack + ABAC',
                 desc: 'Booking and admin system for schools with multiple campuses, built with Angular and ASP.NET Core.',
-                longDesc: 'ELLA 2.0 continues ELLA 1.0 and is a complete booking and admin system for schools with multiple campuses. Students and teachers book rooms and resources, invite classes and manage everything in a role based admin panel. The system has dynamic role templates with individual overrides, CSV import of admission lists, recurring booking series and public booking links for external guests.',
+                longDesc: 'ELLA 2.0 is a rebuild of ELLA 1.0 and a complete booking and admin system for schools with multiple campuses. Where the first version used Node.js, Express and vanilla JavaScript, the second uses Angular and ASP.NET Core. Students and teachers book rooms and resources, invite classes and manage everything in a role based admin panel. The system has dynamic role templates with individual overrides, CSV import of admission lists, recurring booking series and public booking links for external guests.',
                 role: 'Fullstack developer in team - backend, permission system and booking flows.',
             },
-            6: {
+            5: {
                 title: 'Buggernaut',
                 category: 'CLI + LLM',
                 desc: 'CLI tool in .NET that generates C# exercises with bugs through a chosen LLM provider.',
                 longDesc: 'Buggernaut is a CLI tool that generates C# exercises with built in bugs through an LLM provider of your choice. You run a command, the tool asks an AI for an exercise and writes a .cs file with an intentional bug plus a matching test file. Your task is to find and fix the bug until the tests turn green. The tool also has hint and explain commands and supports Gemini, OpenAI, Anthropic, Mistral, Ollama and OpenRouter.',
                 role: 'Solo developer - designed and implemented the whole tool from scratch.',
             },
-            7: {
+            6: {
                 title: 'Assessment Tool',
                 category: 'Angular + ASP.NET',
                 desc: 'Mobile friendly web tool that simplifies documentation and assessment in preparedness training.',
                 longDesc: 'The assessment tool was built for Johan Delin and replaces manual handling of photos, notes and assessments with a mobile friendly web interface. The user creates training sessions with groups and participants in a custom folder structure, takes notes, photos and audio recordings linked to session, group or participant and gets a compiled view per participant that simplifies reporting. Backend is ASP.NET Core Minimal API with SQLite and EF Core, frontend is Angular and hosting uses Docker.',
                 role: 'Developer in team - also tried the role of scrum master.',
+            },
+            7: {
+                title: '30-0 - Allsvenskan Draft Game',
+                category: 'React + C# + Game',
+                desc: 'Web based draft game where you build an Allsvenskan dream team from 25 seasons and play a 30 match season.',
+                longDesc: '30-0 is the Allsvenskan version of 82-0 and 38-0. You build an all-star XI from more than 6,700 player seasons from 2001 until today, spin the wheel to land on a club and season, draft players into your formation and then simulate a full 30 match season against 15 AI controlled opponents. The game has six formations, squad first and position first draft, reroll mechanics, OVR ratings per position, season and peak modes, minute by minute match engine and a Text TV inspired interface. Data comes from FBref and is processed with C# into static data files.',
+                role: 'Solo developer - game design, data, simulation and frontend from scratch.',
             },
             8: {
                 title: 'Learnpoint Extension (EPA)',
@@ -719,13 +712,6 @@ export const translations: Record<Language, TranslationStrings> = {
                 desc: 'Book circle chat with generative AI where you discuss books with an AI partner and save notes and ratings.',
                 longDesc: 'preNostros is a chat where you discuss books with an AI partner and save quotes, thoughts, analysis and ratings as notes. The idea is an MVP that proves LLM integration against the Nostos product is possible. Backend is a Minimal API with EF Core and SQLite, frontend in React is a terminal style surface where every path goes through commands like /bok and /samtal. ChatService builds a system prompt from role plus book plus notes plus history and streams answers as SSE from Azure OpenAI.',
                 role: 'Solo developer - designed and implemented backend, frontend and AI flow from scratch.',
-            },
-            10: {
-                title: '30-0 - Allsvenskan Draft Game',
-                category: 'React + C# + Game',
-                desc: 'Web based draft game where you build an Allsvenskan dream team from 25 seasons and play a 30 match season.',
-                longDesc: '30-0 is the Allsvenskan version of 82-0 and 38-0. You build an all-star XI from more than 6,700 player seasons from 2001 until today, spin the wheel to land on a club and season, draft players into your formation and then simulate a full 30 match season against 15 AI controlled opponents. The game has six formations, squad first and position first draft, reroll mechanics, OVR ratings per position, season and peak modes, minute by minute match engine and a Text TV inspired interface. Data comes from FBref and is processed with C# into static data files.',
-                role: 'Solo developer - game design, data, simulation and frontend from scratch.',
             },
         },
     },
