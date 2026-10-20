@@ -37,6 +37,9 @@ import Footer from './components/Footer';
 // Språkhantering
 import { LanguageProvider } from './i18n/LanguageContext';
 
+// Vercel Analytics
+import { Analytics } from '@vercel/analytics/react';
+
 function App() {
     return (
         <LanguageProvider>
@@ -84,6 +87,7 @@ function App() {
                         </main>
                     </div>
                 </ClickSpark>
+            <Analytics />
         </LanguageProvider>
     );
 }
