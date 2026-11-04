@@ -24,8 +24,12 @@
     4px 4px 0px 0px rgba(0, 0, 0, 0.15),
     8px 8px 15px -5px rgba(0, 0, 0, 0.1);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
-  cursor: pointer;
+  cursor: default;
   max-width: 280px;
+}
+
+.polaroid.is-interactive {
+  cursor: pointer;
 }
 
 /* Rotation för "slängt på bordet"-känsla */
@@ -57,7 +61,7 @@
 }
 
 .polaroid:hover .polaroid-image {
-  /* Färg vid hover */
+  /* Färg vid hover – gäller alla polaroids, även de utan klick */
   filter: grayscale(0%) contrast(1) brightness(1);
 }
 
@@ -176,8 +180,12 @@
     3px 3px 0px 0px rgba(0, 0, 0, 0.1),
     6px 6px 12px -3px rgba(0, 0, 0, 0.15);
   transition: all 0.4s ease;
-  cursor: pointer;
+  cursor: default;
   max-width: 260px;
+}
+
+.instant.is-interactive {
+  cursor: pointer;
 }
 
 .instant::before {

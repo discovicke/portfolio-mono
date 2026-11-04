@@ -155,7 +155,6 @@
     border: 2px solid var(--text-ink);
     border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
     padding: 1.25rem;
-    transition: all 0.2s ease;
 }
 
 /* Varierande border-radius för visuell variation */
@@ -169,11 +168,6 @@
 
 .exp-modal-card:nth-child(4) {
     border-radius: 15px 255px 15px 225px / 255px 15px 225px 15px;
-}
-
-.exp-modal-card:hover {
-    transform: translateX(4px);
-    box-shadow: 4px 4px 0 var(--accent-organic);
 }
 
 /* Card header */

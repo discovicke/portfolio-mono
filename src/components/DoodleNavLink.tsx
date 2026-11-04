@@ -1,41 +1,23 @@
 /**
  * DoodleNavLink Component
  *
- * En navigations-länk med handritad doodle-markering.
- * Visar ett överkryss (doodle X) när sektionen är aktiv.
- * Använder Intersection Observer för att detektera vilken sektion som är synlig.
+ * En navigationslänk med en handritad penndragning över sig när sektionen
+ * är aktiv. Strecken är två lätta, ojämna passningar som ritas in med
+ * stroke-dashoffset – det ska kännas som att någon stryker under med penna.
  */
 
-import React, { useMemo } from 'react';
+import React from 'react';
 import './DoodleNavLink.css';
 
 interface DoodleNavLinkProps {
     label: string;
     href: string;
     isActive: boolean;
-    /**
-     * Vilken doodle-variant som ska användas (0-baserad index)
-     * Om ej satt används första i listan.
-     */
-    orderIndex?: number;
+    /** Anropas efter att länken navigerat, t.ex. för att stänga mobilmenyn */
+    onNavigate?: () => void;
 }
 
-// Array med tillgängliga doodle-markeringar
-const DOODLE_MARKS = [
-    '/svg/doodleHash.svg',
-    '/svg/doodleX2.svg',
-    '/svg/doodleX1.svg',
-];
-
-const DoodleNavLink: React.FC<DoodleNavLinkProps> = ({ label, href, isActive, orderIndex = 0 }) => {
-    /**
-     * Välj doodle efter ordning i arrayen baserat på givet index
-     */
-    const doodleSrc = useMemo(() => {
-        const idx = Math.abs(orderIndex) % DOODLE_MARKS.length;
-        return DOODLE_MARKS[idx];
-    }, [orderIndex]);
-
+const DoodleNavLink: React.FC<DoodleNavLinkProps> = ({ label, href, isActive, onNavigate }) => {
     /**
      * Smooth scroll till sektionen
      */
@@ -44,8 +26,10 @@ const DoodleNavLink: React.FC<DoodleNavLinkProps> = ({ label, href, isActive, or
         const targetId = href.replace('#', '');
         const element = document.getElementById(targetId);
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            element.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
         }
+        onNavigate?.();
     };
 
     return (
@@ -53,17 +37,25 @@ const DoodleNavLink: React.FC<DoodleNavLinkProps> = ({ label, href, isActive, or
             href={href}
             className={`doodle-nav-link ${isActive ? 'active' : ''}`}
             onClick={handleClick}
+            aria-current={isActive ? 'location' : undefined}
         >
             <span className="doodle-nav-text">{label}</span>
 
-            {/* Doodle X-markering som visas när aktiv */}
-            <div className="doodle-nav-mark">
-                <img
-                    src={doodleSrc}
-                    alt=""
-                    className="doodle-x"
-                />
-            </div>
+            {/* Handritat penndrag som visas när länken är aktiv */}
+            <span className="doodle-nav-mark" aria-hidden="true">
+                <svg viewBox="0 0 100 20" preserveAspectRatio="none" focusable="false">
+                    <path
+                        className="doodle-stroke doodle-stroke-1"
+                        pathLength={1}
+                        d="M2 13C20 9 42 15 61 10S86 6 98 11"
+                    />
+                    <path
+                        className="doodle-stroke doodle-stroke-2"
+                        pathLength={1}
+                        d="M3 15C24 12 47 17 68 12S90 9 97 14"
+                    />
+                </svg>
+            </span>
         </a>
     );
 };

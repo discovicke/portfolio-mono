@@ -32,6 +32,7 @@ import SquigglyLine from './components/SquigglyLine';
 import Skills from './components/Skills';
 import Work from './components/Work';
 import About from './components/About';
+import RecruiterFacts from './components/RecruiterFacts';
 import Footer from './components/Footer';
 
 // Språkhantering
@@ -81,6 +82,9 @@ function App() {
 
                             {/* Om mig-sektion */}
                             <About/>
+
+                            {/* Kort faktapanel för rekryterare */}
+                            <RecruiterFacts/>
 
                             {/* Sidfot */}
                             <Footer/>

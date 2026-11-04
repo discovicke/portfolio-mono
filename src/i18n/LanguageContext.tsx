@@ -43,7 +43,9 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-    const [language, setLanguageState] = useState<Language>(getSavedLanguage);
+    // Starta alltid på svenska så att klientens första render matchar den
+    // prerenderade HTML:en. Sparat språkval appliceras direkt efter hydrering.
+    const [language, setLanguageState] = useState<Language>('sv');
 
     const setLanguage = (lang: Language) => {
         setLanguageState(lang);
@@ -51,6 +53,17 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
         // Uppdatera html lang-attribut för tillgänglighet
         document.documentElement.lang = lang;
     };
+
+    // Läs sparat språk (eller webbläsarens) efter att sidan hydrerats
+    useEffect(() => {
+        const initial = getSavedLanguage();
+        if (initial !== 'sv') {
+            // Måste ske efter hydrering: första klientrenderingen ska matcha
+            // den prerenderade svenska HTML:en.
+            // eslint-disable-next-line react-hooks/set-state-in-effect
+            setLanguageState(initial);
+        }
+    }, []);
 
     // Sätt initialt språk på html-elementet
     useEffect(() => {

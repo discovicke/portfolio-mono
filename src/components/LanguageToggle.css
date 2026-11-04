@@ -9,34 +9,35 @@
     align-items: center;
     gap: 0.25rem;
     padding: 0.4rem 0.6rem;
-    background: rgba(255, 255, 255, 0.5);
-    border: 2px solid var(--color-dark, #181818);
-    border-radius: 6px;
+    background: transparent;
+    border: 2px solid var(--text-ink);
+    border-radius: 8px 3px 8px 3px / 3px 8px 3px 8px;
     font-family: var(--font-doodle);
     font-size: 0.9rem;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease;
     transform: rotate(-1deg);
 }
 
 .language-toggle:hover {
-    transform: rotate(1deg) scale(1.05);
-    background: rgba(255, 255, 255, 0.8);
+    transform: rotate(1deg);
+    background: rgba(24, 24, 24, 0.06);
 }
 
-.language-toggle:focus {
-    outline: 2px solid var(--color-dark, #181818);
-    outline-offset: 2px;
+.language-toggle:focus-visible {
+    outline: 2px dashed var(--text-ink);
+    outline-offset: 3px;
 }
 
 .lang-option {
-    color: var(--color-muted, #666);
-    transition: all 0.2s ease;
+    color: var(--text-ink);
+    opacity: 0.45;
+    transition: opacity 0.2s ease;
     font-weight: 400;
 }
 
 .lang-option.active {
-    color: var(--color-dark, #181818);
+    opacity: 1;
     font-weight: 700;
     text-decoration: underline;
     text-decoration-style: wavy;
@@ -44,7 +45,8 @@
 }
 
 .lang-divider {
-    color: var(--color-muted, #666);
+    color: var(--text-ink);
+    opacity: 0.35;
     font-weight: 300;
 }
 

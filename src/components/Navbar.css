@@ -15,15 +15,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* Bättre kontrast mot mörka bakgrundsbilder */
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.85) 0%,
-    rgba(255, 255, 255, 0.6) 70%,
-    rgba(255, 255, 255, 0.3) 100%
-  );
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  /* Platt pappersfärg istället för vit gradient – inget ljusglitter */
+  background: rgba(239, 239, 234, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(24, 24, 24, 0.12);
 }
 
 .logo {
@@ -43,8 +39,6 @@
   gap: 2rem;
   font-family: var(--font-doodle);
   font-size: 1.25rem;
-  /* Subtil text-skugga för bättre läsbarhet mot mörka bakgrunder */
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 /* Responsiv design - visa nav-länkar på större skärmar */
@@ -57,14 +51,58 @@
   }
 }
 
-.mobile-menu-icon {
-  display: block;
-  width: 30px;
-  height: 30px;
+/* Mobilmeny-knapp */
+.mobile-menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  background: transparent;
+  color: var(--text-ink);
+  border: 2px solid var(--text-ink);
+  border-radius: 14px 4px 14px 4px / 4px 14px 4px 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.mobile-menu-toggle:hover {
+  background: rgba(24, 24, 24, 0.06);
+  transform: rotate(-3deg);
+}
+
+.mobile-menu-toggle:focus-visible {
+  outline: 2px dashed var(--text-ink);
+  outline-offset: 3px;
+}
+
+/* Utfällbar meny under navbaren */
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem 1rem 2rem;
+  background: rgba(239, 239, 234, 0.98);
+  border-bottom: 1px solid rgba(24, 24, 24, 0.12);
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-menu .doodle-nav-link {
+  font-size: 1.6rem;
 }
 
 @media (min-width: 768px) {
-  .mobile-menu-icon {
+  .mobile-menu-toggle,
+  .mobile-menu {
     display: none;
   }
 }

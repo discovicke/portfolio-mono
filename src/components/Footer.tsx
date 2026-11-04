@@ -10,6 +10,8 @@ import {Mail, Instagram, Linkedin, Github} from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 import './Footer.css';
 
+const CONTACT_MAILTO = 'mailto:johanssonviktor@pm.me?subject=Kontakt%20via%20portfolio&body=Hej%20Viktor%2C';
+
 const Footer: React.FC = () => {
     const { t } = useLanguage();
 
@@ -24,7 +26,7 @@ const Footer: React.FC = () => {
             {/* Sociala medier länkar */}
             <div className="social-links">
                 <a
-                    href="mailto:johanssonviktor@pm.me?subject=Kontakt%20via%20portfolio&body=Hej%20Viktor%2C"
+                    href={CONTACT_MAILTO}
                     aria-label="Email"
                     target="_blank"
                     rel="noopener noreferrer"

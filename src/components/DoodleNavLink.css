@@ -1,7 +1,7 @@
 /**
  * DoodleNavLink Component Styles
  *
- * Stilar för navigations-länk med handritad doodle-markering.
+ * Handritad penndragning över aktiva nav-länkar.
  */
 
 .doodle-nav-link {
@@ -13,11 +13,6 @@
   color: var(--text-ink);
   text-decoration: none;
   padding: 0.25rem 0.5rem;
-  transition: opacity 0.3s ease;
-}
-
-.doodle-nav-link:hover {
-  opacity: 0.7;
 }
 
 .doodle-nav-text {
@@ -25,59 +20,66 @@
   z-index: 1;
 }
 
-/* Doodle X-markering container */
+/* Penndragets yta, centrerad över texten */
 .doodle-nav-mark {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: -1%;
+  top: 52%;
+  width: 102%;
+  height: 1.05em;
+  transform: translateY(-50%) rotate(-1.2deg);
+  pointer-events: none;
+}
+
+.doodle-nav-mark svg {
+  display: block;
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
+  overflow: visible;
+}
+
+/* Två passningar ger lite ojämn, handritad känsla */
+.doodle-stroke {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: stroke-dashoffset 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
 }
 
-.doodle-nav-link.active .doodle-nav-mark {
-  opacity: 1;
+.doodle-stroke-2 {
+  stroke-width: 1.2;
 }
 
-/* Doodle X-bild */
-.doodle-x {
-  width: 2.5rem;
-  height: 2.5rem;
-  opacity: 0.35; /* Ljusare när inaktiv */
-  transform: rotate(-5deg);
-  animation: doodleAppear 0.4s ease-out;
-  filter: brightness(1.5); /* Ljusare när inaktiv */
-  transition: opacity 0.3s ease, filter 0.3s ease;
+.doodle-nav-link.active .doodle-stroke-1 {
+  stroke-dashoffset: 0;
+  opacity: 0.6;
 }
 
-/* Mörkare och tydligare när aktiv */
-.doodle-nav-link.active .doodle-x {
-  opacity: 0.85; /* Mycket mörkare när aktiv */
-  filter: brightness(0.5) contrast(1.2); /* Gör SVG:en mörkare och skarpare */
+.doodle-nav-link.active .doodle-stroke-2 {
+  stroke-dashoffset: 0;
+  opacity: 0.35;
+  transition-delay: 0.1s;
 }
 
-@keyframes doodleAppear {
-  0% {
-    opacity: 0;
-    transform: rotate(-15deg) scale(0.5);
+/* Liten förhandstitt när man hovrar – länken är klickbar */
+.doodle-nav-link:not(.active):hover .doodle-stroke-1 {
+  stroke-dashoffset: 0;
+  opacity: 0.22;
+}
+
+.doodle-nav-link:focus-visible {
+  outline: 2px dashed var(--text-ink);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .doodle-stroke {
+    transition: none;
   }
-  50% {
-    opacity: 1;
-    transform: rotate(5deg) scale(1.1);
-  }
-  100% {
-    transform: rotate(-5deg) scale(1);
-  }
-}
-
-/* Aktiv länk får mörkare text */
-.doodle-nav-link.active .doodle-nav-text {
-  opacity: 0.5;
-  font-weight: 700;
 }

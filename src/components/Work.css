@@ -20,13 +20,14 @@
 .work-title::after {
   content: '';
   position: absolute;
-  bottom: -8px;
+  bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 60%;
-  height: 4px;
-  background: var(--text-ink);
-  border-radius: 2px;
+  width: 65%;
+  height: 10px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'%3E%3Cpath d='M2 8C30 2 55 12 85 7S145 1 198 7' fill='none' stroke='%23181818' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .work-subtitle {

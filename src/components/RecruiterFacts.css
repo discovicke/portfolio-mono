@@ -1,0 +1,112 @@
+/**
+ * RecruiterFacts Component Styles
+ *
+ * Fakta-panel i samma handritade, monokroma stil som resten av sajten.
+ */
+
+.recruiter-section {
+  padding: 4rem 1rem 6rem;
+}
+
+.recruiter-inner {
+  max-width: 52rem;
+  padding: 2.5rem 1.5rem;
+  border: 2px dashed var(--text-ink);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.recruiter-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.recruiter-title {
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.recruiter-subtitle {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+.recruiter-facts {
+  margin: 0;
+  display: grid;
+  gap: 0;
+}
+
+.recruiter-fact {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px dashed rgba(24, 24, 24, 0.25);
+}
+
+.recruiter-fact:last-child {
+  border-bottom: none;
+}
+
+.recruiter-fact dt {
+  font-family: var(--font-doodle);
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+
+.recruiter-fact dd {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.recruiter-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.recruiter-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border: 2px solid var(--text-ink);
+  border-radius: 4px;
+  font-family: var(--font-doodle);
+  font-size: 1.05rem;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.recruiter-button:hover,
+.recruiter-button:focus-visible {
+  background-color: var(--text-ink);
+  color: var(--bg-wall);
+  transform: translateY(-2px);
+}
+
+.recruiter-button:focus-visible {
+  outline: 2px dashed var(--text-ink);
+  outline-offset: 4px;
+}
+
+@media (min-width: 768px) {
+  .recruiter-title {
+    font-size: 3rem;
+  }
+
+  .recruiter-inner {
+    padding: 3rem 3rem 2.5rem;
+  }
+
+  .recruiter-fact {
+    grid-template-columns: 10rem 1fr;
+  }
+}

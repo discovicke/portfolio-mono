@@ -16,8 +16,6 @@
 .footer-cta h2 {
   font-family: var(--font-psych);
   font-size: 3.5rem;
-  cursor: pointer;
-  transition: transform 0.3s;
   margin-bottom: 3rem;
   display: inline-block;
 }
@@ -26,10 +24,6 @@
   .footer-cta h2 {
     font-size: 6rem;
   }
-}
-
-.footer-cta h2:hover {
-  transform: skewX(-10deg);
 }
 
 .social-links {

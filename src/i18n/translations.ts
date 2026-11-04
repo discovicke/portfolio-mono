@@ -15,13 +15,17 @@ export interface TranslationStrings {
         about: string;
         contact: string;
         goToTop: string;
+        openMenu: string;
+        closeMenu: string;
     };
 
     // Hero
     hero: {
         greeting: string;
+        h1: string;
         role: string;
         location: string;
+        availability: string;
         scrollToProjects: string;
         photoAlt: string;
     };
@@ -44,6 +48,15 @@ export interface TranslationStrings {
             buttonSv: string;
             buttonEn: string;
         };
+    };
+
+    // Recruiter quick facts
+    recruiter: {
+        title: string;
+        subtitle: string;
+        facts: Array<{ label: string; value: string }>;
+        emailCta: string;
+        cvCta: string;
     };
 
     // Footer
@@ -133,11 +146,15 @@ export const translations: Record<Language, TranslationStrings> = {
             about: 'Om Mig',
             contact: 'Kontakt',
             goToTop: 'Gå till toppen av sidan',
+            openMenu: 'Öppna meny',
+            closeMenu: 'Stäng meny',
         },
         hero: {
             greeting: 'Hej, jag heter Viktor!',
-            role: 'Systemutvecklare .NET',
+            h1: 'Systemutvecklare i Hudiksvall',
+            role: 'Studerar till .NET-utvecklare med AI-kompetens',
             location: 'Hudiksvall, Hälsingland',
+            availability: 'Öppen för juniora roller, sommarjobb och mindre\u00A0projekt',
             scrollToProjects: 'Scrolla till projekt',
             photoAlt: 'En bild på Viktor Johansson när han ler mot kameran',
         },
@@ -152,7 +169,7 @@ export const translations: Record<Language, TranslationStrings> = {
                 'Jag är en fullstack-utvecklare med fokus på .NET, med en bakgrund inom pedagogik, kreativt arbete och lång erfarenhet av att arbeta nära människor. Jag har alltid trivts i sammanhang där kreativitet, struktur och samarbete möts.',
                 'Efter år inom musikproduktion, undervisning och elevstöd har jag samlat på mig erfarenheter som kretsar kring samma sak: att förstå människor och lösa problem på ett sätt som fungerar i vardagen. I dag gör jag det genom systemutveckling.',
                 'När jag inte kodar hittar du mig med musikprojekt, framför en fotbollsmatch eller samtalandes runt sällskapsspel eller ett bastuaggregat.',
-                'Jag studerar till Systemutvecklare .NET med AI-kompetens på Edugrade i Hudiksvall och drivs av att bygga tydliga, användbara lösningar tillsammans med andra.',
+                'Jag studerar till Systemutvecklare .NET med AI-kompetens på Edugrade i Hudiksvall och drivs av att bygga tydliga, användbara lösningar tillsammans med andra. Just nu söker jag en junior roll i Hälsingland, Gävleborg eller på distans.',
                 'Jag drivs av att fortsätta växa tekniskt och bidra i ett team.',
             ],
             signature: 'Viktor',
@@ -162,6 +179,21 @@ export const translations: Record<Language, TranslationStrings> = {
                 buttonSv: 'CV (Svenska)',
                 buttonEn: 'CV (English)',
             },
+        },
+        recruiter: {
+            title: 'För dig som rekryterar',
+            subtitle: 'Det viktigaste på en rad – resten hittar du i projekten och CV:t.',
+            facts: [
+                { label: 'Roll', value: 'Systemutvecklare .NET under utbildning' },
+                { label: 'Ort', value: 'Hudiksvall, Hälsingland' },
+                { label: 'Utbildning', value: 'Systemutvecklare .NET med AI-kompetens, Edugrade Hudiksvall' },
+                { label: 'Söker', value: 'Junior tjänst, sommar-/extraarbete och mindre projekt' },
+                { label: 'Område', value: 'Hudiksvall, Hälsingland, Gävleborg och distans' },
+                { label: 'Tekniker', value: 'C#, .NET, ASP.NET, Entity Framework, Blazor, React, TypeScript, SQL, Azure OpenAI' },
+                { label: 'Språk', value: 'Svenska och engelska' },
+            ],
+            emailCta: 'Mejla mig',
+            cvCta: 'Ladda ner CV',
         },
         footer: {
             cta: 'Hör av dig!',
@@ -425,11 +457,15 @@ export const translations: Record<Language, TranslationStrings> = {
             about: 'About',
             contact: 'Contact',
             goToTop: 'Go to top of page',
+            openMenu: 'Open menu',
+            closeMenu: 'Close menu',
         },
         hero: {
             greeting: "Hi, I'm Viktor!",
-            role: '.NET Systems Developer',
+            h1: 'Software developer in Hudiksvall',
+            role: 'Studying to become a .NET\u00A0developer with AI\u00A0skills',
             location: 'Hudiksvall, Sweden',
+            availability: 'Open to junior roles, summer jobs and smaller\u00A0projects',
             scrollToProjects: 'Scroll to projects',
             photoAlt: 'A photo of Viktor Johansson smiling at the camera',
         },
@@ -444,7 +480,7 @@ export const translations: Record<Language, TranslationStrings> = {
                 "I'm a fullstack developer focusing on .NET, with a background in education, creative work, and extensive experience working closely with people. I've always thrived in environments where creativity, structure, and collaboration meet.",
                 "After years in music production, teaching, and student support, I've gathered experiences that revolve around the same thing: understanding people and solving problems in ways that work in everyday life. Today, I do that through systems development.",
                 "When I'm not coding, you'll find me working on music projects, watching a football match, or chatting around board games or a sauna.",
-                "I'm studying to become a .NET Systems Developer with AI competence at Edugrade in Hudiksvall, driven by building clear, useful solutions together with others.",
+                "I'm studying to become a .NET Systems Developer with AI competence at Edugrade in Hudiksvall, driven by building clear, useful solutions together with others. Right now I'm looking for a junior role in Hälsingland, Gävleborg or remotely.",
                 "I'm driven by continuing to grow technically and contributing to a team.",
             ],
             signature: 'Viktor',
@@ -454,6 +490,21 @@ export const translations: Record<Language, TranslationStrings> = {
                 buttonSv: 'CV (Swedish)',
                 buttonEn: 'CV (English)',
             },
+        },
+        recruiter: {
+            title: 'For recruiters',
+            subtitle: 'The essentials in one place – the rest is in the projects and the CV.',
+            facts: [
+                { label: 'Role', value: '.NET systems developer (student)' },
+                { label: 'Location', value: 'Hudiksvall, Hälsingland, Sweden' },
+                { label: 'Education', value: '.NET Systems Developer with AI competence, Edugrade Hudiksvall' },
+                { label: 'Looking for', value: 'Junior role, summer/part-time work and smaller projects' },
+                { label: 'Area', value: 'Hudiksvall, Hälsingland, Gävleborg and remote' },
+                { label: 'Technologies', value: 'C#, .NET, ASP.NET, Entity Framework, Blazor, React, TypeScript, SQL, Azure OpenAI' },
+                { label: 'Languages', value: 'Swedish and English' },
+            ],
+            emailCta: 'Email me',
+            cvCta: 'Download CV',
         },
         footer: {
             cta: 'Get in touch!',
