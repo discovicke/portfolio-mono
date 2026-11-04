@@ -43,8 +43,17 @@ const Hero: React.FC = () => {
                 <p className="hero-intro">{t.hero.greeting}</p>
 
                 {/* Huvudrubrik med liquid text-effekt (från SVG filter) */}
-                <h1 className="hero-title" style={{ filter: 'url(#liquid-text)' }}>
-                    PORT<br />FOLIO
+                <h1 className="hero-title">
+                    {/* Dekorativ logotyp – dold för skärmläsare så h1:an blir begriplig */}
+                    <span
+                        className="hero-title-mark"
+                        aria-hidden="true"
+                        style={{ filter: 'url(#liquid-text)' }}
+                    >
+                        PORT<br />FOLIO
+                    </span>
+                    {/* Rubrik som säger vad sidan handlar om, för Google och AI */}
+                    <span className="hero-title-role">{t.hero.h1}</span>
                 </h1>
 
                 {/* Beskrivning */}
@@ -52,6 +61,7 @@ const Hero: React.FC = () => {
                     {t.hero.role}<br />
                     {t.hero.location}
                 </p>
+                <p className="hero-availability font-doodle">{t.hero.availability}</p>
 
                 {/* Polaroid för mobil (visas bara på små skärmar) */}
                 <div className="hero-mobile-polaroid">
