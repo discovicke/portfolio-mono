@@ -15,6 +15,7 @@
 ## Länkar
 
 - Webbplats: https://viktorjohansson.vercel.app/
+- Webbplats (engelska): https://viktorjohansson.vercel.app/en/
 - GitHub: https://www.github.com/discovicke
 - LinkedIn: https://www.linkedin.com/in/viktorjohansson96/
 - Instagram: https://www.instagram.com/discovicke

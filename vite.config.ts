@@ -1,23 +1,36 @@
+import { resolve } from 'node:path'
 import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
-import { SITE, buildStructuredData } from './src/seo/config'
+import { SITE, buildStructuredData, pageUrl, type SiteLanguage } from './src/seo/config'
 
 /**
- * Lägger in titel, meta-taggar, canonical, Open Graph och JSON-LD i <head>.
- * Allt styrs från src/seo/config.ts så att domän och copy bara finns på ett ställe.
+ * Lägger in titel, meta-taggar, canonical, hreflang, Open Graph och JSON-LD.
+ * Allt styrs från src/seo/config.ts. Sidan /en/index.html får engelsk copy,
+ * startsidan får svensk.
  */
 function seoPlugin(): Plugin {
   return {
     name: 'portfolio-seo',
-    transformIndexHtml() {
-      const url = `${SITE.url}/`
+    transformIndexHtml(_html, ctx) {
+      const normalizedPath = ctx.filename.replace(/\\/g, '/')
+      const language: SiteLanguage = normalizedPath.includes('/en/') ? 'en' : 'sv'
+      const isEnglish = language === 'en'
+
+      const url = pageUrl(language)
       const image = `${SITE.url}${SITE.image}`
+      const title = isEnglish ? SITE.titleEn : SITE.title
+      const description = isEnglish ? SITE.descriptionEn : SITE.description
+      const imageAlt = isEnglish
+        ? `${SITE.name}, .NET developer in ${SITE.city}`
+        : `${SITE.name}, systemutvecklare .NET i ${SITE.city}`
+      const locale = isEnglish ? SITE.localeEn : SITE.locale
+      const localeAlternate = isEnglish ? SITE.locale : SITE.localeEn
 
       return [
-        { tag: 'title', children: SITE.title, injectTo: 'head' },
+        { tag: 'title', children: title, injectTo: 'head' },
         {
           tag: 'meta',
-          attrs: { name: 'description', content: SITE.description },
+          attrs: { name: 'description', content: description },
           injectTo: 'head',
         },
         {
@@ -44,6 +57,23 @@ function seoPlugin(): Plugin {
           injectTo: 'head',
         },
 
+        // Språkvarianter
+        {
+          tag: 'link',
+          attrs: { rel: 'alternate', hreflang: 'sv', href: `${SITE.url}/` },
+          injectTo: 'head',
+        },
+        {
+          tag: 'link',
+          attrs: { rel: 'alternate', hreflang: 'en', href: SITE.urlEn },
+          injectTo: 'head',
+        },
+        {
+          tag: 'link',
+          attrs: { rel: 'alternate', hreflang: 'x-default', href: `${SITE.url}/` },
+          injectTo: 'head',
+        },
+
         // Open Graph
         {
           tag: 'meta',
@@ -52,17 +82,20 @@ function seoPlugin(): Plugin {
         },
         {
           tag: 'meta',
-          attrs: { property: 'og:site_name', content: SITE.shortTitle },
+          attrs: {
+            property: 'og:site_name',
+            content: isEnglish ? SITE.shortTitleEn : SITE.shortTitle,
+          },
           injectTo: 'head',
         },
         {
           tag: 'meta',
-          attrs: { property: 'og:title', content: SITE.title },
+          attrs: { property: 'og:title', content: title },
           injectTo: 'head',
         },
         {
           tag: 'meta',
-          attrs: { property: 'og:description', content: SITE.description },
+          attrs: { property: 'og:description', content: description },
           injectTo: 'head',
         },
         {
@@ -77,10 +110,7 @@ function seoPlugin(): Plugin {
         },
         {
           tag: 'meta',
-          attrs: {
-            property: 'og:image:alt',
-            content: `${SITE.name}, systemutvecklare .NET i ${SITE.city}`,
-          },
+          attrs: { property: 'og:image:alt', content: imageAlt },
           injectTo: 'head',
         },
         {
@@ -95,14 +125,14 @@ function seoPlugin(): Plugin {
         },
         {
           tag: 'meta',
-          attrs: { property: 'og:locale', content: SITE.locale },
+          attrs: { property: 'og:locale', content: locale },
           injectTo: 'head',
         },
         {
           tag: 'meta',
           attrs: {
             property: 'og:locale:alternate',
-            content: SITE.localeAlternate,
+            content: localeAlternate,
           },
           injectTo: 'head',
         },
@@ -115,12 +145,12 @@ function seoPlugin(): Plugin {
         },
         {
           tag: 'meta',
-          attrs: { name: 'twitter:title', content: SITE.title },
+          attrs: { name: 'twitter:title', content: title },
           injectTo: 'head',
         },
         {
           tag: 'meta',
-          attrs: { name: 'twitter:description', content: SITE.description },
+          attrs: { name: 'twitter:description', content: description },
           injectTo: 'head',
         },
         {
@@ -130,10 +160,7 @@ function seoPlugin(): Plugin {
         },
         {
           tag: 'meta',
-          attrs: {
-            name: 'twitter:image:alt',
-            content: `${SITE.name}, systemutvecklare .NET i ${SITE.city}`,
-          },
+          attrs: { name: 'twitter:image:alt', content: imageAlt },
           injectTo: 'head',
         },
 
@@ -141,7 +168,7 @@ function seoPlugin(): Plugin {
         {
           tag: 'script',
           attrs: { type: 'application/ld+json' },
-          children: JSON.stringify(buildStructuredData(), null, 2),
+          children: JSON.stringify(buildStructuredData(language), null, 2),
           injectTo: 'head',
         },
       ]
@@ -152,4 +179,12 @@ function seoPlugin(): Plugin {
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), seoPlugin()],
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(process.cwd(), 'index.html'),
+        en: resolve(process.cwd(), 'en/index.html'),
+      },
+    },
+  },
 })
