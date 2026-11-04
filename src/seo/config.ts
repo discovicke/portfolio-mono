@@ -15,7 +15,7 @@ export const SITE = {
     title: 'Systemutvecklare .NET i Hudiksvall – Viktor Johansson',
     shortTitle: 'Viktor Johansson – Systemutvecklare .NET',
     description:
-        'Viktor Johansson är systemutvecklare .NET under utbildning i Hudiksvall. Han söker junior tjänst, sommarjobb och mindre projekt i Hälsingland, Gävleborg och på distans. Se projekt, kompetenser och CV.',
+        'Systemutvecklare .NET under utbildning i Hudiksvall. Söker junior roll, sommarjobb eller mindre projekt i Hälsingland, Gävleborg och på distans.',
     email: 'johanssonviktor@pm.me',
     image: '/og-image.jpg',
     locale: 'sv_SE',

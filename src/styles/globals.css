@@ -14,11 +14,13 @@
   font-family: 'Shrikhand';
   src: url("../assets/fonts/Shrikhand-Regular.ttf") format('truetype');
   font-weight: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'ComicNeue';
   src: url("../assets/fonts/ComicNeue-Regular.ttf") format('truetype');
   font-weight: normal;
+  font-display: swap;
 }
 
 /* CSS-variabler (globala färger och typsnitt) */
@@ -101,6 +103,18 @@ a {
 @media (min-width: 768px) {
   .section-title {
     font-size: 4.5rem;
+  }
+}
+
+/* Respektera användare som vill ha mindre rörelse */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 

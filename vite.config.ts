@@ -85,6 +85,16 @@ function seoPlugin(): Plugin {
         },
         {
           tag: 'meta',
+          attrs: { property: 'og:image:width', content: '1200' },
+          injectTo: 'head',
+        },
+        {
+          tag: 'meta',
+          attrs: { property: 'og:image:height', content: '630' },
+          injectTo: 'head',
+        },
+        {
+          tag: 'meta',
           attrs: { property: 'og:locale', content: SITE.locale },
           injectTo: 'head',
         },
@@ -116,6 +126,14 @@ function seoPlugin(): Plugin {
         {
           tag: 'meta',
           attrs: { name: 'twitter:image', content: image },
+          injectTo: 'head',
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            name: 'twitter:image:alt',
+            content: `${SITE.name}, systemutvecklare .NET i ${SITE.city}`,
+          },
           injectTo: 'head',
         },
 
