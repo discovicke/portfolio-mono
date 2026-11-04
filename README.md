@@ -41,45 +41,6 @@ Outputs production files to the `dist/` folder.
 - Optimized for Vercel; see `vercel.json` for defaults.
 - Typical settings: build `npm run build`, output `dist`, install `npm install`.
 
-## SEO & synlighet
-
-Sajten är en React-SPA, men `npm run build` prerendrar hela innehållet till
-`dist/index.html` via `scripts/prerender.mjs` (körs automatiskt som `postbuild`).
-Det gör att Google och AI-crawlers som inte kör JavaScript ändå ser texten.
-
-Allt som rör titel, beskrivning, canonical, Open Graph och JSON-LD finns i
-`src/seo/config.ts`. Ändra domän där om sajten flyttas till en egen domän, och
-uppdatera samtidigt `public/robots.txt` och `public/sitemap.xml`.
-
-Övriga filer:
-
-- `public/robots.txt` – tillåter sökmotorer och AI-botar, pekar på sitemapen.
-- `public/sitemap.xml` – skickas in till Google/Bing.
-- `public/llms.txt` – kort maskinläsbar sammanfattning för AI-assistenter.
-
-### Bilder
-
-Bilderna i `public/` är WebP. När du lägger till nya skärmdumpar eller foton:
-
-```bash
-npm run optimize:images
-```
-
-Skriptet skalar ned till max 1400 px (porträtt till 900 px), skriver `.webp` och
-genererar dessutom `public/og-image.jpg`. Referera sedan till `.webp`-filen i
-`src/data/projects.ts`.
-
-### Google Search Console
-
-1. Logga in på [search.google.com/search-console](https://search.google.com/search-console) med ditt Google-konto.
-2. Lägg till `viktorjohansson.vercel.app` som property.
-3. Välj verifiering med HTML-tagg. Taggen finns redan i `index.html` – byt bara ut `content`-värdet om du behöver verifiera en ny domän.
-4. Deploya, klicka Verifiera.
-5. Skicka in `https://viktorjohansson.vercel.app/sitemap.xml` under Sitemaps.
-
-Bing Webmaster Tools kan importera samma property och är värt att göra eftersom
-Bing bland annat ligger bakom en del av det ChatGPT söker på.
-
 ## License
 
 © 2026 Viktor Johansson
