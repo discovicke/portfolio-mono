@@ -18,13 +18,9 @@ const Footer: React.FC = () => {
     return (
         <footer id="contact" className="footer">
             <div className="container">
-                {/* Call-to-action rubrik – klickbar, öppnar mejl */}
+                {/* Call-to-action rubrik */}
                 <div className="footer-cta">
-                    <h2>
-                        <a href={CONTACT_MAILTO} className="footer-cta-link">
-                            {t.footer.cta}
-                        </a>
-                    </h2>
+                    <h2>{t.footer.cta}</h2>
                 </div>
 
             {/* Sociala medier länkar */}
