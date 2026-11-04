@@ -73,7 +73,7 @@ genererar dessutom `public/og-image.jpg`. Referera sedan till `.webp`-filen i
 
 1. Logga in på [search.google.com/search-console](https://search.google.com/search-console) med ditt Google-konto.
 2. Lägg till `viktorjohansson.vercel.app` som property.
-3. Välj verifiering med HTML-tagg och klistra in taggen i `index.html` där kommentaren finns.
+3. Välj verifiering med HTML-tagg. Taggen finns redan i `index.html` – byt bara ut `content`-värdet om du behöver verifiera en ny domän.
 4. Deploya, klicka Verifiera.
 5. Skicka in `https://viktorjohansson.vercel.app/sitemap.xml` under Sitemaps.
 
