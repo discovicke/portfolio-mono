@@ -8,6 +8,8 @@
   padding: 8rem 1rem;
   text-align: center;
   position: relative;
+  /* Håller den roterande dekorformen innanför sektionen så sidan inte kan sidscrollas */
+  overflow: hidden;
 }
 
 .about-content {
@@ -80,8 +82,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 110%;
-  height: 78%;
+  width: 100%;
+  height: 74%;
   border: 2px dashed var(--birch-grey);
   border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
   z-index: 0;

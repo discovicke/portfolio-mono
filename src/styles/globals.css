@@ -38,6 +38,11 @@
   box-sizing: border-box;
 }
 
+html {
+  /* Skyddsnät mot horisontell scroll från roterande/dekorativa element */
+  overflow-x: clip;
+}
+
 body {
   margin: 0;
   padding: 0;
