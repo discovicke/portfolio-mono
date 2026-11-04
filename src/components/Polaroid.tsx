@@ -29,6 +29,8 @@ interface PolaroidProps {
     /** Stilvariant: 'polaroid' | 'instant' */
     variant?: PolaroidVariant;
     showTape?: boolean;
+    /** Laddningstrategi för bilden, 'eager' för bilder ovanför folden */
+    loading?: 'lazy' | 'eager';
     /** onClick-handler */
     onClick?: () => void;
 }
@@ -51,6 +53,7 @@ export const Polaroid: React.FC<PolaroidProps> = ({
     caption,
     variant = 'polaroid',
     showTape = true,
+    loading = 'lazy',
     onClick
 }) => {
     // Polaroid-stil
@@ -58,7 +61,7 @@ export const Polaroid: React.FC<PolaroidProps> = ({
         return (
             <div className="polaroid" onClick={onClick} role={onClick ? 'button' : undefined} tabIndex={onClick ? 0 : undefined} aria-label={onClick ? (caption ? `${caption}` : alt) : undefined}>
                 {showTape && <div className="polaroid-tape" />}
-                <img src={src} alt={alt} className="polaroid-image" />
+                <img src={src} alt={alt} className="polaroid-image" loading={loading} decoding="async" />
                 {caption && <span className="polaroid-caption">{caption}</span>}
             </div>
         );
@@ -68,7 +71,7 @@ export const Polaroid: React.FC<PolaroidProps> = ({
     if (variant === 'instant') {
         return (
             <div className="instant" onClick={onClick} role={onClick ? 'button' : undefined} tabIndex={onClick ? 0 : undefined} aria-label={onClick ? (caption ? `${caption}` : alt) : undefined}>
-                <img src={src} alt={alt} className="instant-image" />
+                <img src={src} alt={alt} className="instant-image" loading={loading} decoding="async" />
                 {caption && <span className="instant-caption">{caption}</span>}
             </div>
         );

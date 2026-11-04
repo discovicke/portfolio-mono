@@ -77,6 +77,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, project }) => {
                     src={project.img}
                     alt={translatedProject?.title || project.title}
                     className="modal-image"
+                    decoding="async"
                 />
 
                 {/* Modal-innehåll */}

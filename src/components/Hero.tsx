@@ -29,11 +29,12 @@ const Hero: React.FC = () => {
             {/* Polaroid till vänster (på desktop) */}
             <div className="hero-polaroid hero-polaroid-left">
                 <Polaroid
-                    src="/IMG_6450.PNG"
+                    src="/IMG_6450.webp"
                     alt={t.hero.photoAlt}
                     caption=" "
                     variant="polaroid"
                     showTape={false}
+                    loading="eager"
                 />
             </div>
 
@@ -48,7 +49,7 @@ const Hero: React.FC = () => {
                     <span
                         className="hero-title-mark"
                         aria-hidden="true"
-                        style={{ filter: 'url(#liquid-text)' }}
+                        style={{ filter: 'url(#wavy)' }}
                     >
                         PORT<br />FOLIO
                     </span>
@@ -66,7 +67,7 @@ const Hero: React.FC = () => {
                 {/* Polaroid för mobil (visas bara på små skärmar) */}
                 <div className="hero-mobile-polaroid">
                     <Polaroid
-                        src="/IMG_6450.PNG"
+                        src="/IMG_6450.webp"
                         alt={t.hero.photoAlt}
                         caption=" "
                         variant="polaroid"

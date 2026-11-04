@@ -57,6 +57,18 @@ uppdatera samtidigt `public/robots.txt` och `public/sitemap.xml`.
 - `public/sitemap.xml` – skickas in till Google/Bing.
 - `public/llms.txt` – kort maskinläsbar sammanfattning för AI-assistenter.
 
+### Bilder
+
+Bilderna i `public/` är WebP. När du lägger till nya skärmdumpar eller foton:
+
+```bash
+npm run optimize:images
+```
+
+Skriptet skalar ned till max 1400 px (porträtt till 900 px), skriver `.webp` och
+genererar dessutom `public/og-image.jpg`. Referera sedan till `.webp`-filen i
+`src/data/projects.ts`.
+
 ### Google Search Console
 
 1. Logga in på [search.google.com/search-console](https://search.google.com/search-console) med ditt Google-konto.

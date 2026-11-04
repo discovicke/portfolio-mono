@@ -79,7 +79,7 @@ const Work: React.FC = () => {
                             >
                                 {/* Wobble Box - bildcontainer med handritad ram */}
                                 <div className="wobble-box">
-                                    <img src={p.img} alt={title} />
+                                    <img src={p.img} alt={title} loading="lazy" decoding="async" />
 
                                     {/* Kategori-sticker i hörnet */}
                                     <div className="sticker">

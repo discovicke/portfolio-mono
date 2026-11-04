@@ -57,7 +57,7 @@ const About: React.FC = () => {
                     {/* Höger kolumn: Polaroid */}
                     <div className="about-polaroid-column">
                         <Polaroid
-                            src="/IMG_6448.PNG"
+                            src="/IMG_6448.webp"
                             alt={t.about.photoAlt}
                             caption=" "
                             variant="polaroid"

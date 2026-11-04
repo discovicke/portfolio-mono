@@ -148,7 +148,7 @@ export const translations: Record<Language, TranslationStrings> = {
         hero: {
             greeting: 'Hej, jag heter Viktor!',
             h1: 'Systemutvecklare i Hudiksvall',
-            role: 'Student till .NET-utvecklare med AI-kompetens',
+            role: 'Studerar till .NET-utvecklare med AI-kompetens',
             location: 'Hudiksvall, Hälsingland',
             availability: 'Öppen för juniora roller, sommarjobb och mindre projekt',
             scrollToProjects: 'Scrolla till projekt',
@@ -180,7 +180,7 @@ export const translations: Record<Language, TranslationStrings> = {
             title: 'För dig som rekryterar',
             subtitle: 'Det viktigaste på en rad – resten hittar du i projekten och CV:t.',
             facts: [
-                { label: 'Roll', value: 'Systemutvecklare .NET (student)' },
+                { label: 'Roll', value: 'Systemutvecklare .NET under utbildning' },
                 { label: 'Ort', value: 'Hudiksvall, Hälsingland' },
                 { label: 'Utbildning', value: 'Systemutvecklare .NET med AI-kompetens, Edugrade Hudiksvall' },
                 { label: 'Söker', value: 'Junior tjänst, sommar-/extraarbete och mindre projekt' },
@@ -457,7 +457,7 @@ export const translations: Record<Language, TranslationStrings> = {
         hero: {
             greeting: "Hi, I'm Viktor!",
             h1: 'Systems developer in Hudiksvall',
-            role: 'Student .NET developer with AI skills',
+            role: 'Studying to become a .NET developer with AI skills',
             location: 'Hudiksvall, Sweden',
             availability: 'Open to junior roles, summer jobs and smaller projects',
             scrollToProjects: 'Scroll to projects',

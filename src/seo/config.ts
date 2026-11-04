@@ -17,13 +17,13 @@ export const SITE = {
     description:
         'Viktor Johansson är systemutvecklare .NET under utbildning i Hudiksvall. Han söker junior tjänst, sommarjobb och mindre projekt i Hälsingland, Gävleborg och på distans. Se projekt, kompetenser och CV.',
     email: 'johanssonviktor@pm.me',
-    image: '/ViktorJohanssonHero.png',
+    image: '/og-image.jpg',
     locale: 'sv_SE',
     localeAlternate: 'en_US',
     city: 'Hudiksvall',
     region: 'Gävleborg',
     country: 'SE',
-    jobTitle: 'Systemutvecklare .NET (student)',
+    jobTitle: 'Systemutvecklare .NET under utbildning',
     education: 'Edugrade, Hudiksvall',
     sameAs: [
         'https://www.github.com/discovicke',
