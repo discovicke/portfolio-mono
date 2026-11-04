@@ -16,10 +16,28 @@
 .footer-cta h2 {
   font-family: var(--font-psych);
   font-size: 3.5rem;
-  cursor: pointer;
-  transition: transform 0.3s;
   margin-bottom: 3rem;
   display: inline-block;
+}
+
+.footer-cta-link {
+  display: inline-block;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+.footer-cta-link:hover,
+.footer-cta-link:focus-visible {
+  transform: rotate(-1.5deg) skewX(-4deg);
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.18em;
+}
+
+.footer-cta-link:focus-visible {
+  outline: 2px dashed var(--bg-wall);
+  outline-offset: 8px;
 }
 
 @media (min-width: 768px) {
