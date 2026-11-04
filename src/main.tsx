@@ -5,9 +5,12 @@ import App from './App.tsx'
 
 const container = document.getElementById('root')!
 
+// Sidans språk kommer från <html lang> och matchar den prerenderade HTML:en
+const initialLanguage = document.documentElement.lang === 'en' ? 'en' : 'sv'
+
 const app = (
   <StrictMode>
-    <App />
+    <App initialLanguage={initialLanguage} />
   </StrictMode>
 )
 

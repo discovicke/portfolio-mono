@@ -37,13 +37,19 @@ import Footer from './components/Footer';
 
 // Språkhantering
 import { LanguageProvider } from './i18n/LanguageContext';
+import type { Language } from './i18n/translations';
 
 // Vercel Analytics
 import { Analytics } from '@vercel/analytics/react';
 
-function App() {
+interface AppProps {
+    /** Språk som sidan är prerenderad på. Styr första render och hydrering. */
+    initialLanguage?: Language;
+}
+
+function App({ initialLanguage = 'sv' }: AppProps) {
     return (
-        <LanguageProvider>
+        <LanguageProvider initialLanguage={initialLanguage}>
             {/* SVG Filters - Måste finnas för att CSS filter:url() ska fungera */}
             <SVGFilters/>
 

@@ -2,7 +2,8 @@
  * LanguageToggle Component
  *
  * En diskret språkväxlare som följer portfolions handritade estetik.
- * Visar SV/EN och växlar mellan svenska och engelska.
+ * Den är en riktig länk mellan / (svenska) och /en/ (engelska), så att
+ * språkversionerna får egna indexerbara URL:er och hreflang fungerar.
  */
 
 import React from 'react';
@@ -10,23 +11,22 @@ import { useLanguage } from '../i18n/LanguageContext';
 import './LanguageToggle.css';
 
 const LanguageToggle: React.FC = () => {
-    const { language, setLanguage } = useLanguage();
+    const { language } = useLanguage();
 
-    const toggleLanguage = () => {
-        setLanguage(language === 'sv' ? 'en' : 'sv');
-    };
+    const nextLanguage = language === 'sv' ? 'en' : 'sv';
+    const nextHref = nextLanguage === 'en' ? '/en/' : '/';
 
     return (
-        <button
+        <a
             className="language-toggle"
-            onClick={toggleLanguage}
+            href={nextHref}
+            hrefLang={nextLanguage}
             aria-label={language === 'sv' ? 'Switch to English' : 'Byt till svenska'}
-            type="button"
         >
             <span className={`lang-option ${language === 'sv' ? 'active' : ''}`}>SV</span>
             <span className="lang-divider">/</span>
             <span className={`lang-option ${language === 'en' ? 'active' : ''}`}>EN</span>
-        </button>
+        </a>
     );
 };
 

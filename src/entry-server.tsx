@@ -1,13 +1,14 @@
 /**
  * SSR-ingång som bara används av scripts/prerender.mjs.
  *
- * Renderar hela appen till HTML-sträng så att crawlare som inte kör
- * JavaScript (Google delvis, men framför allt AI-botar) ser innehållet.
+ * Renderar hela appen till HTML-sträng per språk så att crawlare som inte
+ * kör JavaScript ser innehållet på både / och /en/.
  */
 
 import { renderToString } from 'react-dom/server';
 import App from './App';
+import type { Language } from './i18n/translations';
 
-export function render(): string {
-    return renderToString(<App />);
+export function render(language: Language = 'sv'): string {
+    return renderToString(<App initialLanguage={language} />);
 }

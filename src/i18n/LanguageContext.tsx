@@ -2,7 +2,10 @@
  * Language Context
  *
  * React Context för att hantera språkval globalt i applikationen.
- * Sparar användarens val i localStorage så det bevaras mellan sessioner.
+ *
+ * Språket styrs av URL:en ( / = svenska, /en/ = engelska ) och prerendras
+ * per sida. Det gör att klientens första render alltid matchar HTML:en och
+ * att hydreringen blir ren. Språkväxlaren navigerar mellan sidorna.
  */
 
 /* eslint-disable react-refresh/only-export-components */
@@ -18,54 +21,25 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-const STORAGE_KEY = 'portfolio-language';
-
-/**
- * Hämta sparad språkinställning från localStorage
- */
-const getSavedLanguage = (): Language => {
-    if (typeof window !== 'undefined') {
-        const saved = localStorage.getItem(STORAGE_KEY);
-        if (saved === 'en' || saved === 'sv') {
-            return saved;
-        }
-        // Kolla webbläsarens språkinställning
-        const browserLang = navigator.language.toLowerCase();
-        if (browserLang.startsWith('en')) {
-            return 'en';
-        }
-    }
-    return 'sv'; // Standard: svenska
-};
-
 interface LanguageProviderProps {
     children: ReactNode;
+    /** Språket som sidan är prerenderad på */
+    initialLanguage?: Language;
 }
 
-export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-    // Starta alltid på svenska så att klientens första render matchar den
-    // prerenderade HTML:en. Sparat språkval appliceras direkt efter hydrering.
-    const [language, setLanguageState] = useState<Language>('sv');
+export const LanguageProvider: React.FC<LanguageProviderProps> = ({
+    children,
+    initialLanguage = 'sv',
+}) => {
+    const [language, setLanguageState] = useState<Language>(initialLanguage);
 
     const setLanguage = (lang: Language) => {
         setLanguageState(lang);
-        localStorage.setItem(STORAGE_KEY, lang);
         // Uppdatera html lang-attribut för tillgänglighet
         document.documentElement.lang = lang;
     };
 
-    // Läs sparat språk (eller webbläsarens) efter att sidan hydrerats
-    useEffect(() => {
-        const initial = getSavedLanguage();
-        if (initial !== 'sv') {
-            // Måste ske efter hydrering: första klientrenderingen ska matcha
-            // den prerenderade svenska HTML:en.
-            // eslint-disable-next-line react-hooks/set-state-in-effect
-            setLanguageState(initial);
-        }
-    }, []);
-
-    // Sätt initialt språk på html-elementet
+    // Håll html lang-attributet i synk med valt språk
     useEffect(() => {
         document.documentElement.lang = language;
     }, [language]);
