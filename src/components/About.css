@@ -80,12 +80,13 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 120%;
-  height: 80%;
+  width: 110%;
+  height: 78%;
   border: 2px dashed var(--birch-grey);
   border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
   z-index: 0;
-  animation: spin 60s linear infinite;
+  opacity: 0.75;
+  animation: spin 90s linear infinite;
   pointer-events: none;
 }
 
@@ -95,6 +96,12 @@
   }
   to {
     transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-bg-shape {
+    animation: none;
   }
 }
 

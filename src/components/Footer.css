@@ -28,10 +28,6 @@
   }
 }
 
-.footer-cta h2:hover {
-  transform: skewX(-10deg);
-}
-
 .social-links {
   display: flex;
   justify-content: center;

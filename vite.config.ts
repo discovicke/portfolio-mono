@@ -126,13 +126,6 @@ function seoPlugin(): Plugin {
           children: JSON.stringify(buildStructuredData(), null, 2),
           injectTo: 'head',
         },
-
-        // Badges från shields.io används i kompetens-sektionen
-        {
-          tag: 'link',
-          attrs: { rel: 'preconnect', href: 'https://img.shields.io' },
-          injectTo: 'head',
-        },
       ]
     },
   }

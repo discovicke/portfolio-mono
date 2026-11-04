@@ -59,7 +59,7 @@ export const Polaroid: React.FC<PolaroidProps> = ({
     // Polaroid-stil
     if (variant === 'polaroid') {
         return (
-            <div className="polaroid" onClick={onClick} role={onClick ? 'button' : undefined} tabIndex={onClick ? 0 : undefined} aria-label={onClick ? (caption ? `${caption}` : alt) : undefined}>
+            <div className={`polaroid${onClick ? ' is-interactive' : ''}`} onClick={onClick} role={onClick ? 'button' : undefined} tabIndex={onClick ? 0 : undefined} aria-label={onClick ? (caption ? `${caption}` : alt) : undefined}>
                 {showTape && <div className="polaroid-tape" />}
                 <img src={src} alt={alt} className="polaroid-image" loading={loading} decoding="async" />
                 {caption && <span className="polaroid-caption">{caption}</span>}
@@ -70,7 +70,7 @@ export const Polaroid: React.FC<PolaroidProps> = ({
     // Instant/Fuji-stil
     if (variant === 'instant') {
         return (
-            <div className="instant" onClick={onClick} role={onClick ? 'button' : undefined} tabIndex={onClick ? 0 : undefined} aria-label={onClick ? (caption ? `${caption}` : alt) : undefined}>
+            <div className={`instant${onClick ? ' is-interactive' : ''}`} onClick={onClick} role={onClick ? 'button' : undefined} tabIndex={onClick ? 0 : undefined} aria-label={onClick ? (caption ? `${caption}` : alt) : undefined}>
                 <img src={src} alt={alt} className="instant-image" loading={loading} decoding="async" />
                 {caption && <span className="instant-caption">{caption}</span>}
             </div>

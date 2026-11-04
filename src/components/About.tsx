@@ -17,7 +17,7 @@ const About: React.FC = () => {
     return (
         <section id="about" className="about-section">
             {/* Roterande dekorativ bakgrundsform */}
-            {/* <div className="about-bg-shape" /> */}
+            <div className="about-bg-shape" aria-hidden="true" />
 
             {/* Huvudinnehåll - två kolumner på desktop */}
             <div className="about-content">

@@ -16,7 +16,6 @@ import './Skills.css';
 
 interface Skill {
     name: string;
-    icon: string; // shields.io badge URL
 }
 
 interface SkillCategory {
@@ -28,50 +27,50 @@ const skillCategories: SkillCategory[] = [
     {
         titleKey: 'frontend',
         skills: [
-            { name: 'HTML5', icon: 'https://img.shields.io/badge/HTML5-181818?style=for-the-badge&logo=html5&logoColor=EFEFEA' },
-            { name: 'CSS3', icon: 'https://img.shields.io/badge/CSS3-181818?style=for-the-badge&logo=css3&logoColor=EFEFEA' },
-            { name: 'JavaScript', icon: 'https://img.shields.io/badge/JavaScript-181818?style=for-the-badge&logo=javascript&logoColor=EFEFEA' },
-            { name: 'TypeScript', icon: 'https://img.shields.io/badge/TypeScript-181818?style=for-the-badge&logo=typescript&logoColor=EFEFEA' },
-            { name: 'Angular', icon: 'https://img.shields.io/badge/Angular-181818?style=for-the-badge&logo=angular&logoColor=EFEFEA' },
-            { name: 'React', icon: 'https://img.shields.io/badge/React-181818?style=for-the-badge&logo=react&logoColor=EFEFEA' },
-            { name: 'Vite', icon: 'https://img.shields.io/badge/Vite-181818?style=for-the-badge&logo=vite&logoColor=EFEFEA' },
-            { name: 'SCSS', icon: 'https://img.shields.io/badge/SCSS-181818?style=for-the-badge&logo=sass&logoColor=EFEFEA' },
+            { name: 'HTML5' },
+            { name: 'CSS3' },
+            { name: 'JavaScript' },
+            { name: 'TypeScript' },
+            { name: 'Angular' },
+            { name: 'React' },
+            { name: 'Vite' },
+            { name: 'SCSS' },
         ],
     },
     {
         titleKey: 'backend',
         skills: [
-            { name: 'C#', icon: 'https://img.shields.io/badge/C%23-181818?style=for-the-badge&logo=csharp&logoColor=EFEFEA' },
-            { name: '.NET', icon: 'https://img.shields.io/badge/.NET-181818?style=for-the-badge&logo=dotnet&logoColor=EFEFEA' },
-            { name: 'ASP.NET', icon: 'https://img.shields.io/badge/ASP.NET-181818?style=for-the-badge&logo=dotnet&logoColor=EFEFEA' },
-            { name: 'Node.js', icon: 'https://img.shields.io/badge/Node.js-181818?style=for-the-badge&logo=nodedotjs&logoColor=EFEFEA' },
-            { name: 'Entity Framework', icon: 'https://img.shields.io/badge/Entity_Framework-181818?style=for-the-badge&logo=dotnet&logoColor=EFEFEA' },
-            { name: 'Dapper', icon: 'https://img.shields.io/badge/Dapper-181818?style=for-the-badge&logo=dotnet&logoColor=EFEFEA' },
-            { name: 'Blazor', icon: 'https://img.shields.io/badge/Blazor-181818?style=for-the-badge&logo=blazor&logoColor=EFEFEA' },
-            { name: 'xUnit', icon: 'https://img.shields.io/badge/xUnit-181818?style=for-the-badge&logo=dotnet&logoColor=EFEFEA' },
+            { name: 'C#' },
+            { name: '.NET' },
+            { name: 'ASP.NET' },
+            { name: 'Node.js' },
+            { name: 'Entity Framework' },
+            { name: 'Dapper' },
+            { name: 'Blazor' },
+            { name: 'xUnit' },
         ],
     },
     {
         titleKey: 'tools',
         skills: [
-            { name: 'SQL', icon: 'https://img.shields.io/badge/SQL-181818?style=for-the-badge&logo=postgresql&logoColor=EFEFEA' },
-            { name: 'Git', icon: 'https://img.shields.io/badge/Git-181818?style=for-the-badge&logo=git&logoColor=EFEFEA' },
-            { name: 'GitHub', icon: 'https://img.shields.io/badge/GitHub-181818?style=for-the-badge&logo=github&logoColor=EFEFEA' },
-            { name: 'VS Code', icon: 'https://img.shields.io/badge/VS_Code-181818?style=for-the-badge&logo=visualstudiocode&logoColor=EFEFEA' },
-            { name: 'JetBrains', icon: 'https://img.shields.io/badge/JetBrains-181818?style=for-the-badge&logo=jetbrains&logoColor=EFEFEA' },
-            { name: 'Postman', icon: 'https://img.shields.io/badge/Postman-181818?style=for-the-badge&logo=postman&logoColor=EFEFEA' },
-            { name: 'SQLite', icon: 'https://img.shields.io/badge/SQLite-181818?style=for-the-badge&logo=sqlite&logoColor=EFEFEA' },
-            { name: 'PostgreSQL', icon: 'https://img.shields.io/badge/PostgreSQL-181818?style=for-the-badge&logo=postgresql&logoColor=EFEFEA' },
-            { name: 'Docker', icon: 'https://img.shields.io/badge/Docker-181818?style=for-the-badge&logo=docker&logoColor=EFEFEA' },
-            { name: 'NuGet', icon: 'https://img.shields.io/badge/NuGet-181818?style=for-the-badge&logo=nuget&logoColor=EFEFEA' },
+            { name: 'SQL' },
+            { name: 'Git' },
+            { name: 'GitHub' },
+            { name: 'VS Code' },
+            { name: 'JetBrains' },
+            { name: 'Postman' },
+            { name: 'SQLite' },
+            { name: 'PostgreSQL' },
+            { name: 'Docker' },
+            { name: 'NuGet' },
         ],
     },
     {
         titleKey: 'aidata',
         skills: [
-            { name: 'Azure OpenAI', icon: 'https://img.shields.io/badge/Azure_OpenAI-181818?style=for-the-badge&logo=openai&logoColor=EFEFEA' },
-            { name: 'Puppeteer', icon: 'https://img.shields.io/badge/Puppeteer-181818?style=for-the-badge&logo=puppeteer&logoColor=EFEFEA' },
-            { name: 'JWT', icon: 'https://img.shields.io/badge/JWT-181818?style=for-the-badge&logo=jsonwebtokens&logoColor=EFEFEA' },
+            { name: 'Azure OpenAI' },
+            { name: 'Puppeteer' },
+            { name: 'JWT' },
         ],
     },
 ];
@@ -117,14 +116,7 @@ const Skills: React.FC = () => {
                                         <ul className="skill-list" role="list">
                                             {category.skills.map((skill) => (
                                                 <li key={skill.name} className="skill-item">
-                                                    <div className="skill-card" tabIndex={0} role="listitem" aria-label={skill.name}>
-                                                        <img
-                                                            src={skill.icon}
-                                                            alt={skill.name}
-                                                            className="skill-icon"
-                                                            loading="lazy"
-                                                        />
-                                                    </div>
+                                                    <span className="skill-card">{skill.name}</span>
                                                 </li>
                                             ))}
                                         </ul>

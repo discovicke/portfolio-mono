@@ -180,13 +180,6 @@
   font-size: 1rem;
   border: 2px solid var(--text-ink);
   border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
-  transition: all 0.3s ease;
-}
-
-.modal-tech-tag:hover {
-  background: var(--text-ink);
-  color: var(--bg-wall);
-  transform: rotate(-2deg);
 }
 
 /* Role section */
