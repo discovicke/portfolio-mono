@@ -15,6 +15,8 @@ export interface TranslationStrings {
         about: string;
         contact: string;
         goToTop: string;
+        openMenu: string;
+        closeMenu: string;
     };
 
     // Hero
@@ -144,6 +146,8 @@ export const translations: Record<Language, TranslationStrings> = {
             about: 'Om Mig',
             contact: 'Kontakt',
             goToTop: 'Gå till toppen av sidan',
+            openMenu: 'Öppna meny',
+            closeMenu: 'Stäng meny',
         },
         hero: {
             greeting: 'Hej, jag heter Viktor!',
@@ -453,6 +457,8 @@ export const translations: Record<Language, TranslationStrings> = {
             about: 'About',
             contact: 'Contact',
             goToTop: 'Go to top of page',
+            openMenu: 'Open menu',
+            closeMenu: 'Close menu',
         },
         hero: {
             greeting: "Hi, I'm Viktor!",

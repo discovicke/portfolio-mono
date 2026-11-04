@@ -13,9 +13,11 @@ interface DoodleNavLinkProps {
     label: string;
     href: string;
     isActive: boolean;
+    /** Anropas efter att länken navigerat, t.ex. för att stänga mobilmenyn */
+    onNavigate?: () => void;
 }
 
-const DoodleNavLink: React.FC<DoodleNavLinkProps> = ({ label, href, isActive }) => {
+const DoodleNavLink: React.FC<DoodleNavLinkProps> = ({ label, href, isActive, onNavigate }) => {
     /**
      * Smooth scroll till sektionen
      */
@@ -24,8 +26,10 @@ const DoodleNavLink: React.FC<DoodleNavLinkProps> = ({ label, href, isActive }) 
         const targetId = href.replace('#', '');
         const element = document.getElementById(targetId);
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            element.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
         }
+        onNavigate?.();
     };
 
     return (
@@ -33,6 +37,7 @@ const DoodleNavLink: React.FC<DoodleNavLinkProps> = ({ label, href, isActive }) 
             href={href}
             className={`doodle-nav-link ${isActive ? 'active' : ''}`}
             onClick={handleClick}
+            aria-current={isActive ? 'location' : undefined}
         >
             <span className="doodle-nav-text">{label}</span>
 

@@ -7,6 +7,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
 import DoodleNavLink from './DoodleNavLink';
 import LanguageToggle from './LanguageToggle';
 import { useLanguage } from '../i18n/LanguageContext';
@@ -16,6 +17,9 @@ const Navbar: React.FC = () => {
     // Håll reda på vilka sektioner som har scrollats förbi
     const [activeSection, setActiveSection] = useState<string>('');
 
+    // Mobilmenyns öppna/stängda läge
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     // Hämta översättningar
     const { t } = useLanguage();
 
@@ -23,8 +27,20 @@ const Navbar: React.FC = () => {
      * Scrolla till toppen av sidan
      */
     const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+        setIsMenuOpen(false);
     };
+
+    // Stäng mobilmenyn med Escape
+    useEffect(() => {
+        if (!isMenuOpen) return;
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') setIsMenuOpen(false);
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [isMenuOpen]);
 
     /**
      * Intersection Observer för att detektera vilka sektioner som är synliga
@@ -150,6 +166,47 @@ const Navbar: React.FC = () => {
             <DoodleNavLink label={t.nav.projects} href="#work" isActive={isSectionActive('work')} />
             <DoodleNavLink label={t.nav.about} href="#about" isActive={isSectionActive('about')} />
             <DoodleNavLink label={t.nav.contact} href="#contact" isActive={isSectionActive('contact')} />
+            <LanguageToggle />
+        </div>
+
+        {/* Mobilmeny-knapp */}
+        <button
+            className="mobile-menu-toggle"
+            type="button"
+            onClick={() => setIsMenuOpen((open) => !open)}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-nav"
+            aria-label={isMenuOpen ? t.nav.closeMenu : t.nav.openMenu}
+        >
+            {isMenuOpen ? <X size={26} strokeWidth={2} /> : <Menu size={26} strokeWidth={2} />}
+        </button>
+
+        {/* Mobilmeny */}
+        <div id="mobile-nav" className={`mobile-menu${isMenuOpen ? ' open' : ''}`}>
+            <DoodleNavLink
+                label={t.nav.skills}
+                href="#skills"
+                isActive={isSectionActive('skills')}
+                onNavigate={() => setIsMenuOpen(false)}
+            />
+            <DoodleNavLink
+                label={t.nav.projects}
+                href="#work"
+                isActive={isSectionActive('work')}
+                onNavigate={() => setIsMenuOpen(false)}
+            />
+            <DoodleNavLink
+                label={t.nav.about}
+                href="#about"
+                isActive={isSectionActive('about')}
+                onNavigate={() => setIsMenuOpen(false)}
+            />
+            <DoodleNavLink
+                label={t.nav.contact}
+                href="#contact"
+                isActive={isSectionActive('contact')}
+                onNavigate={() => setIsMenuOpen(false)}
+            />
             <LanguageToggle />
         </div>
     </nav>
