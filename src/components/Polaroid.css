@@ -41,7 +41,7 @@
   transform: rotate(2deg);
 }
 
-.polaroid.is-interactive:hover {
+.polaroid:hover {
   transform: rotate(0deg) scale(1.05) translateY(-8px);
   box-shadow:
     6px 6px 0px 0px rgba(0, 0, 0, 0.2),
@@ -209,7 +209,7 @@
   transform: rotate(2deg);
 }
 
-.instant.is-interactive:hover {
+.instant:hover {
   transform: rotate(0deg) scale(1.08) translateY(-5px);
 }
 
