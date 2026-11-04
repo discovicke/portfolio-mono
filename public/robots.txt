@@ -1,0 +1,28 @@
+# https://viktorjohansson.vercel.app/robots.txt
+
+User-agent: *
+Allow: /
+
+# AI-sökmotorer och assistenter – tillåtna att läsa och citera sajten
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://viktorjohansson.vercel.app/sitemap.xml

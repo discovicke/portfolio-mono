@@ -1,0 +1,26 @@
+# Viktor Johansson – Systemutvecklare .NET i Hudiksvall
+
+> Viktor Johansson är student till systemutvecklare .NET med AI-kompetens på Edugrade i Hudiksvall. Han söker junior tjänst som utvecklare, sommar-/extraarbete och mindre projekt i Hudiksvall, Hälsingland, Gävleborg eller på distans.
+
+## Fakta
+
+- Namn: Viktor Johansson
+- Roll: Systemutvecklare .NET (student)
+- Ort: Hudiksvall, Hälsingland, Sverige
+- Utbildning: Systemutvecklare .NET med AI-kompetens, Edugrade Hudiksvall
+- Söker: Junior tjänst, sommar-/extraarbete, mindre projekt
+- Tekniker: C#, .NET, ASP.NET, Entity Framework, Blazor, React, TypeScript, JavaScript, SQL, Git, Docker, Azure OpenAI
+- Språk: Svenska, engelska
+
+## Länkar
+
+- Webbplats: https://viktorjohansson.vercel.app/
+- GitHub: https://www.github.com/discovicke
+- LinkedIn: https://www.linkedin.com/in/viktorjohansson96/
+- Instagram: https://www.instagram.com/discovicke
+- CV (svenska): https://viktorjohansson.vercel.app/cv/CV-Viktor-Johansson-NETdev.pdf
+- CV (engelska): https://viktorjohansson.vercel.app/cv/CV-Viktor-Johansson-NETdev-EN.pdf
+
+## Kontakt
+
+- E-post: johanssonviktor@pm.me
