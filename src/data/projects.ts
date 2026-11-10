@@ -148,4 +148,22 @@ export const projects: Project[] = [
         year: "2026",
         role: "Ensam utvecklare - designade och implementerade backend, frontend och AI flöde från grunden."
     },
+    {
+        id: 10,
+        title: "Lärka",
+        category: "LMS + DevOps",
+        desc: "Lärplattform för yrkeshögskolor där lärare publicerar innehåll, elever lämnar in och admin ordnar skolan.",
+        img: "/larka-preview.webp",
+        longDesc:
+            "Lärka är ett lärplattformssystem (LMS) för yrkeshögskolor. Lärare skapar nyheter, teori och uppgifter och publicerar dem till klasser och grupper. " +
+            "Elever läser, lämnar in text eller filer, kopplar GitHub-repon och får betyg med kommentarer och notiser. " +
+            "Admin hanterar skolor, användare, kurser och grupper och följer upp klasser och kurser i en dashboard. " +
+            "Backend är ASP.NET Core i .NET 10 med EF Core och PostgreSQL, klienten Vue 3 med Vite, TypeScript och shadcn-vue. " +
+            "Drift sker med Docker på Render, filer i Supabase Storage och CD med semantic release. Tre Playwright-flöden och xUnit med Testcontainers testar hela kedjan.",
+        technologies: [".NET 10", "ASP.NET Core", "EF Core", "PostgreSQL", "Vue 3", "TypeScript", "Vite", "shadcn-vue", "Docker", "Playwright"],
+        liveUrl: "https://net25-devops-grupp-4.onrender.com",
+        repoUrl: "https://github.com/EduEdugrade/net25-devops-grupp-4",
+        year: "2026",
+        role: "Fullstack-utvecklare i team - GitHub-integrationen med grupprepon, adminens uppföljningsdashboard, elevens kurs- och inkorgsvyer samt designsystemet och mörkt läge."
+    },
 ];
