@@ -448,6 +448,13 @@ export const translations: Record<Language, TranslationStrings> = {
                 longDesc: 'preNostros är en chatt där du diskuterar böcker med en AI samtalspartner och sparar citat, tankar, analyser och betyg som anteckningar. Tanken är en MVP som visar att det går att integrera LLM mot Nostos produkten. Backend är ett Minimal API med EF Core och SQLite, frontend i React är en terminalren yta där alla vägar in går via kommandon som /bok och /samtal. ChatService bygger systemprompt av roll plus bok plus anteckningar plus historik och strömmar svar som SSE från Azure OpenAI.',
                 role: 'Ensam utvecklare - designade och implementerade backend, frontend och AI flöde från grunden.',
             },
+            10: {
+                title: 'Lärka',
+                category: 'LMS + DevOps',
+                desc: 'Lärplattform för yrkeshögskolor där lärare publicerar innehåll, elever lämnar in och admin ordnar skolan.',
+                longDesc: 'Lärka är ett lärplattformssystem (LMS) för yrkeshögskolor. Lärare skapar nyheter, teori och uppgifter och publicerar dem till klasser och grupper. Elever läser, lämnar in text eller filer, kopplar GitHub-repon och får betyg med kommentarer och notiser. Admin hanterar skolor, användare, kurser och grupper och följer upp klasser och kurser i en dashboard. Backend är ASP.NET Core i .NET 10 med EF Core och PostgreSQL, klienten Vue 3 med Vite, TypeScript och shadcn-vue. Drift sker med Docker på Render, filer i Supabase Storage och CD med semantic release. Tre Playwright-flöden och xUnit med Testcontainers testar hela kedjan.',
+                role: 'Fullstack-utvecklare i team - GitHub-integrationen med grupprepon, adminens uppföljningsdashboard, elevens kurs- och inkorgsvyer samt designsystemet och mörkt läge.',
+            },
         },
     },
     en: {
@@ -763,6 +770,13 @@ export const translations: Record<Language, TranslationStrings> = {
                 desc: 'Book circle chat with generative AI where you discuss books with an AI partner and save notes and ratings.',
                 longDesc: 'preNostros is a chat where you discuss books with an AI partner and save quotes, thoughts, analysis and ratings as notes. The idea is an MVP that proves LLM integration against the Nostos product is possible. Backend is a Minimal API with EF Core and SQLite, frontend in React is a terminal style surface where every path goes through commands like /bok and /samtal. ChatService builds a system prompt from role plus book plus notes plus history and streams answers as SSE from Azure OpenAI.',
                 role: 'Solo developer - designed and implemented backend, frontend and AI flow from scratch.',
+            },
+            10: {
+                title: 'Lärka',
+                category: 'LMS + DevOps',
+                desc: 'Learning platform for vocational schools where teachers publish content, students submit work and admins run the school.',
+                longDesc: 'Lärka is a learning management system (LMS) for vocational schools. Teachers create news, theory and assignments and publish them to classes and groups. Students read, submit text or files, connect GitHub repositories and receive grades with feedback and notifications. Admins manage schools, users, courses and groups and follow up classes and courses in a dashboard. Backend is ASP.NET Core on .NET 10 with EF Core and PostgreSQL, the client is Vue 3 with Vite, TypeScript and shadcn-vue. Hosting uses Docker on Render, files live in Supabase Storage and CD runs with semantic release. Three Playwright journeys and xUnit with Testcontainers test the whole chain.',
+                role: 'Fullstack developer in team - the GitHub integration with group repositories, the admin follow-up dashboard, student course and inbox views, and the design system and dark mode.',
             },
         },
     },
